@@ -1,0 +1,2 @@
+class TastingsController < ApplicationController
+end
