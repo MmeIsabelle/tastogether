@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   end
   resources :participations, only: :update
   resources :hosts, only: :show
-  resource :dashboard, only: :show
+  resource :dashboards, only: :show
 end
