@@ -6,6 +6,7 @@ class ParticipationPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    # if user is not the host
+    record.tasting.user != user
   end
 end
