@@ -16,6 +16,16 @@ User.create!(
   password: "123456"
 )
 
+User.create!(
+  email: "user1@user.com",
+  password: "123456"
+)
+
+User.create!(
+  email: "user2@user.com",
+  password: "123456"
+)
+
 puts "You created #{User.count} Users."
 
 # Tasting seeds:
