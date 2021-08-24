@@ -5,7 +5,7 @@ attr_reader :user
     @user = user
   end
 
-  def pending_tastings
-    @pendings = Participation.where(user_id: @user, status: "pending")
+  def pending_participations
+    user.participations.pending
   end
 end
