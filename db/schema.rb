@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_24_162146) do
+ActiveRecord::Schema.define(version: 2021_08_24_201806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,11 +51,6 @@ ActiveRecord::Schema.define(version: 2021_08_24_162146) do
     t.index ["tasting_id"], name: "index_categorizations_on_tasting_id"
   end
 
-  create_table "hosts", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "participations", force: :cascade do |t|
     t.string "status"
     t.boolean "host"
@@ -74,10 +69,8 @@ ActiveRecord::Schema.define(version: 2021_08_24_162146) do
     t.string "location"
     t.date "date"
     t.integer "capacity"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_tastings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -97,5 +90,4 @@ ActiveRecord::Schema.define(version: 2021_08_24_162146) do
   add_foreign_key "categorizations", "tastings"
   add_foreign_key "participations", "tastings"
   add_foreign_key "participations", "users"
-  add_foreign_key "tastings", "users"
 end

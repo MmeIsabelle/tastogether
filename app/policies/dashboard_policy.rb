@@ -4,4 +4,8 @@ class DashboardPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def show?
+    record.user == user
+  end
 end
