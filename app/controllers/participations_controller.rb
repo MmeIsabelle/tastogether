@@ -4,8 +4,11 @@ class ParticipationsController < ApplicationController
     @participation = Participation.new(participation_params)
     @participation.tasting = @tasting
     @participation.user = current_user
+
+    # set the host attribute to false if the user is not already a participant
+    @participation.host = false if @participation.tasting.participations.where(user: current_user).none?
+
     authorize(@participation)
-    @participation.host = false
     @participation.status = "Pending"
     if @participation.save!
       redirect_to "/"
