@@ -93,8 +93,11 @@ ActiveRecord::Schema.define(version: 2021_08_24_162146) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+<<<<<<< HEAD
   add_foreign_key "categorizations", "categories"
   add_foreign_key "categorizations", "tastings"
+=======
+>>>>>>> master
   add_foreign_key "participations", "tastings"
   add_foreign_key "participations", "users"
   add_foreign_key "tastings", "users"
