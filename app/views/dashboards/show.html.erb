@@ -1,3 +1,9 @@
 <div class="container">
 <h1><%= @dashboard.user.email %>'s Dashboard</h1>
+
+<ul><% @dashboard.pending_participations.each do |participation| %>
+  <li><%= participation.tasting.title %></li>
+<% end %>
+</ul>
+
 </div>
