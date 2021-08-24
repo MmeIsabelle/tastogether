@@ -5,7 +5,8 @@ class TastingsController < ApplicationController
   end
 
   def show
-
+    @tasting = Tasting.find(params[:id])
+    authorize(@tasting)
   end
 
   def create
