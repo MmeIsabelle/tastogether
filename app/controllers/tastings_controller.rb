@@ -10,6 +10,20 @@ class TastingsController < ApplicationController
   end
 
   def create
+    @tasting = Tasting.new(tasting_params)
+    @tasting.host = current_user
+    authorize @tasting
+    if @tasting.save
+      redirect_to dashboard_path
+    else
+      @dashboard = Dashboard.new(current_user)
+      render "/dashboards/show"
+    end
+  end
 
+  private
+
+  def tasting_params
+    params.require(:tasting).permit(:title, :description, :location, :date, :capacity)
   end
 end
