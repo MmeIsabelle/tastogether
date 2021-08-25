@@ -6,32 +6,48 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User seeds:
-
-User.delete_all
-puts "All Users deleted!"
+# Destroy all
+Participation.destroy_all
+Tasting.destroy_all
+User.destroy_all
+puts "All participations, tastings, and users deleted!"
 
 User.create!(
-  email: "host@user.com",
-  password: "123456"
+  email: "user0@user.com",
+  password: "123456",
+  address: "632 Rue Cathcart, Montréal, QC H3B 1L9, Canada"
 )
 
 User.create!(
   email: "user1@user.com",
-  password: "123456"
+  password: "123456",
+  address: "8910 Rue Lajeunesse, Montréal, QC H2M 1R9, Canada"
 )
 
 User.create!(
   email: "user2@user.com",
-  password: "123456"
+  password: "123456",
+  address: "1255 Phillips Square Suite 800, Montreal, Quebec H3B 3G1, Canada"
+)
+
+User.create!(
+  email: "user2@user.com",
+  password: "123456",
+  address: "620 Saint-Catherine St W, Montreal, Quebec H3B 1B7, Canada"
+)
+
+User.create!(
+  email: "user2@user.com",
+  password: "123456",
+  address: "192 Rue Saint-Zotique E, Montréal, QC H2S 1K8, Canada"
+)
+User.create!(
+  email: "user2@user.com",
+  password: "123456",
+  address: "1478 Rue, Peel St, Montreal, Quebec H3A 1T1, Canada"
 )
 
 puts "You created #{User.count} Users."
-
-# Tasting seeds:
-
-Tasting.delete_all
-puts "All Tastings deleted!"
 
 Tasting.create!(
   title: "Dark chocolate party",
