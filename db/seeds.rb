@@ -70,7 +70,7 @@ User.create!(
   avatar: Faker::Avatar.image
 )
 
-puts "Created #{User.count} Users."
+puts "Created #{User.count} users."
 
 puts "Creating tastings and assigning users as hosts..."
 
@@ -98,8 +98,35 @@ Tasting.create!(
   capacity: 10
 )
 
+
+puts "You created #{Tasting.count} tastings."
+
+puts "Creating host participations..."
+
 Tasting.all.each do |tasting|
-  tasting.host_participation = User.all.sample
+  tasting.host = User.all.sample
 end
 
-puts "You created #{Tasting.count} Tastings."
+puts "Creating other participations..."
+# run 5 iterations
+5.times do
+  # select a random user and select a random tasting
+  rand_user = User.all.sample
+  rand_tasting = Tasting.all.sample
+
+  # create a new participation if
+  ## 1. random user is not the host of the random tasting
+  ## 2. OR random user is not already a participant of the tasting
+  if rand_tasting.host != rand_user && rand_tasting.participations.where(user: rand_user).none?
+    Participation.create!(
+      tasting: rand_tasting,
+      user: rand_user,
+      host: false,
+      initial_message: Faker::Lorem.sentence,
+      status: "pending"
+    )
+  end
+end
+
+puts "You created #{Participation.count} participations."
+puts "All done!"
