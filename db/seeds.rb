@@ -19,7 +19,7 @@ User.create!(
   password: "123456",
   address: "632 Rue Cathcart, Montréal, QC H3B 1L9, Canada",
   username: Faker::Internet.username,
-  bio: Faker::Lorem.paragraph_by_chars(number: 150),
+  bio: "Extreme beer lover. Lifelong music expert. Incurable gamer. Social media nerd. Zombie geek. Food fan. Explorer.",
   avatar: Faker::Avatar.image
 )
 
@@ -28,7 +28,7 @@ User.create!(
   password: "123456",
   address: "8910 Rue Lajeunesse, Montréal, QC H2M 1R9, Canada",
   username: Faker::Internet.username,
-  bio: Faker::Lorem.paragraph_by_chars(number: 150),
+  bio: "Student. Bacon nerd. Beeraholic. Introvert. Evil music aficionado. Freelance pop culture advocate. Coffee trailblazer.",
   avatar: Faker::Avatar.image
 )
 
@@ -37,7 +37,7 @@ User.create!(
   password: "123456",
   address: "1255 Phillips Square Suite 800, Montreal, Quebec H3B 3G1, Canada",
   username: Faker::Internet.username,
-  bio: Faker::Lorem.paragraph_by_chars(number: 150),
+  bio: "Devoted alcohol enthusiast. Zombie maven. Social media fan. Evil web geek. Introvert. Problem solver. Entrepreneur.",
   avatar: Faker::Avatar.image
 )
 
@@ -46,7 +46,7 @@ User.create!(
   password: "123456",
   address: "620 Saint-Catherine St W, Montreal, Quebec H3B 1B7, Canada",
   username: Faker::Internet.username,
-  bio: Faker::Lorem.paragraph_by_chars(number: 150),
+  bio: "Beer evangelist. Wannabe travel trailblazer. Twitter nerd. Alcohol advocate. Social media aficionado. Pop culture ninja.",
   avatar: Faker::Avatar.image
 )
 
@@ -55,7 +55,7 @@ User.create!(
   password: "123456",
   address: "192 Rue Saint-Zotique E, Montréal, QC H2S 1K8, Canada",
   username: Faker::Internet.username,
-  bio: Faker::Lorem.paragraph_by_chars(number: 150),
+  bio: "Food expert. Travel geek. Pop culture scholar. Troublemaker. Gamer. Coffee guru. Internet evangelist. Writer. Beer buff.",
   avatar: Faker::Avatar.image
 )
 User.create!(
@@ -63,7 +63,7 @@ User.create!(
   password: "123456",
   address: "1478 Rue, Peel St, Montreal, Quebec H3A 1T1, Canada",
   username: Faker::Internet.username,
-  bio: Faker::Lorem.paragraph_by_chars(number: 150),
+  bio: "Beer trailblazer. Web lover. Twitter buff. Travel specialist. Avid alcohol maven.",
   avatar: Faker::Avatar.image
 )
 
