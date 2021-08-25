@@ -11,7 +11,7 @@ class ParticipationsController < ApplicationController
     authorize(@participation)
     @participation.status = "Pending"
     if @participation.save!
-      redirect_to "/"
+      redirect_to dashboard_path
     else
       render "/tastings/:tasting_id"
     end
