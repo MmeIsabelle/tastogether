@@ -4,6 +4,7 @@ class DashboardsController < ApplicationController
 
   def show
     @dashboard = Dashboard.new(current_user)
+    @tasting = Tasting.new
     authorize @dashboard
   end
 end
