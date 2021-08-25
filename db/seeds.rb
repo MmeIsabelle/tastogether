@@ -15,36 +15,54 @@ puts "All participations, tastings, and users deleted!"
 User.create!(
   email: "user0@user.com",
   password: "123456",
-  address: "632 Rue Cathcart, Montréal, QC H3B 1L9, Canada"
+  address: "632 Rue Cathcart, Montréal, QC H3B 1L9, Canada",
+  username: Faker::Internet.username,
+  bio: Faker::Lorem.paragraph_by_chars(number: 150),
+  avatar: Faker::Avatar.image
 )
 
 User.create!(
   email: "user1@user.com",
   password: "123456",
-  address: "8910 Rue Lajeunesse, Montréal, QC H2M 1R9, Canada"
+  address: "8910 Rue Lajeunesse, Montréal, QC H2M 1R9, Canada",
+  username: Faker::Internet.username,
+  bio: Faker::Lorem.paragraph_by_chars(number: 150),
+  avatar: Faker::Avatar.image
 )
 
 User.create!(
   email: "user2@user.com",
   password: "123456",
-  address: "1255 Phillips Square Suite 800, Montreal, Quebec H3B 3G1, Canada"
+  address: "1255 Phillips Square Suite 800, Montreal, Quebec H3B 3G1, Canada",
+  username: Faker::Internet.username,
+  bio: Faker::Lorem.paragraph_by_chars(number: 150),
+  avatar: Faker::Avatar.image
 )
 
 User.create!(
   email: "user2@user.com",
   password: "123456",
-  address: "620 Saint-Catherine St W, Montreal, Quebec H3B 1B7, Canada"
+  address: "620 Saint-Catherine St W, Montreal, Quebec H3B 1B7, Canada",
+  username: Faker::Internet.username,
+  bio: Faker::Lorem.paragraph_by_chars(number: 150),
+  avatar: Faker::Avatar.image
 )
 
 User.create!(
   email: "user2@user.com",
   password: "123456",
-  address: "192 Rue Saint-Zotique E, Montréal, QC H2S 1K8, Canada"
+  address: "192 Rue Saint-Zotique E, Montréal, QC H2S 1K8, Canada",
+  username: Faker::Internet.username,
+  bio: Faker::Lorem.paragraph_by_chars(number: 150),
+  avatar: Faker::Avatar.image
 )
 User.create!(
   email: "user2@user.com",
   password: "123456",
-  address: "1478 Rue, Peel St, Montreal, Quebec H3A 1T1, Canada"
+  address: "1478 Rue, Peel St, Montreal, Quebec H3A 1T1, Canada",
+  username: Faker::Internet.username,
+  bio: Faker::Lorem.paragraph_by_chars(number: 150),
+  avatar: Faker::Avatar.image
 )
 
 puts "You created #{User.count} Users."
