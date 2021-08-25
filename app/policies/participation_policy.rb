@@ -6,7 +6,7 @@ class ParticipationPolicy < ApplicationPolicy
   end
 
   def create?
-    # if user is not the host and if user is not already among participants
-    !(record.host) && record.tasting.participations.where(user: user).none?
+    # if user is not the host and if user is not already among participants then grant authorization
+    !(record.tasting.host_participation == user || record.tasting.participations.where(user: user).exists?)
   end
 end
