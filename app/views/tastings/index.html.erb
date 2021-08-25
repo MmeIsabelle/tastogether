@@ -1,6 +1,17 @@
 <h1>Tastings</h1>
-<ul>
-  <% @tastings.each do |tasting| %>
-    <li><%= link_to tasting.title, tasting_path(tasting) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="search-form-control form-group pt-3">
+    <%= form_tag tastings_path, method: :get do%>
+      <%= text_field_tag :query, params[:query], class: "form-control" , placeholder: "Find Gear!" %>
+      <%= submit_tag "Search" , class: "btn" %>
+    <% end %>
+  </div>
+  <div>
+    <ul>
+      <% @tastings.each do |tasting| %>
+        <li><%= link_to tasting.title, tasting_path(tasting) %></li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>
