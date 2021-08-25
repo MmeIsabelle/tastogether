@@ -1,9 +1,26 @@
 <div class="container">
 <h1><%= @dashboard.user.email %>'s Dashboard</h1>
+<div>
+<h2>Pending tastings</h2>
+  <ul><% @dashboard.pending_participations.each do |participation| %>
+    <li><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></li>
+  <% end %>
+  </ul>
+</div>
+<div>
+<h2>Upcoming tastings</h2>
+  <ul><% @dashboard.upcoming_tastings.each do |participation| %>
+    <li><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></li>
+  <% end %>
+  </ul>
+</div>
+<div>
+<h2>Past tastings</h2>
+  <ul><% @dashboard.finished_tastings.each do |participation| %>
+    <li><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></li>
+  <% end %>
 
-<ul><% @dashboard.pending_participations.each do |participation| %>
-  <li><%= participation.tasting.title %></li>
-<% end %>
-</ul>
+  </ul>
+</div>
 
 </div>
