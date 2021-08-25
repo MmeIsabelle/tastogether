@@ -6,6 +6,7 @@ class TastingsController < ApplicationController
 
   def show
     @tasting = Tasting.find(params[:id])
+    @participation = Participation.new
     authorize(@tasting)
   end
 
