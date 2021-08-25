@@ -5,6 +5,10 @@ attr_reader :user
     @user = user
   end
 
+  def hostings
+    user.hosted_tastings
+  end
+
   def pending_participations
     user.participations.pending
   end

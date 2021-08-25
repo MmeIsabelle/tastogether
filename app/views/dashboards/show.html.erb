@@ -1,6 +1,13 @@
 <div class="container">
   <h1><%= @dashboard.user.email %>'s Dashboard</h1>
   <div>
+    <h2>Hostings</h2>
+    <ul><% @dashboard.hostings.each do |tasting| %>
+      <li><%= link_to tasting.title, tasting_path(tasting) %></li>
+    <% end %>
+    </ul>
+  </div>
+  <div>
     <h2>Pending tastings</h2>
     <ul><% @dashboard.pending_participations.each do |participation| %>
       <li><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></li>
@@ -24,7 +31,7 @@
   <div>
     <h2>Add a tasting</h2>
     <div>
-      <%= render 'new_tasting' %>
+      <%= render 'dashboards/new_tasting' %>
     </div>
   </div>
 </div>

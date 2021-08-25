@@ -18,6 +18,13 @@ class ParticipationsController < ApplicationController
   end
 
   def update
+    @participation = Participation.find(params[:id])
+    if @participation.update(participation_params)
+      redirect_to dashboard_path
+    else
+      @dashboard = Dashboard.new(current_user)
+      render "/dashboards/show"
+    end
   end
 
   def participation_params

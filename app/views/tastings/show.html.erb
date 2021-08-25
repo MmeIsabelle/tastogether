@@ -2,10 +2,25 @@
   <h1><%= @tasting.title.capitalize %></h1>
 
   <p><%= @tasting.description %></p>
-
-  <h3 class="text-center">Want to join?</h3>
-  <%= simple_form_for [ @tasting, @participation ] do |f| %>
-    <%= f.input :initial_message, label: 'Write a message to the host to introduce yourself' %>
-    <%= f.submit "Send my request", class: "btn btn-primary rounded-pill my-3" %>
-  <% end %>
+  <div>
+    <% unless current_user.tastings.include?(@tasting) %>
+      <h3 class="text-center">Want to join?</h3>
+      <%= simple_form_for [ @tasting, @participation ] do |f| %>
+        <%= f.input :initial_message, label: 'Write a message to the host to introduce yourself' %>
+        <%= f.submit "Send my request", class: "btn btn-primary rounded-pill my-3" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div>
+    <% if current_user.hosted_tastings.include?(@tasting)%>
+      <% @tasting.participations.pending.each do |participation| %>
+      <div>
+        <p><%= participation.user.email %> requested to attend this tasting</p>
+        <p><%= participation.initial_message %></p>
+        <button>Accept</button><button>Decline</button>
+        <hr>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
