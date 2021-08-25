@@ -9,4 +9,8 @@ class User < ApplicationRecord
 
   has_many :hosting_participations, -> { where(host: true, status: "accepted") }, class_name: "Participation"
   has_many :hosted_tastings, through: :hosting_participations, source: :tasting
+
+  validates :email, :address, presence: true
+  validates :email, :username, uniqueness: true
+  validates :bio, length: { maximum: 250 }
 end
