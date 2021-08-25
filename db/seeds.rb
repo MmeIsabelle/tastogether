@@ -11,11 +11,8 @@ puts "Emptying database"
 Participation.destroy_all
 Tasting.destroy_all
 User.destroy_all
-puts "All participations, tastings, and users deleted!"
 
 puts "Seeding database..."
-
-puts "Creating users..."
 
 User.create!(
   email: "user0@user.com",
@@ -70,10 +67,6 @@ User.create!(
   avatar: Faker::Avatar.image
 )
 
-puts "Created #{User.count} users."
-
-puts "Creating tastings and assigning users as hosts..."
-
 Tasting.create!(
   title: "Dark chocolate party",
   description: "Bring your favorite type of dark chocolate. The rarer the better.",
@@ -98,17 +91,12 @@ Tasting.create!(
   capacity: 10
 )
 
-
-puts "You created #{Tasting.count} tastings."
-
-puts "Creating host participations..."
-
+# Creating host participations
 Tasting.all.each do |tasting|
   tasting.host = User.all.sample
 end
 
-puts "Creating other participations..."
-# run 5 iterations
+# Creating other participations
 5.times do
   # select a random user and select a random tasting
   rand_user = User.all.sample
@@ -128,5 +116,4 @@ puts "Creating other participations..."
   end
 end
 
-puts "You created #{Participation.count} participations."
 puts "All done!"
