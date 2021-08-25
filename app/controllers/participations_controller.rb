@@ -6,7 +6,7 @@ class ParticipationsController < ApplicationController
     @participation.user = current_user
 
     # set the host attribute to false if the user is not already a participant
-    @participation.host = false if @participation.tasting.participations.where(user: current_user).none?
+    @participation.host = false if @participation.tasting.host_participation
 
     authorize(@participation)
     @participation.status = "pending"
