@@ -1,7 +1,7 @@
 <h1>Tastings</h1>
 <ul>
   <% @tastings.each do |tasting| %>
-    <li><%= tasting.title %></li>
+    <li><%= link_to tasting.title, tasting_path(tasting) %></li>
   <% end %>
 
 
