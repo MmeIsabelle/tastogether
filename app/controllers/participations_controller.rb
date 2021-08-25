@@ -9,7 +9,7 @@ class ParticipationsController < ApplicationController
     @participation.host = false if @participation.tasting.participations.where(user: current_user).none?
 
     authorize(@participation)
-    @participation.status = "Pending"
+    @participation.status = "pending"
     if @participation.save!
       redirect_to dashboard_path
     else
