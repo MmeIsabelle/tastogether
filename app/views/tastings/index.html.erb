@@ -24,7 +24,7 @@
                 <% if tasting.photo.attached? %>
                   <%= cl_image_tag tasting.photo.key %>
                 <% else %>
-                  <%= image_tag tasting.image, style: 'width:300px; height:crop' %>
+                  <%= image_tag tasting.image, height: 200 %>
                 <% end %>
                 <div class="card-body">
                   <div class="d-flex justify-content-end">
