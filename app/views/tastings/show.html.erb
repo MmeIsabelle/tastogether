@@ -17,9 +17,9 @@
       <h3>Description</h3>
       <%= @tasting.description %>
     </div>
-    <%# Note to self (Dylan): Code everything above "participants" above this line. %>
+    <strong> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </strong>
     <div>
-      Participants <% @tasting.participations.each do |participant| %>
+       <% @tasting.participations.each do |participant| %>
         <% unless participant.host %>
           <%= participant.user.username %>
         <% end %>
