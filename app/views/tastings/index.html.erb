@@ -1,10 +1,10 @@
 <div class="bg-secondary mb-4 py-3 d-flex justify-content-around align-items-center">
   <div>
-    <h4 class="mb-0"><%= params[:query].nil? ? "" : params[:query]%>
+    <h4 class="mb-0"><%= params[:query].nil? ? "" : params[:query].downcase%>
     <h1>Tastings</h1>
   </div>
   <div>
-    <img src="https://via.placeholder.com/100x100" alt="Tastogether logo">
+    <img src="https://via.placeholder.com/100x100?text=Logo" alt="Tastogether logo">
   </div>
 </div>
 
@@ -24,7 +24,7 @@
                 <img src="https://via.placeholder.com/150x100" class="card-img-top img-fluid" alt="...">
                 <div class="card-body">
                   <div class="d-flex justify-content-end">
-                    <%= image_tag tasting.host.avatar, class: "rounded-circle border", width: 50, height: 50 %>
+                    <%= image_tag tasting.host.avatar, class: "rounded-circle border", width: 50, height: 50%>
                   </div>
                     <h5 class="card-title"><%= tasting.title %></h5>
                   <p class="card-text">#category</p>
