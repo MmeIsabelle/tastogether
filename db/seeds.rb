@@ -67,53 +67,187 @@ User.create!(
   avatar: Faker::Avatar.image
 )
 
+#Creating tastings and hosts
 Tasting.create!(
   title: "Dark chocolate party",
-  description: "Bring your favorite type of dark chocolate. The rarer the better.",
+  description: "A variety of dark chocolate from different origins will be shared to explore the nuances and the different notes. Bring your favorite! The rarer the better.",
   location: "620 Rue Cathcart #300, Montréal, QC H3B 1M1, Canada",
   date: Date.tomorrow,
-  capacity: 5
+  capacity: 5,
+  image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1629996108/Tastogether/dark_chocolate_k402i4.jpg'
+)
+Participation.create!(
+  tasting: Tasting.find_by(title: "Dark chocolate party"),
+  user: User.find_by(email: "user4@user.com"),
+  host: true,
+  initial_message: Faker::Lorem.sentence,
+  status: "accepted"
 )
 
-Tasting.create!(
-  title: "Exotic coffee tasting",
-  description: "Bring your coffee of choice. Coffee connaisseurs only.",
-  location: "1255 Boulevard Robert-Bourassa Suite #1505, Montreal, Quebec H3B 3V8, Canada",
-  date: Date.tomorrow + 1,
-  capacity: 8
+#Creating tastings
+tastings = {
+  coffee_tasting: Tasting.create!(
+    title: "Exotic coffee tasting",
+    description: "Bring your coffee of choice. Coffee connaisseurs only.",
+    location: "1255 Boulevard Robert-Bourassa Suite #1505, Montreal, Quebec H3B 3V8, Canada",
+    date: Date.tomorrow + 1,
+    capacity: 4,
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/a_90/v1629996106/Tastogether/coffee_lesk06.jpg'
+  ),
+  beans: Tasting.create!(
+    title: "From the beans to the bar",
+    description: "Chocolate made from scratch... Really! Let's taste chocolates made from beans from different countries. I will show you how I make it possible and we can discuss the subtle and not so subtle diffenrences in flavours.",
+    location: "1290 Av. Bernard, Outremont, QC H2V 1V9, Canada",
+    date: Date.tomorrow + 3,
+    capacity: 4,
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630000746/Tastogether/bean_to_bar_mzj7m2.jpg'
+  ),
+  gelato: Tasting.create!(
+    title: "Gelato, just because...",
+    description: "Gelato is just an amizing world to discover... Join in!",
+    location: "1290 Av. Bernard, Outremont, QC H2V 1V9, Canada",
+    date: Date.tomorrow + 6,
+    capacity: 4,
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630000742/Tastogether/gelato_ela3ku.jpg'
+  ),
+  milk: Tasting.create!(
+    title: "The milky way",
+    description: "Because milk chocolates don't all taste the same! We will revisit some well know bars and compare them with some local chocolaters ",
+    location: "2221 Rue Workman, Montréal, QC H3J 2N6, Canada",
+    date: Date.tomorrow + 5,
+    capacity: 4,
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630000740/Tastogether/chocolate_bar_em9caz.jpg'
+  ),
+  vintage: Tasting.create!(
+    title: "From old to new",
+    description: "Let's taste the same wine from different vintages to compare and discuss the effect of aging on the flavours.",
+    location: "852 Rue Sherbrooke, Montreal, Quebec H2L 1K9, Canada",
+    date: Date.tomorrow + 10,
+    capacity: 6,
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1629996979/Tastogether/wine_bgbbom.jpg'
+  ),
+  pizza: Tasting.create!(
+    title: "Pizza party",
+    description: "We will all order pizza from our favorite pizza restaurants to compare their take on the margarita pizza.",
+    location: "5991 Victoria Ave, Montreal, Quebec H3W 2R9, Canada",
+    date: Date.tomorrow + 10,
+    capacity: 10,
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
+  )
+}
+
+#Creating hosts
+Participation.create!(
+  tasting: tastings[:coffee_tasting],
+  user: User.find_by(email: "user0@user.com"),
+  host: true,
+  initial_message: Faker::Lorem.sentence,
+  status: "accepted"
 )
 
-Tasting.create!(
-  title: "Pizza party",
-  description: "We will all order pizza from our favorite pizza restaurants.",
-  location: "5991 Victoria Ave, Montreal, Quebec H3W 2R9, Canada",
-  date: Date.tomorrow + 10,
-  capacity: 10
+Participation.create!(
+  tasting: tastings[:beans],
+  user: User.find_by(email: "user0@user.com"),
+  host: true,
+  initial_message: Faker::Lorem.sentence,
+  status: "accepted"
 )
 
-# Creating host participations
-Tasting.all.each do |tasting|
-  tasting.host = User.all.sample
-end
+Participation.create!(
+  tasting: tastings[:gelato],
+  user: User.find_by(email: "user0@user.com"),
+  host: true,
+  initial_message: Faker::Lorem.sentence,
+  status: "accepted"
+)
 
-# Creating other participations
-5.times do
-  # select a random user and select a random tasting
-  rand_user = User.all.sample
-  rand_tasting = Tasting.all.sample
+Participation.create!(
+  tasting: tastings[:milk],
+  user: User.find_by(email: "user4@user.com"),
+  host: true,
+  initial_message: Faker::Lorem.sentence,
+  status: "accepted"
+)
 
-  # create a new participation if
-  ## 1. random user is not the host of the random tasting
-  ## 2. OR random user is not already a participant of the tasting
-  if rand_tasting.host != rand_user && rand_tasting.participations.where(user: rand_user).none?
-    Participation.create!(
-      tasting: rand_tasting,
-      user: rand_user,
-      host: false,
-      initial_message: Faker::Lorem.sentence,
-      status: "pending"
-    )
-  end
-end
+Participation.create!(
+  tasting: tastings[:vintage],
+  user: User.find_by(email: "user0@user.com"),
+  host: true,
+  initial_message: Faker::Lorem.sentence,
+  status: "accepted"
+)
+
+Participation.create!(
+  tasting: tastings[:pizza],
+  user: User.find_by(email: "user3@user.com"),
+  host: true,
+  initial_message: Faker::Lorem.sentence,
+  status: "accepted"
+)
+
+# Creating participations
+Participation.create!(
+  tasting: tastings[:beans],
+  user: User.find_by(email: "user1@user.com"),
+  host: false,
+  initial_message: Faker::Lorem.sentence,
+  status: "pending"
+)
+
+Participation.create!(
+  tasting: tastings[:beans],
+  user: User.find_by(email: "user4@user.com"),
+  host: false,
+  initial_message: Faker::Lorem.sentence,
+  status: "pending"
+)
+
+Participation.create!(
+  tasting: tastings[:vintage],
+  user: User.find_by(email: "user1@user.com"),
+  host: false,
+  initial_message: Faker::Lorem.sentence,
+  status: "pending"
+)
+
+Participation.create!(
+  tasting: tastings[:vintage],
+  user: User.find_by(email: "user4@user.com"),
+  host: false,
+  initial_message: Faker::Lorem.sentence,
+  status: "accepted"
+)
+
+Participation.create!(
+  tasting: tastings[:vintage],
+  user: User.find_by(email: "user5@user.com"),
+  host: false,
+  initial_message: Faker::Lorem.sentence,
+  status: "pending"
+)
+
+Participation.create!(
+  tasting: tastings[:beans],
+  user: User.find_by(email: "user1@user.com"),
+  host: false,
+  initial_message: Faker::Lorem.sentence,
+  status: "pending"
+)
+
+Participation.create!(
+  tasting: tastings[:milk],
+  user: User.find_by(email: "user3@user.com"),
+  host: false,
+  initial_message: Faker::Lorem.sentence,
+  status: "pending"
+)
+
+Participation.create!(
+  tasting: tastings[:gelato],
+  user: User.find_by(email: "user2@user.com"),
+  host: false,
+  initial_message: Faker::Lorem.sentence,
+  status: "pending"
+)
 
 puts "All done!"
