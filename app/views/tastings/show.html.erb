@@ -1,44 +1,48 @@
 <div class="container">
-  <h1><%= @tasting.title.capitalize %></h1>
-
-  <p><%= @tasting.description %></p>
+  <%# Dark brown div on top of page: %>
   <div>
-  Participants <% @tasting.participations.each do |participant| %>
-    <% unless participant.host %>
-      <%= participant.user.username %>
-    <% end %>
-  <% end %>
+    <h1><%= @tasting.title.capitalize %></h1>
   </div>
+  <%# Div for everything else (excluding navbar on the bottom) %>
   <div>
-    <% unless current_user.tastings.include?(@tasting) %>
-      <h3 class="text-center">Want to join?</h3>
-      <%= simple_form_for [ @tasting, @participation ] do |f| %>
-        <%= f.input :initial_message, label: 'Write a message to the host to introduce yourself' %>
-        <%= f.submit "Send my request", class: "btn btn-primary rounded-pill my-3" %>
+    <div>
+      Participants <% @tasting.participations.each do |participant| %>
+        <% unless participant.host %>
+          <%= participant.user.username %>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-  <div>
-    <% if current_user.hosted_tastings.include?(@tasting)%>
-      <% @tasting.participations.pending.each do |participation| %>
-      <div>
-        <p><%= participation.user.email %> requested to attend this tasting</p>
-        <p><%= participation.initial_message %></p>
-        <div>
-          <%= simple_form_for participation do |f| %>
-            <%= f.hidden_field :status, value: "accepted" %>
-            <%= f.button :submit, "Accept" %>
-          <% end %>
-        </div>
-        <div>
-          <%= simple_form_for participation do |f| %>
-            <%= f.hidden_field :status, value: "decline" %>
-            <%= f.button :submit, "Decline" %>
-          <% end %>
-        </div>
-        <hr>
-      </div>
+    </div>
+    <div>
+      <% unless current_user.tastings.include?(@tasting) %>
+        <h3 class="text-center">Want to join?</h3>
+        <%= simple_form_for [ @tasting, @participation ] do |f| %>
+          <%= f.input :initial_message, label: 'Write a message to the host to introduce yourself' %>
+          <%= f.submit "Send my request", class: "btn btn-primary rounded-pill my-3" %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+    <div>
+      <% if current_user.hosted_tastings.include?(@tasting)%>
+        <% @tasting.participations.pending.each do |participation| %>
+        <div>
+          <p><%= participation.user.email %> requested to attend this tasting</p>
+          <p><%= participation.initial_message %></p>
+          <div>
+            <%= simple_form_for participation do |f| %>
+              <%= f.hidden_field :status, value: "accepted" %>
+              <%= f.button :submit, "Accept" %>
+            <% end %>
+          </div>
+          <div>
+            <%= simple_form_for participation do |f| %>
+              <%= f.hidden_field :status, value: "decline" %>
+              <%= f.button :submit, "Decline" %>
+            <% end %>
+          </div>
+          <hr>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
