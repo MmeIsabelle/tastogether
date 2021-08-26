@@ -1,17 +1,47 @@
-<h1>Tastings</h1>
+<div class="bg-secondary mb-4 py-3 d-flex justify-content-around align-items-center">
+  <div>
+    <h4 class="mb-0"><%= params[:query].nil? ? "" : params[:query].downcase%>
+    <h1>Tastings</h1>
+  </div>
+  <div>
+    <img src="https://via.placeholder.com/100x100?text=Logo" alt="Tastogether logo">
+  </div>
+</div>
+
 <div class="container">
-  <div class="search-form-control form-group pt-3">
-    <%= form_tag tastings_path, method: :get do%>
+  <div>
+    <%= form_tag tastings_path, class: "input-group", method: :get do%>
       <%= text_field_tag :query, params[:query], class: "form-control" , placeholder: "Discover your next tasting" %>
-      <%= submit_tag "Search" , class: "btn" %>
+      <%= submit_tag "Discover" %>
     <% end %>
   </div>
   <div>
-    <ul>
-      <% @tastings.each do |tasting| %>
-        <li><%= link_to tasting.title, tasting_path(tasting) %></li>
-      <% end %>
-    </ul>
+      <div class="row justify-content-center">
+        <% @tastings.each do |tasting| %>
+          <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+            <%= link_to tasting_path(tasting), class: "text-decoration-none text-dark" do %>
+              <div class="card my-3" style="width: 18rem;">
+                <% if tasting.photo.attached? %>
+                  <%= cl_image_tag tasting.photo.key %>
+                <% else %>
+                  <%= image_tag tasting.image, height: 200 %>
+                <% end %>
+                <div class="card-body">
+                  <div class="d-flex justify-content-end">
+                    <%= image_tag tasting.host.avatar, class: "rounded-circle border", width: 50, height: 50%>
+                  </div>
+                    <h5 class="card-title"><%= tasting.title %></h5>
+                  <p class="card-text">#category</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item text-right">
+                    <%= tasting.date %> - Montreal
+                  </li>
+                </ul>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
   </div>
-
 </div>
