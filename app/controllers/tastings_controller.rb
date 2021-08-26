@@ -7,6 +7,7 @@ class TastingsController < ApplicationController
   def show
     @tasting = Tasting.find(params[:id])
     @participation = Participation.new
+    @host = @tasting.participations.find_by(host: true).user
     authorize(@tasting)
   end
 

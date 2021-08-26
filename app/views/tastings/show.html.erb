@@ -6,6 +6,10 @@
   <%# Div for everything else (excluding navbar on the bottom) %>
   <div>
     <div>
+      <h2><%=@host.username%></h2>
+    </div>
+    <%# Note to self (Dylan): Code everything above "participants" above this line. %>
+    <div>
       Participants <% @tasting.participations.each do |participant| %>
         <% unless participant.host %>
           <%= participant.user.username %>
