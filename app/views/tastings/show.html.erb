@@ -12,6 +12,11 @@
     <div class="d-flex justify-content-center">
       <%= image_tag 'https://picsum.photos/500/300' %>
     </div>
+    #category1 #category2 #category3
+    <div>
+      <h3>Description</h3>
+      <%= @tasting.description %>
+    </div>
     <%# Note to self (Dylan): Code everything above "participants" above this line. %>
     <div>
       Participants <% @tasting.participations.each do |participant| %>
