@@ -3,6 +3,13 @@
 
   <p><%= @tasting.description %></p>
   <div>
+  Participants <% @tasting.participations.each do |participant| %>
+    <% unless participant.host %>
+      <%= participant.user.username %>
+    <% end %>
+  <% end %>
+  </div>
+  <div>
     <% unless current_user.tastings.include?(@tasting) %>
       <h3 class="text-center">Want to join?</h3>
       <%= simple_form_for [ @tasting, @participation ] do |f| %>
@@ -17,7 +24,18 @@
       <div>
         <p><%= participation.user.email %> requested to attend this tasting</p>
         <p><%= participation.initial_message %></p>
-        <button>Accept</button><button>Decline</button>
+        <div>
+          <%= simple_form_for participation do |f| %>
+            <%= f.hidden_field :status, value: "accepted" %>
+            <%= f.button :submit, "Accept" %>
+          <% end %>
+        </div>
+        <div>
+          <%= simple_form_for participation do |f| %>
+            <%= f.hidden_field :status, value: "decline" %>
+            <%= f.button :submit, "Decline" %>
+          <% end %>
+        </div>
         <hr>
       </div>
       <% end %>

@@ -19,8 +19,10 @@ class ParticipationsController < ApplicationController
 
   def update
     @participation = Participation.find(params[:id])
+    authorize @participation
     if @participation.update(participation_params)
-      redirect_to dashboard_path
+      @tasting = @participation.tasting
+      redirect_to tasting_path(@tasting)
     else
       @dashboard = Dashboard.new(current_user)
       render "/dashboards/show"
@@ -28,6 +30,6 @@ class ParticipationsController < ApplicationController
   end
 
   def participation_params
-    params.require(:participation).permit(:initial_message)
+    params.require(:participation).permit(:initial_message, :status)
   end
 end

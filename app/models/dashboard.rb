@@ -10,14 +10,14 @@ attr_reader :user
   end
 
   def pending_participations
-    user.participations.pending
+    user.participations.pending.where(host: false)
   end
 
   def upcoming_tastings
-    user.participations.accepted
+    user.participations.accepted.where(host: false)
   end
 
   def finished_tastings
-    user.participations.finished
+    user.participations.finished.where(host: false)
   end
 end
