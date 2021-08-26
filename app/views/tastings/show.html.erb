@@ -1,6 +1,6 @@
 <div class="container">
   <%# Dark brown div on top of page: %>
-  <div class="text-center">
+  <div class="bg-secondary py-3 d-flex justify-content-around align-items-center">
     <h1><%= @tasting.title.capitalize %></h1>
   </div>
   <%# Div for everything else (excluding navbar on the bottom) %>
@@ -25,7 +25,7 @@
         </div>
         <a href="#" data-toggle="modal" data-target="#myModal"><%=@host.username%></a>
       </div>
-      <h3>Rating: ☆☆☆☆☆</h3>
+      <p>Rating: ☆☆☆☆☆</p>
     </div>
     <div class="d-flex justify-content-center">
       <% if @tasting.photo.attached? %>
