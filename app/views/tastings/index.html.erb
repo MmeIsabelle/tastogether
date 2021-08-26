@@ -21,7 +21,11 @@
           <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
             <%= link_to tasting_path(tasting), class: "text-decoration-none text-dark" do %>
               <div class="card my-3" style="width: 18rem;">
-                <img src="https://via.placeholder.com/150x100" class="card-img-top img-fluid" alt="...">
+                <% if tasting.photo.attached? %>
+                  <%= cl_image_tag tasting.photo.key %>
+                <% else %>
+                  <%= image_tag tasting.image, style: 'width:300px; height:crop' %>
+                <% end %>
                 <div class="card-body">
                   <div class="d-flex justify-content-end">
                     <%= image_tag tasting.host.avatar, class: "rounded-circle border", width: 50, height: 50%>
