@@ -1,31 +1,73 @@
 <div class="container">
-  <h1><%= @dashboard.user.email %>'s Dashboard</h1>
   <div>
+    <h1><%= @dashboard.user.username.capitalize %></h1>
+  </div>
+  <div class="attending-pending my-4">
+    <div>
+      <h2>Pending tastings</h2>
+      <div class="card ">
+        <% @dashboard.pending_participations.each do |participation| %>
+          <div class="d-flex justify-content-between align-items-center m-4">
+            <% if participation.tasting.photo.attached? %>
+              <%= cl_image_tag participation.tasting.photo.key%>
+            <% else %>
+              <%= image_tag participation.tasting.image, width: 100, height: 100 %>
+            <% end %>
+            <h3><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></h3>
+            <%= participation.tasting.date %>
+          </div>
+        <% end %>
+      <div>
+    </div>
+  </div>
+  <div class="attending-upcoming my-4">
+    <div>
+      <h2>Upcoming tastings</h2>
+      <div class="card">
+        <% @dashboard.upcoming_tastings.each do |tastings| %>
+          <div class="d-flex justify-content-between align-items-center m-4">
+            <% if tasting.photo.attached? %>
+              <%= cl_image_tag tasting.photo.key%>
+            <% else %>
+              <%= image_tag tasting.image, width: 100, height: 100 %>
+            <% end %>
+            <h3><%= link_to tasting.title, tasting_path(participation.tasting) %></h3>
+            <%= tasting.date %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="hosting my-4">
     <h2>Hostings</h2>
-    <ul><% @dashboard.hostings.each do |tasting| %>
-      <li><%= link_to tasting.title, tasting_path(tasting) %></li>
-    <% end %>
-    </ul>
+    <div class="card">
+      <% @dashboard.hostings.each do |tasting| %>
+        <div class="d-flex justify-content-between align-items-center m-4">
+          <% if tasting.photo.attached? %>
+            <%= cl_image_tag tasting.photo.key%>
+          <% else %>
+            <%= image_tag tasting.image, width: 100, height: 100 %>
+          <% end %>
+          <h3><%= link_to tasting.title, tasting_path(tasting) %></h3>
+          <%= tasting.date %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div>
-    <h2>Pending tastings</h2>
-    <ul><% @dashboard.pending_participations.each do |participation| %>
-      <li><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></li>
-    <% end %>
-    </ul>
-  </div>
-  <div>
-    <h2>Upcoming tastings</h2>
-    <ul><% @dashboard.upcoming_tastings.each do |participation| %>
-      <li><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></li>
-    <% end %>
-    </ul>
-  </div>
-  <div>
+  <div class="past my-4">
     <h2>Past tastings</h2>
-    <ul><% @dashboard.finished_tastings.each do |participation| %>
-      <li><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></li>
-    <% end %>
-    </ul>
+    <div class="card">
+      <% @dashboard.finished_tastings.each do |tasting| %>
+        <div class="d-flex justify-content-between align-items-center m-4">
+          <% if tasting.photo.attached? %>
+            <%= cl_image_tag tasting.photo.key%>
+          <% else %>
+            <%= image_tag tasting.image, width: 100, height: 100 %>
+          <% end %>
+          <h3><%= link_to tasting.title, tasting_path(tasting) %></h3>
+          <%= tasting.date %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
