@@ -9,14 +9,16 @@
       <div>
         <div class="modal fade" id="myModal">
           <div class="modal-dialog modal-sm">
-            <div class="modal-header">
-              <h1><%=@host.username%>'s Bio:</h1>
-            </div>
-            <div class="modal-body">
-              <%=@host.bio%>
-            </div>
-            <div class="modal-footer">
-              <input class="btn btn-default" value="Close">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1><%=@host.username%>'s Bio:</h1>
+              </div>
+              <div class="modal-body">
+                <%=@host.bio%>
+              </div>
+              <div class="modal-footer">
+                <input class="btn btn-default" data-dismiss="modal" value="Close">
+              </div>
             </div>
           </div>
         </div>
