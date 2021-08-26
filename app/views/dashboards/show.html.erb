@@ -1,7 +1,10 @@
+<div class="bg-secondary py-3 d-flex justify-content-around align-items-center">
+  <h1><%= @dashboard.user.username %></h1>
+  <div class="rounded-circle bg-white">
+    <%= image_tag@dashboard.user.avatar, width: 50, height:50 %>
+  </div> 
+</div>
 <div class="container">
-  <div>
-    <h1><%= @dashboard.user.username %></h1>
-  </div>
   <div class="attending-pending my-4">
     <div>
       <h2>Pending tastings</h2>
