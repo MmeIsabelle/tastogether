@@ -17,15 +17,13 @@
                 <%=@host.bio%>
               </div>
               <div class="modal-footer">
-                <input class="btn btn-default" data-dismiss="modal" value="Close">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <%# <input class="btn btn-default" data-dismiss="modal" value="Close"> %>
               </div>
             </div>
           </div>
         </div>
-
-        <%# <h3><strong><%=@host.username%></strong></h3>
         <a href="#" data-toggle="modal" data-target="#myModal"><%=@host.username%></a>
-
       </div>
       <h3>Rating: ☆☆☆☆☆</h3>
     </div>
