@@ -2,7 +2,7 @@
 <div class="container">
   <div class="search-form-control form-group pt-3">
     <%= form_tag tastings_path, method: :get do%>
-      <%= text_field_tag :query, params[:query], class: "form-control" , placeholder: "Find Gear!" %>
+      <%= text_field_tag :query, params[:query], class: "form-control" , placeholder: "Discover your next tasting" %>
       <%= submit_tag "Search" , class: "btn" %>
     <% end %>
   </div>
