@@ -10,6 +10,11 @@ class TastingsController < ApplicationController
     authorize(@tasting)
   end
 
+  def new
+    @tasting = Tasting.new
+    authorize @tasting
+  end
+
   def create
     @tasting = Tasting.new(tasting_params)
     @tasting.host = current_user
