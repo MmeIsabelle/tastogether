@@ -1,10 +1,14 @@
-<div>
+<div class="container">
+  <h1>Add a tasting</h1>
+  <div>
     <%= simple_form_for (@tasting) do |f| %>
       <%= f.input :title %>
       <%= f.input :description %>
       <%= f.input :location %>
-      <%= f.input :date %>
+      <%= f.input :date, html5: true %>
       <%= f.input :capacity %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit %>
     <% end %>
+  </div>
 </div>
