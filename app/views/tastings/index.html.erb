@@ -37,6 +37,9 @@
                   <li class="list-group-item text-right">
                     <%= tasting.date %> - Montreal
                   </li>
+                  <li class="list-group-item text-right">
+                    <%= current_user.distance_to([tasting.latitude, tasting.longitude]).round(2) %>km away
+                  </li>
                 </ul>
               </div>
             <% end %>

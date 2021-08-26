@@ -17,7 +17,7 @@ puts "Seeding database..."
 User.create!(
   email: "user0@user.com",
   password: "123456",
-  address: "632 Rue Cathcart, Montréal, QC H3B 1L9, Canada",
+  address: "632 Rue Cathcart",
   username: Faker::Internet.username,
   bio: "Extreme beer lover. Lifelong music expert. Incurable gamer. Social media nerd. Zombie geek. Food fan. Explorer.",
   avatar: Faker::Avatar.image
@@ -26,7 +26,7 @@ User.create!(
 User.create!(
   email: "user1@user.com",
   password: "123456",
-  address: "8910 Rue Lajeunesse, Montréal, QC H2M 1R9, Canada",
+  address: "8910 Rue Lajeunesse",
   username: Faker::Internet.username,
   bio: "Student. Bacon nerd. Beeraholic. Introvert. Evil music aficionado. Freelance pop culture advocate. Coffee trailblazer.",
   avatar: Faker::Avatar.image
@@ -35,7 +35,7 @@ User.create!(
 User.create!(
   email: "user2@user.com",
   password: "123456",
-  address: "1255 Phillips Square Suite 800, Montreal, Quebec H3B 3G1, Canada",
+  address: "1255 Phillips Square",
   username: Faker::Internet.username,
   bio: "Devoted alcohol enthusiast. Zombie maven. Social media fan. Evil web geek. Introvert. Problem solver. Entrepreneur.",
   avatar: Faker::Avatar.image
@@ -44,7 +44,7 @@ User.create!(
 User.create!(
   email: "user3@user.com",
   password: "123456",
-  address: "620 Saint-Catherine St W, Montreal, Quebec H3B 1B7, Canada",
+  address: "620 Saint-Catherine",
   username: Faker::Internet.username,
   bio: "Beer evangelist. Wannabe travel trailblazer. Twitter nerd. Alcohol advocate. Social media aficionado. Pop culture ninja.",
   avatar: Faker::Avatar.image
@@ -53,7 +53,7 @@ User.create!(
 User.create!(
   email: "user4@user.com",
   password: "123456",
-  address: "192 Rue Saint-Zotique E, Montréal, QC H2S 1K8, Canada",
+  address: "192 Rue Saint-Zotique",
   username: Faker::Internet.username,
   bio: "Food expert. Travel geek. Pop culture scholar. Troublemaker. Gamer. Coffee guru. Internet evangelist. Writer. Beer buff.",
   avatar: Faker::Avatar.image
@@ -61,7 +61,7 @@ User.create!(
 User.create!(
   email: "user5@user.com",
   password: "123456",
-  address: "1478 Rue, Peel St, Montreal, Quebec H3A 1T1, Canada",
+  address: "1478 Rue Peel St",
   username: Faker::Internet.username,
   bio: "Beer trailblazer. Web lover. Twitter buff. Travel specialist. Avid alcohol maven.",
   avatar: Faker::Avatar.image
