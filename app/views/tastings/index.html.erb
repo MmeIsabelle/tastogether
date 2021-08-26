@@ -6,12 +6,23 @@
       <%= submit_tag "Search" , class: "btn" %>
     <% end %>
   </div>
-  <div>
-    <ul>
-      <% @tastings.each do |tasting| %>
-        <li><%= link_to tasting.title, tasting_path(tasting) %></li>
-      <% end %>
-    </ul>
+  <div class="container">
+      <div class="row justify-content-center">
+        <% @tastings.each do |tasting| %>
+          <div class="col-12 col-md-6 col-lg-4 col-3">
+            <div class="card my-3" style="width: 18rem;">
+              <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><%= link_to tasting.title, tasting_path(tasting) %></h5>
+                <p class="card-text"><%= tasting.description %></p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item text-right"><%= tasting.date %> - Montreal</li>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+      </div>
   </div>
 
 </div>
