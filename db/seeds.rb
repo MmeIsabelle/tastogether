@@ -71,7 +71,7 @@ User.create!(
 Tasting.create!(
   title: "Dark chocolate party",
   description: "A variety of dark chocolate from different origins will be shared to explore the nuances and the different notes. Bring your favorite! The rarer the better.",
-  location: "620 Rue Cathcart #300, Montréal, QC H3B 1M1, Canada",
+  location: "620 Rue Cathcart",
   date: Date.tomorrow,
   capacity: 5,
   image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1629996108/Tastogether/dark_chocolate_k402i4.jpg'
@@ -89,7 +89,7 @@ tastings = {
   coffee_tasting: Tasting.create!(
     title: "Exotic coffee tasting",
     description: "Bring your coffee of choice. Coffee connaisseurs only.",
-    location: "1255 Boulevard Robert-Bourassa Suite #1505, Montreal, Quebec H3B 3V8, Canada",
+    location: "1255 Boulevard Robert-Bourassa",
     date: Date.tomorrow + 1,
     capacity: 4,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/a_90/v1629996106/Tastogether/coffee_lesk06.jpg'
@@ -97,7 +97,7 @@ tastings = {
   beans: Tasting.create!(
     title: "From the beans to the bar",
     description: "Chocolate made from scratch... Really! Let's taste chocolates made from beans from different countries. I will show you how I make it possible and we can discuss the subtle and not so subtle diffenrences in flavours.",
-    location: "1290 Av. Bernard, Outremont, QC H2V 1V9, Canada",
+    location: "1426 Rue Bishop",
     date: Date.tomorrow + 3,
     capacity: 4,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630000746/Tastogether/bean_to_bar_mzj7m2.jpg'
@@ -105,7 +105,7 @@ tastings = {
   gelato: Tasting.create!(
     title: "Gelato, just because...",
     description: "Gelato is just an amizing world to discover... Join in!",
-    location: "1290 Av. Bernard, Outremont, QC H2V 1V9, Canada",
+    location: "1290 Av. Bernard",
     date: Date.tomorrow + 6,
     capacity: 4,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630000742/Tastogether/gelato_ela3ku.jpg'
@@ -113,7 +113,7 @@ tastings = {
   milk: Tasting.create!(
     title: "The milky way",
     description: "Because milk chocolates don't all taste the same! We will revisit some well know bars and compare them with some local chocolaters ",
-    location: "2221 Rue Workman, Montréal, QC H3J 2N6, Canada",
+    location: "2221 Rue Workman",
     date: Date.tomorrow + 5,
     capacity: 4,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630000740/Tastogether/chocolate_bar_em9caz.jpg'
@@ -121,7 +121,7 @@ tastings = {
   vintage: Tasting.create!(
     title: "From old to new",
     description: "Let's taste the same wine from different vintages to compare and discuss the effect of aging on the flavours.",
-    location: "852 Rue Sherbrooke, Montreal, Quebec H2L 1K9, Canada",
+    location: "852 Rue Sherbrooke",
     date: Date.tomorrow + 10,
     capacity: 6,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1629996979/Tastogether/wine_bgbbom.jpg'
@@ -129,7 +129,7 @@ tastings = {
   pizza: Tasting.create!(
     title: "Pizza party",
     description: "We will all order pizza from our favorite pizza restaurants to compare their take on the margarita pizza.",
-    location: "5991 Victoria Ave, Montreal, Quebec H3W 2R9, Canada",
+    location: "5991 Victoria Ave",
     date: Date.tomorrow + 10,
     capacity: 10,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
