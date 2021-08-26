@@ -36,6 +36,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'geocoder'
 gem 'pundit'
 gem 'faker'
+gem 'pg_search', '~> 2.3.0'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
