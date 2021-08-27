@@ -15,7 +15,8 @@ class Tasting < ApplicationRecord
   validates :capacity, numericality: { only_integer: true }
 
   include PgSearch::Model
-  pg_search_scope :search_by_title_and_description_and_location,
+  pg_search_scope :search_by_params,
                   against: %i[title description location],
+                  associated_against: { host: :username },
                   using: { tsearch: { prefix: true } }
 end

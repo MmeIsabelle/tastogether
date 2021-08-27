@@ -1,9 +1,8 @@
 class TastingsController < ApplicationController
-
   def index
     @tastings = policy_scope(Tasting).order(created_at: :desc)
     if params[:query].present?
-      @tastings = @tastings.search_by_title_and_description_and_location(params[:query])
+      @tastings = @tastings.search_by_params(params[:query])
     else
       @tastings.all
     end
