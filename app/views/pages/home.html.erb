@@ -5,16 +5,14 @@
 </div>
 <div class="container">
   <p class="pt-4"><em>Tastogether allows you to discover nearby food experiences.</em></p>
-  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-    <div class="search-form-control form-group">
-      <input class="form-control string" type="text" name="search[query]" id="search_query" placeholder="Find a tasting"/>
-      <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i> Search
-      </button>
+    <div class="search-form-control form-group pt-3">
+      <form method='get' action="/tastings">
+        <%= text_field_tag :query, params[:query], class: "form-control " , placeholder: "Find a Tasting" %>
+          <%= submit_tag "Discover" , class: "btn mt-3 " %>
+      </form>
     </div>
-  <% end %>
 
-  <h4><em>Popular categories</em></h4>
+  <h4 class="pt-4"><em>Popular categories</em></h4>
   <div class="category-cards mx-5">
     <div class="category-card mx-auto" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1600070338156-c39c9b594cd1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)">
       <%= link_to "Chocolate" , tastings_path(:query=> "chocolate"), class: "text-white"%>
