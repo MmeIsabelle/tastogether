@@ -1,21 +1,20 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <ul class="navbar-nav m-auto">
     <li class="nav-item mx-3">
-      <i class="fas fa-home ml-3"></i>
+      <i class="fas fa-home mx-auto"></i>
       <%= link_to "Home" , root_path , class: "nav-link" %>
     </li>
     <li class="nav-item mx-3">
-      <i class="fas fa-utensils ml-4"></i>
+      <i class="fas fa-utensils mx-auto"></i>
       <%= link_to "Tastings" , tastings_path , class: "nav-link" %>
     </li>
     <li class="nav-item mx-3">
-      <i class="fas fa-plus-square ml-3"></i>
-      <%= link_to "Host a Tasting" , new_tasting_path , class: "nav-link" %>
+      <i class="fas fa-plus-square mx-auto"></i>
+      <%= link_to "Host" , new_tasting_path , class: "nav-link" %>
     </li>
     <li class="nav-item mx-3">
-      <i class="fas fa-user-circle ml-3"></i>
+      <i class="fas fa-user-circle mx-auto"></i>
       <%= link_to "Profile" , dashboard_path , class: "nav-link" %>
-      <%= link_to "Log out" , destroy_user_session_path, method: :delete, class: "dropdown-item" %>
     </li>
   </ul>
 </div>

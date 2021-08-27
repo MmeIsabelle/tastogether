@@ -31,8 +31,17 @@ h1{
 }
 .navbar-nav{
   flex-direction: row;
+  padding-top: 15px;
 }
-
+.nav-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+}
+.fas{
+  font-size: 25px;
+}
 .category-card{
   height: 100px;
   width: 100px;
@@ -59,7 +68,7 @@ h1{
   background-size: cover;
   background-position: center;
   height: 550px ;
-  width: 375px;
+  width: 100%;
 }
 .background-img p{
   color: #EEEBDD;
