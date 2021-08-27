@@ -51,6 +51,7 @@
         <% end %>
       </ul>
     </div>
+    <hr>
     <div>
       <% unless current_user.tastings.include?(@tasting) %>
         <h3 class="text-center">Want to join?</h3>
@@ -66,17 +67,19 @@
         <div>
           <p><%= participation.user.username %> requested to attend this tasting</p>
           <p><%= participation.initial_message %></p>
-          <div>
-            <%= simple_form_for participation do |f| %>
-              <%= f.hidden_field :status, value: "accepted" %>
-              <%= f.button :submit, "Accept" %>
-            <% end %>
-          </div>
-          <div>
-            <%= simple_form_for participation do |f| %>
-              <%= f.hidden_field :status, value: "decline" %>
-              <%= f.button :submit, "Decline" %>
-            <% end %>
+          <div class="d-flex justify-content-around">
+            <div>
+              <%= simple_form_for participation do |f| %>
+                <%= f.hidden_field :status, value: "accepted" %>
+                <%= f.button :submit, "Accept", class: "btn btn-dark rounded" %>
+              <% end %>
+            </div>
+            <div>
+              <%= simple_form_for participation do |f| %>
+                <%= f.hidden_field :status, value: "decline" %>
+                <%= f.button :submit, "Decline", class: "btn btn-white btn-outline-secondary" %>
+              <% end %>
+            </div>
           </div>
           <hr>
         </div>
