@@ -23,7 +23,7 @@ class TastingsController < ApplicationController
   def create
     @tasting = Tasting.new(tasting_params)
     @tasting.host = current_user
-    @tasting.image = "https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630095495/8my3bwx9xt2t7caentgmv0v8ugz1.jpg"
+    @tasting.image = "https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto/v1630095495/8my3bwx9xt2t7caentgmv0v8ugz1.jpg"
     authorize @tasting
     if @tasting.save!
       redirect_to dashboard_path
