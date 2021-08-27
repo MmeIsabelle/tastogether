@@ -38,7 +38,8 @@
     #category1 #category2 #category3
     <div>
       <h3>Description</h3>
-      <%= @tasting.description %>
+      <p><%= @tasting.description %></p>
+      <p><%= @tasting.start_at.strftime('%B %e at %l:%M %p')%></p>
     </div>
 
     <div class="my-2">
