@@ -47,7 +47,7 @@
       <% @dashboard.hostings.each do |tasting| %>
         <div class="d-flex justify-content-between align-items-center m-4">
           <% if tasting.photo.attached? %>
-            <%= cl_image_tag tasting.photo.key%>
+            <%= cl_image_tag tasting.photo.key, width: 100, height: 100 %>
           <% else %>
             <%= image_tag tasting.image, width: 100, height: 100 %>
           <% end %>

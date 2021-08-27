@@ -21,7 +21,7 @@ users = {
     username: "Choco Nerd",
     bio: "Extreme chocolate lover. Lifelong music expert. Incurable gamer. Social media nerd. Food fan. Explorer.",
     avatar: Faker::Avatar.image
-  ),  
+  ),
   sweet: User.create!(
     email: "user1@user.com",
     password: "123456",
@@ -29,7 +29,7 @@ users = {
     username: "All about sweets",
     bio: "Student. Sweets nerd. Icecream-a-holic. Introvert. Evil music aficionado. Freelance pop culture advocate. Coffee trailblazer.",
     avatar: Faker::Avatar.image
-  ),  
+  ),
   wine: User.create!(
     email: "user2@user.com",
     password: "123456",
@@ -45,7 +45,7 @@ users = {
     username: "Super Tastebuds",
     bio: "Coffee evangelist. Wannabe travel trailblazer. Twitter nerd. Alcohol advocate. Social media aficionado. Pop culture ninja.",
     avatar: Faker::Avatar.image
-  ),  
+  ),
   bobby: User.create!(
     email: "user4@user.com",
     password: "123456",
@@ -61,7 +61,7 @@ users = {
     username: "Edgar",
     bio: "Beer trailblazer. Italy lover. Twitter buff. Travel specialist. Avid alcohol maven.",
     avatar: Faker::Avatar.image
-  ),  
+  ),
   meg: User.create!(
     email: "meg@user.com",
     password: "123456",
@@ -128,7 +128,7 @@ tastings = {
     location: "5991 Victoria Ave",
     start_at: DateTime.new(2021, 9, 11, 20, 0, 0),
     capacity: 10,
-    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
   )
 }
 
