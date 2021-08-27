@@ -24,11 +24,11 @@ class TastingsController < ApplicationController
     @tasting = Tasting.new(tasting_params)
     @tasting.host = current_user
     authorize @tasting
-    if @tasting.save
+    if @tasting.save!
       redirect_to dashboard_path
     else
       @dashboard = Dashboard.new(current_user)
-      render "/dashboards/show"
+      render :new
     end
   end
 
