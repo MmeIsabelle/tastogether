@@ -27,15 +27,15 @@
     <div>
       <h2>Upcoming tastings</h2>
       <div class="card">
-        <% @dashboard.upcoming_tastings.each do |tasting| %>
+        <% @dashboard.upcoming_tastings.each do |participation| %>
           <div class="d-flex justify-content-between align-items-center m-4">
-            <% if tasting.photo.attached? %>
-              <%= cl_image_tag tasting.photo.key%>
+            <% if participation.tasting.photo.attached? %>
+              <%= cl_image_tag participation.tasting.photo.key%>
             <% else %>
-              <%= image_tag tasting.image, width: 100, height: 100 %>
+              <%= image_tag participation.tasting.image, width: 100, height: 100 %>
             <% end %>
-            <h3><%= link_to tasting.title, tasting_path(participation.tasting) %></h3>
-            <%= tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
+            <h3><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></h3>
+            <%= participation.tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
           </div>
         <% end %>
       </div>
@@ -60,15 +60,15 @@
   <div class="past my-4">
     <h2>Past tastings</h2>
     <div class="card">
-      <% @dashboard.finished_tastings.each do |tasting| %>
+      <% @dashboard.finished_tastings.each do |participation| %>
         <div class="d-flex justify-content-between align-items-center m-4">
-          <% if tasting.photo.attached? %>
-            <%= cl_image_tag tasting.photo.key%>
+          <% if participation.tasting.photo.attached? %>
+            <%= cl_image_tag participation.tasting.photo.key%>
           <% else %>
-            <%= image_tag tasting.image, width: 100, height: 100 %>
+            <%= image_tag participation.tasting.image, width: 100, height: 100 %>
           <% end %>
-          <h3><%= link_to tasting.title, tasting_path(tasting) %></h3>
-          <%= tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
+          <h3><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></h3>
+          <%= participation.tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
         </div>
       <% end %>
     </div>
