@@ -1,9 +1,59 @@
-<h1>Tastogether</h1>
+<div class="head-banner">
+  <img src="/../../assets/images/IMG_2036.jpg"alt="">
+  <h1>Tastogether</h1>
+  <p>What is taste without buds?</p>
+</div>
 <div class="container">
-  <div class="search-form-control form-group pt-3">
-    <%= form_tag tastings_path, method: :get do%>
-      <%= text_field_tag :query, params[:query], class: "form-control" , placeholder: "Discover your next tasting" %>
-      <%= submit_tag "Search" , class: "btn" %>
-    <% end %>
+  <p class="pt-4"><em>Tastogether allows you to discover nearby food experiences.</em></p>
+  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <div class="search-form-control form-group">
+      <input class="form-control string" type="text" name="search[query]" id="search_query" placeholder="Find a tasting"/>
+      <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-search"></i> Search
+      </button>
+    </div>
+  <% end %>
+
+  <h4><em>Popular categories</em></h4>
+  <div class="category-cards mx-5">
+    <div class="category-card mx-auto" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1600070338156-c39c9b594cd1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)">
+      <%= link_to "Chocolate" , tastings_path(:query=> "chocolate"), class: "text-white"%>
+    </div>
+
+    <div class="category-card mx-auto"
+      style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1515557578-37803a809769?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)">
+      <%= link_to "Coffee" , tastings_path(:query=> "coffee"), class: "text-white" %>
+    </div>
+
+    <div class="category-card mx-auto"
+      style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1599719455360-ff0be7c4dd06?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1464&q=80)">
+      <%= link_to "Banh my" , tastings_path(:query=> "banh my"), class: "text-white" %>
+    </div>
+
+    <div class="category-card mx-auto"
+      style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1590083745251-4fdb0b285c6a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=956&q=80)">
+      <%= link_to "Pizza" , tastings_path(:query=> "pizza"), class: "text-white" %>
+    </div>
   </div>
+
+</div>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon mt-5 pt-4">
+  <ul class="navbar-nav m-auto">
+    <li class="nav-item mx-3">
+      <i class="fas fa-home"></i>
+      <%= link_to "Home" , "#" , class: "nav-link" %>
+    </li>
+    <li class="nav-item mx-3">
+      <i class="fas fa-utensils"></i>
+      <%= link_to "Tastings" , "#" , class: "nav-link" %>
+    </li>
+    <li class="nav-item mx-3">
+      <i class="fas fa-plus-square"></i>
+      <%= link_to "Host a Tasting" , "#" , class: "nav-link" %>
+    </li>
+    <li class="nav-item mx-3">
+      <i class="fas fa-user-circle"></i>
+      <%= link_to "Profile" , "#" , class: "nav-link" %>
+    </li>
+  </ul>
 </div>
