@@ -35,7 +35,7 @@
                 </div>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item text-right">
-                    <p><%= tasting.date %> - Montreal</p>
+                    <p><%= tasting.start_at.strftime('%B %e at %l:%M %p') %> - Montreal</p>
                     <p><%= current_user.distance_to([tasting.latitude, tasting.longitude]).round(2) %>km</p>
                   </li>
                 </ul>

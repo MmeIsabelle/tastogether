@@ -5,7 +5,7 @@
       <%= f.input :title %>
       <%= f.input :description %>
       <%= f.input :location %>
-      <%= f.input :date, html5: true %>
+      <%= f.input :start_at, as: :datetime, html5: true %>
       <%= f.input :capacity %>
       <%= f.input :photo, as: :file %>
       <%= f.submit %>

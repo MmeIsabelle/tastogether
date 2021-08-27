@@ -2,7 +2,7 @@
   <h1><%= @dashboard.user.username %></h1>
   <div class="rounded-circle bg-white">
     <%= image_tag@dashboard.user.avatar, width: 50, height:50 %>
-  </div> 
+  </div>
 </div>
 <div class="container">
   <div class="attending-pending my-4">
@@ -17,7 +17,7 @@
               <%= image_tag participation.tasting.image, width: 100, height: 100 %>
             <% end %>
             <h3><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></h3>
-            <%= participation.tasting.date %>
+            <%= participation.tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
           </div>
         <% end %>
       <div>
@@ -27,7 +27,7 @@
     <div>
       <h2>Upcoming tastings</h2>
       <div class="card">
-        <% @dashboard.upcoming_tastings.each do |tastings| %>
+        <% @dashboard.upcoming_tastings.each do |tasting| %>
           <div class="d-flex justify-content-between align-items-center m-4">
             <% if tasting.photo.attached? %>
               <%= cl_image_tag tasting.photo.key%>
@@ -35,7 +35,7 @@
               <%= image_tag tasting.image, width: 100, height: 100 %>
             <% end %>
             <h3><%= link_to tasting.title, tasting_path(participation.tasting) %></h3>
-            <%= tasting.date %>
+            <%= tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
           </div>
         <% end %>
       </div>
@@ -52,7 +52,7 @@
             <%= image_tag tasting.image, width: 100, height: 100 %>
           <% end %>
           <h3><%= link_to tasting.title, tasting_path(tasting) %></h3>
-          <%= tasting.date %>
+          <%= tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
         </div>
       <% end %>
     </div>
@@ -68,7 +68,7 @@
             <%= image_tag tasting.image, width: 100, height: 100 %>
           <% end %>
           <h3><%= link_to tasting.title, tasting_path(tasting) %></h3>
-          <%= tasting.date %>
+          <%= tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
         </div>
       <% end %>
     </div>

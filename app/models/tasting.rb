@@ -19,4 +19,14 @@ class Tasting < ApplicationRecord
                   against: %i[title description location],
                   associated_against: { host: :username },
                   using: { tsearch: { prefix: true } }
+
+  def date
+    Rails.logger.warn("Tasting#date is deprecated, use #start_at instead.")
+    start_at
+  end
+
+  def date=(value)
+    Rails.logger.warn("Tasting#date is deprecated, use #start_at instead.")
+    self.start_at = value
+  end
 end
