@@ -27,7 +27,7 @@ class TastingsController < ApplicationController
     if @tasting.save!
       redirect_to dashboard_path
     else
-      @dashboard = Dashboard.new(current_user)
+      # @dashboard = Dashboard.new(current_user)
       render :new
     end
   end
@@ -35,6 +35,6 @@ class TastingsController < ApplicationController
   private
 
   def tasting_params
-    params.require(:tasting).permit(:title, :description, :location, :date, :capacity)
+    params.require(:tasting).permit(:title, :description, :location, :date, :capacity, :photo)
   end
 end
