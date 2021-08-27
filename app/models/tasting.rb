@@ -18,4 +18,14 @@ class Tasting < ApplicationRecord
   pg_search_scope :search_by_title_and_description_and_location,
                   against: %i[title description location],
                   using: { tsearch: { prefix: true } }
+
+  def date
+    Rails.logger.warn("Tasting#date is deprecated, use #start_at instead.")
+    start_at
+  end
+
+  def date=(value)
+    Rails.logger.warn("Tasting#date is deprecated, use #start_at instead.")
+    self.start_at = value
+  end
 end
