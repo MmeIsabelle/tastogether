@@ -40,13 +40,16 @@
       <h3>Description</h3>
       <%= @tasting.description %>
     </div>
-    <strong> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </strong>
-    <div>
-       <% @tasting.participations.accepted.each do |participant| %>
-        <% unless participant.host %>
-          <%= participant.user.username %>
+
+    <div class="my-2">
+      <p class="mb-0"><strong> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </strong></p>
+      <ul class="list-inline">
+        <% @tasting.participations.accepted.each do |participant| %>
+          <% unless participant.host %>
+            <li class="list-inline-item"> <%= participant.user.username %> </li>
+          <% end %>
         <% end %>
-      <% end %>
+      </ul>
     </div>
     <div>
       <% unless current_user.tastings.include?(@tasting) %>
@@ -57,11 +60,11 @@
         <% end %>
       <% end %>
     </div>
-    <div>
+    <div class="my-3">
       <% if current_user.hosted_tastings.include?(@tasting)%>
         <% @tasting.participations.pending.each do |participation| %>
         <div>
-          <p><%= participation.user.email %> requested to attend this tasting</p>
+          <p><%= participation.user.username %> requested to attend this tasting</p>
           <p><%= participation.initial_message %></p>
           <div>
             <%= simple_form_for participation do |f| %>
