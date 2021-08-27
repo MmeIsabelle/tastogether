@@ -23,6 +23,7 @@ class TastingsController < ApplicationController
   def create
     @tasting = Tasting.new(tasting_params)
     @tasting.host = current_user
+    @tasting.image = "https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630095495/8my3bwx9xt2t7caentgmv0v8ugz1.jpg"
     authorize @tasting
     if @tasting.save!
       redirect_to dashboard_path
@@ -35,6 +36,6 @@ class TastingsController < ApplicationController
   private
 
   def tasting_params
-    params.require(:tasting).permit(:title, :description, :location, :date, :capacity, :photo)
+    params.require(:tasting).permit(:title, :description, :location, :start_at, :capacity, :photo)
   end
 end
