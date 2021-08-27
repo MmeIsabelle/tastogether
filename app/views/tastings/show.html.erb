@@ -42,7 +42,7 @@
     </div>
     <strong> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </strong>
     <div>
-       <% @tasting.participations.each do |participant| %>
+       <% @tasting.participations.accepted.each do |participant| %>
         <% unless participant.host %>
           <%= participant.user.username %>
         <% end %>
