@@ -1,1 +1,57 @@
 // Specific CSS for your home-page
+.head-banner{
+  background-color: #372F2F;
+  color: #EEEBDD;
+  padding: 30px;
+  // background-image: url('../../images/Tastogether_Thicker.png');
+  // background-image: url('https://images.unsplash.com/photo-1600070338156-c39c9b594cd1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+}
+h1{
+  font-family: 'Qwigley', cursive;
+}
+.search-form-control {
+  position: relative;
+}
+
+.search-form-control .btn {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 8px;
+  background-color: #810000;
+  color: #EEEBDD;
+}
+
+.search-form-control .form-control {
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #E7E7E7;
+}
+.navbar-nav{
+  flex-direction: row;
+
+}
+.category-card{
+  height: 100px;
+  width: 100px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.category-cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.fas{
+  padding-left: 10px;
+}
