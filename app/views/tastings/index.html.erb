@@ -20,12 +20,14 @@
         <% @tastings.each do |tasting| %>
           <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
             <%= link_to tasting_path(tasting), class: "text-decoration-none text-dark" do %>
-              <div class="card my-3" style="width: 18rem;">
-                <% if tasting.photo.attached? %>
-                  <%= cl_image_tag tasting.photo.key %>
-                <% else %>
-                  <%= image_tag tasting.image, height: 200 %>
-                <% end %>
+              <div class="card my-3" style="width: 300px;">
+                <div>
+                  <% if tasting.photo.attached? %>
+                    <%= cl_image_tag tasting.photo.key, transformation: { crop:"fill", height:200, width:300 } %>
+                  <% else %>
+                    <%= image_tag tasting.image, height:200, width:300 %>
+                  <% end %>
+                </div>
                 <div class="card-body">
                   <div class="d-flex justify-content-end">
                     <%= image_tag tasting.host.avatar, class: "rounded-circle border", width: 50, height: 50%>
