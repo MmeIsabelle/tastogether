@@ -28,7 +28,11 @@
                 <% end %>
                 <div class="card-body">
                   <div class="d-flex justify-content-end">
-                    <%= image_tag tasting.host.avatar, class: "rounded-circle border", width: 50, height: 50%>
+                    <% if tasting.host.photo.attached? %>
+                      <%= cl_image_tag tasting.host.photo.key, class: "rounded-circle border", width: 50, height: 50%>
+                    <% else %>
+                      <%= image_tag tasting.host.avatar, class: "rounded-circle border", width: 50, height: 50%>
+                    <% end %>
                   </div>
                     <h5 class="card-title"><%= tasting.title %></h5>
                   <p class="card-text">#category</p>
