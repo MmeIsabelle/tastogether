@@ -30,9 +30,9 @@
     </div>
     <div class="d-flex justify-content-center">
       <% if @tasting.photo.attached? %>
-        <%= cl_image_tag @tasting.photo.key%>
+        <%= cl_image_tag @tasting.photo.key, height:400 %>
       <% else %>
-        <%= image_tag @tasting.image, height: 400%>
+        <%= image_tag @tasting.image, height:400 %>
       <% end %>
     </div>
     #category1 #category2 #category3
