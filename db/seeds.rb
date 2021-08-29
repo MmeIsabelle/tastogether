@@ -33,7 +33,7 @@ users = {
   wine: User.create!(
     email: "user2@user.com",
     password: "123456",
-    address: "1255 Phillips Square, Montreal",
+    address: "1255 Square Phillips, Montreal",
     username: "Arlette",
     bio: "Wine specialist. Social media fan. Evil web geek. Introvert. Problem solver. Entrepreneur.",
     avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190836/arlette.jpg'
@@ -57,7 +57,7 @@ users = {
   edgar: User.create!(
     email: "user5@user.com",
     password: "123456",
-    address: "1478 Peel St, Montreal",
+    address: "4534 Cartier, Montreal",
     username: "Fabiola",
     bio: "Beer trailblazer. Italy lover. Twitter buff. Travel specialist.",
     avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190839/Fabiola.jpg'
@@ -117,7 +117,7 @@ tastings = {
   vintage: Tasting.create!(
     title: "From old to new",
     description: "Let's taste the same wine from different vintages to compare and discuss the effect of aging on the flavours.",
-    location: "1255 Phillips Square, Montreal",
+    location: "1255 Square Phillips, Montreal",
     start_at: DateTime.new(2021, 9, 16, 19, 30, 0),
     capacity: 6,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1629996979/Tastogether/wine_bgbbom.jpg'
@@ -125,7 +125,7 @@ tastings = {
   pizza: Tasting.create!(
     title: "Pizza party",
     description: "We will all order pizza from our favorite pizza restaurants to compare their take on the margarita pizza.",
-    location: "1478 Peel St, Montreal",
+    location: "4534 Cartier, Montreal",
     start_at: DateTime.new(2021, 9, 11, 20, 0, 0),
     capacity: 10,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
@@ -192,7 +192,7 @@ Participation.create!(
 # Creating participations
 Participation.create!(
   tasting: tastings[:beans],
-  user: users[:sweet],
+  user: users[:bobby],
   host: false,
   initial_message: Faker::Lorem.sentence,
   status: "accepted"

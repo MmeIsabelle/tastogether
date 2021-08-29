@@ -30,8 +30,10 @@
                   <div class="d-flex justify-content-end">
                     <% if tasting.host.photo.attached? %>
                       <%= cl_image_tag tasting.host.photo.key, class: "rounded-circle border", width: 50, height: 50%>
+                    <% elsif tasting.host.avatar? %>
+                      <%= image_tag tasting.host.avatar, class: "rounded-circle border", width: 50, height: 50 %>
                     <% else %>
-                      <%= image_tag tasting.host.avatar, class: "rounded-circle border", width: 50, height: 50%>
+                      <%= image_tag 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630205006/silhouette_od01kv.jpg', class: "rounded-circle border", width: 50, height: 50 %>
                     <% end %>
                   </div>
                     <h5 class="card-title"><%= tasting.title %></h5>
@@ -40,7 +42,9 @@
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item text-right">
                     <p><%= tasting.start_at.strftime('%B %e at %l:%M %p') %> - Montreal</p>
-                    <p><%= current_user.distance_to([tasting.latitude, tasting.longitude]).round(2) %>km</p>
+                    <% if  current_user.latitude.present?%>
+                      <p><%= current_user.distance_to([tasting.latitude, tasting.longitude]).round(2) %>km</p>
+                    <% end %>
                   </li>
                 </ul>
               </div>
