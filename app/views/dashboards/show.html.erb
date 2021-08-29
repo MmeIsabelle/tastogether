@@ -1,11 +1,16 @@
 <div class="bg-secondary py-3 d-flex justify-content-around align-items-center">
   <h1><%= @dashboard.user.username %></h1>
-  <div class="rounded-circle bg-white">
-    <%= image_tag@dashboard.user.avatar,  class: "avatar dropdown-toggle" , id: "navbarDropdown" , data: { toggle: 'dropdown'
-      }%>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <%= link_to "Logout" , destroy_user_session_path , method: :delete, class: "dropdown-item" %>
-      </div>
+  <div>
+    <% if @dashboard.user.photo.attached? %>
+      <%= cl_image_tag @dashboard.user.photo.key, :transformation=>[ {:width=>150, :height=>150, :gravity=>"face", :crop=>"thumb"}], class: "avatar dropdown-toggle" , id: "navbarDropdown" , data: { toggle: 'dropdown' }%>
+    <% elsif @dashboard.user.avatar?%>
+      <%= image_tag @dashboard.user.avatar, class: "avatar dropdown-toggle" , id: "navbarDropdown" , data: { toggle: 'dropdown' }%>
+    <% else %>
+      <%= image_tag 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630205006/silhouette_od01kv.jpg', class: "avatar dropdown-toggle" , id: "navbarDropdown" , data: { toggle: 'dropdown' }%>
+    <% end %>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+      <%= link_to "Logout" , destroy_user_session_path , method: :delete, class: "dropdown-item" %>
+    </div>
   </div>
 </div>
 <div class="container">

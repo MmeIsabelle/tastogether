@@ -7,6 +7,8 @@ class User < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  has_one_attached :photo
+
   has_many :participations
   has_many :tastings, through: :participations
 
@@ -16,4 +18,5 @@ class User < ApplicationRecord
   validates :email, :address, presence: true
   validates :email, :username, uniqueness: true
   validates :bio, length: { maximum: 250 }
+
 end
