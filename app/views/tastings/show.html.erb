@@ -77,7 +77,7 @@
             </div>
             <div>
               <%= simple_form_for participation do |f| %>
-                <%= f.hidden_field :status, value: "decline" %>
+                <%= f.hidden_field :status, value: "declined" %>
                 <%= f.button :submit, "Decline", class: "btn btn-white btn-outline-secondary" %>
               <% end %>
             </div>
