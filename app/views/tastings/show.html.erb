@@ -38,7 +38,7 @@
     <div>
       <ul class="list-inline">
         <% @tasting.categories.each do |category| %>
-          <li class="list-inline-item card-text">#<%= category.name.downcase %><li>
+          <li class="list-inline-item card-text"><i class="fas fa-tag" style="2rems"><%= category.name.downcase %></i><li>
         <% end %>
       </ul>
     </div>
