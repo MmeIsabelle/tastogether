@@ -15,8 +15,15 @@ class User < ApplicationRecord
   has_many :hosting_participations, -> { where(host: true, status: "accepted") }, class_name: "Participation"
   has_many :hosted_tastings, through: :hosting_participations, source: :tasting
 
+  # has_many :users, through: :messages
+  has_many :sent_messages, foreign_key: :sender_id, class_name: "Message"
+  has_many :received_messages, foreign_key: :recipient_id, class_name: "Message"
+
   validates :email, :address, presence: true
   validates :email, :username, uniqueness: true
   validates :bio, length: { maximum: 250 }
 
+  def messages
+    Message.where(id: [sent_messages, received_messages])
+  end
 end
