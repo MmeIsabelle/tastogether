@@ -5,4 +5,8 @@ class Conversation
     @main_user = attrs[:main_user]
     @other_user = attrs[:other_user]
   end
+
+  def messages
+    Message.between(main_user, other_user)
+  end
 end

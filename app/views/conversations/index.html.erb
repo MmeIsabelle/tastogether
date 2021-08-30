@@ -1,6 +1,26 @@
 <div class="bg-secondary py-3 d-flex justify-content-around align-items-center">
-  <%= @conversations.main_user %>
+  <h1>Conversations</h1>
 </div>
 <div class="container">
-
+  <div class="my-3">
+    <p>Conversations with</p>
+    <% @conversations.each do |conversation| %>
+      
+      <% if conversation.other_user == @current_conversation.other_user %>
+        <%= link_to conversation.other_user.username, conversations_path(user_id: conversation.other_user.id), class: "btn btn-primary" %>
+      <% else %>
+        <%= link_to conversation.other_user.username, conversations_path(user_id: conversation.other_user.id), class: "btn btn-secondary" %>
+      <% end %>
+      
+    <% end %>
+  </div>
+  <div>  
+      <% @current_conversation.messages.each do |message|  %>
+      <div class="card">
+        <p class="small"><%= message.created_at.strftime('%B %e at %l:%M %p') %></p>
+        <p><%= message.content %></p>
+        <p class="small">Sent by <%= message.sender.username %></p>
+      <% end %>
+      </div>
+  </div>
 </div>
