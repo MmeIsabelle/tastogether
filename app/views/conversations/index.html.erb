@@ -18,13 +18,13 @@
     <% @current_conversation.messages.each do |message|  %>
     <div class="card">
       <p class="small">Sent by <em><%= message.sender.username %></em> at <%= message.created_at.strftime('%B %e at %l:%M %p') %></p>
-      <p><%= message.content %></p>
+      <p id="message-<%= message.id %>">> <%= message.content %></p>
     <% end %>
     </div>
   </div>
   <div>
-    <%= simple_form_for [ @current_conversation, @message ] do |f|%>
-      <%= f.input :content %>
+    <%= simple_form_for @message, url:conversation_messages_path(@current_conversation.other_user) do |f|%>
+      <%= f.input :content, label: "Send a new message"%>
       <%= f.submit %>
     <% end %>
   </div>
