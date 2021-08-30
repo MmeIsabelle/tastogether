@@ -7,11 +7,13 @@ p {
 // Hero Section
 .hero-section {
   img {
-    width: 50px;
+    width: 80px;
     height: auto;
+    object-fit: contain;
   }
   h1 {
     color:#EEEBDD;
+    font-size: 4rem;
   }
 }
 
