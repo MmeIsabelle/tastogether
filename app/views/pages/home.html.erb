@@ -1,18 +1,20 @@
-<div class="container px-0">
-  <div class="hero-section background-img">
-    <div class="pt-4 d-flex justify-content-center">
-      <%= image_tag "Tastogether_Thicker.png" %>
-      <h1>Tastogether</h1>
-    </div>
-    <div class="d-flex justify-content-center">
-      <p class="pt-4 pl-4"><em>Tastogether allows you to discover nearby food experiences.</em></p>
-    </div>
-    <div class="px-4">
-      <%= render 'shared/search_form' %>
-    </div>
+<div class="hero-section background-img">
+  <div class="pt-4 d-flex justify-content-center">
+    <%= image_tag "Tastogether_Thicker.png" %>
+    <h1>Tastogether</h1>
   </div>
-  <div class="cards-section">
-    <h4 class="pt-4"><em>Popular categories</em></h4>
+  <div class="d-flex justify-content-center">
+    <p class="pt-4 pl-4"><em>Tastogether allows you to discover nearby food experiences.</em></p>
+  </div>
+  <div class="px-4">
+    <%= render 'shared/search_form' %>
+  </div>
+</div>
+<div class="container">
+  <div class="cards-section pb-3">
+    <div class="d-flex justify-content-center">
+      <h4 class="py-4"><em>Popular categories</em></h4>
+    </div>
     <div class="category-cards mx-5">
       <div class="category-card mx-auto" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1600070338156-c39c9b594cd1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)">
         <%= link_to "Chocolate" , tastings_path(:query=> "chocolate"), class: "text-white"%>
