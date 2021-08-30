@@ -34,7 +34,11 @@
                     <% end %>
                   </div>
                     <h5 class="card-title"><%= tasting.title %></h5>
-                  <p class="card-text">#category</p>
+                    <ul class="list-inline">
+                      <% tasting.categories.each do |category| %>
+                        <li class="list-inline-item card-text">#<%= category.name.downcase %><li>
+                      <% end %>
+                    </ul>
                 </div>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item text-right">

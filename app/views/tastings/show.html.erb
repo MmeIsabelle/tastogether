@@ -35,7 +35,13 @@
         <%= image_tag @tasting.image, height:400 %>
       <% end %>
     </div>
-    #category1 #category2 #category3
+    <div>
+      <ul class="list-inline">
+        <% @tasting.categories.each do |category| %>
+          <li class="list-inline-item card-text">#<%= category.name.downcase %><li>
+        <% end %>
+      </ul>
+    </div>
     <div>
       <h3>Description</h3>
       <p><%= @tasting.description %></p>
