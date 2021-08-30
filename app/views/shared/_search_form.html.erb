@@ -1,0 +1,6 @@
+<div class="search-form-control form-group pt-3">
+  <form method='get' action="/tastings">
+    <%= text_field_tag :query, params[:query], class: "form-control " , placeholder: "Find a Tasting" %>
+      <%= submit_tag "Discover" , class: "btn mt-3 " %>
+  </form>
+</div>

@@ -1,18 +1,6 @@
-<div class="head-banner">
-  <div class="head-title">
-    <%= image_tag "Tastogether_Thicker.png" %>
-    <h1>Tastogether</h1>
-  </div>
-  <p><em>What is taste without buds?</em></p>
-</div>
 <div class="container background-img">
   <p class="pt-4"><em>Tastogether allows you to discover nearby food experiences.</em></p>
-    <div class="search-form-control form-group pt-3">
-      <form method='get' action="/tastings">
-        <%= text_field_tag :query, params[:query], class: "form-control " , placeholder: "Find a Tasting" %>
-          <%= submit_tag "Discover" , class: "btn mt-3 " %>
-      </form>
-    </div>
+  <%= render 'shared/search_form' %>
   <h4 class="pt-4" style="color: #EEEBDD;"><em>Popular categories</em></h4>
   <div class="category-cards mx-5">
     <div class="category-card mx-auto" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1600070338156-c39c9b594cd1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)">
