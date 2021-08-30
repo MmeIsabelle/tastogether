@@ -1,20 +1,32 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <ul class="navbar-nav m-auto">
-    <li class="nav-item mx-3">
-      <i class="fas fa-home mx-auto"></i>
-      <%= link_to "Home" , root_path , class: "nav-link" %>
-    </li>
-    <li class="nav-item mx-3">
-      <i class="fas fa-utensils mx-auto"></i>
-      <%= link_to "Tastings" , tastings_path , class: "nav-link" %>
-    </li>
-    <li class="nav-item mx-3">
-      <i class="fas fa-plus-square mx-auto"></i>
-      <%= link_to "Host" , new_tasting_path , class: "nav-link" %>
-    </li>
-    <li class="nav-item mx-3">
-      <i class="fas fa-user-circle mx-auto"></i>
-      <%= link_to "Profile" , dashboard_path , class: "nav-link" %>
-    </li>
+    <%= link_to root_path, class: "nav-link" do %>
+      <li class="nav-item mx-3">
+        <i class="fas fa-home mx-auto text-body"></i>
+        <p class="mt-2">Home</p>
+      </li>
+    <% end %>
+
+    <%= link_to tastings_path, class: "nav-link" do %>
+      <li class="nav-item mx-3">
+        <i class="fas fa-utensils mx-auto text-body"></i>
+        <p class="mt-2">Tastings</p>
+      </li>
+    <% end %>
+
+    <%= link_to new_tasting_path, class: "nav-link" do %>
+      <li class="nav-item mx-3">
+        <i class="fas fa-plus-square mx-auto text-body"></i>
+        <p class="mt-2">Host</p>
+      </li>
+    <% end %>
+
+    <%= link_to dashboard_path, class: "nav-link" do %>
+      <li class="nav-item mx-3">
+        <i class="fas fa-user-circle mx-auto text-body"></i>
+        <p class="mt-2">Profile</p>
+      </li>
+    <% end %>
+
   </ul>
 </div>
