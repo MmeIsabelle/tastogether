@@ -33,9 +33,14 @@
                       <%= image_tag 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630205006/silhouette_od01kv.jpg', class: "card-product-user rounded-circle border", width: 50, height: 50 %>
                     <% end %>
                   </div>
-
                     <h3 class="card-title"><%= tasting.title %></h3>
-                  <p class="card-text">#category</p>
+                    <ul class="list-inline">
+                      <% tasting.categories.each do |category| %>
+                        <%= link_to "/tastings?query=#{category.name.downcase}&commit=Discover", query: category.name.downcase do %>
+                          <li class="list-inline-item card-text"><i class="fas fa-tag" style="font-size: 1rem; color: black;"><%= category.name.downcase %></i><li>
+                        <% end %>
+                      <% end %>
+                    </ul>
                 </div>
                 <ul>
                   <li class="text-right">

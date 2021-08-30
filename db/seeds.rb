@@ -8,6 +8,8 @@
 
 # Destroy all
 puts "Emptying database"
+Categorization.destroy_all
+Category.destroy_all
 Participation.destroy_all
 Tasting.destroy_all
 User.destroy_all
@@ -282,6 +284,49 @@ Participation.create!(
   host: false,
   initial_message: Faker::Lorem.sentence,
   status: "pending"
+)
+
+# Creating categories
+categories = {
+  pizza: Category.create!(name: "Pizza"),
+  chocolate: Category.create!(name: "Chocolate"),
+  coffee: Category.create!(name: "Coffee"),
+  beer: Category.create!(name: "Beer"),
+  wine: Category.create!(name: "Wine"),
+  gelato: Category.create!(name: "Gelato"),
+}
+
+# Creating Categorizations
+Categorization.create!(
+  category: categories[:pizza],
+  tasting: tastings[:pizza]
+)
+
+Categorization.create!(
+  category: categories[:chocolate],
+  tasting: tastings[:milk]
+)
+
+Categorization.create!(
+  category: categories[:chocolate],
+  tasting: tastings[:beans]
+)
+
+Categorization.create!(
+  category: categories[:coffee],
+  tasting: tastings[:coffee_tasting]
+)
+Categorization.create!(
+  category: categories[:chocolate],
+  tasting: tastings[:dark]
+)
+Categorization.create!(
+  category: categories[:gelato],
+  tasting: tastings[:gelato]
+)
+Categorization.create!(
+  category: categories[:wine],
+  tasting: tastings[:vintage]
 )
 
 puts "All done!"
