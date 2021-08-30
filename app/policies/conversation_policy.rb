@@ -6,5 +6,4 @@ class ConversationPolicy < ApplicationPolicy
       end
     end
   end
-
 end

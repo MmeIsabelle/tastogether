@@ -2,6 +2,7 @@ class ConversationsController < ApplicationController
   def index
     @conversations = policy_scope(Conversation)
     @current_conversation = current_conversation
+    @message = Message.new
   end
 
   private

@@ -15,12 +15,17 @@
     <% end %>
   </div>
   <div>  
-      <% @current_conversation.messages.each do |message|  %>
-      <div class="card">
-        <p class="small"><%= message.created_at.strftime('%B %e at %l:%M %p') %></p>
-        <p><%= message.content %></p>
-        <p class="small">Sent by <%= message.sender.username %></p>
-      <% end %>
-      </div>
+    <% @current_conversation.messages.each do |message|  %>
+    <div class="card">
+      <p class="small">Sent by <em><%= message.sender.username %></em> at <%= message.created_at.strftime('%B %e at %l:%M %p') %></p>
+      <p><%= message.content %></p>
+    <% end %>
+    </div>
+  </div>
+  <div>
+    <%= simple_form_for [ @current_conversation, @message ] do |f|%>
+      <%= f.input :content %>
+      <%= f.submit %>
+    <% end %>
   </div>
 </div>
