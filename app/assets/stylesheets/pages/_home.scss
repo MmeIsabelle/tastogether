@@ -37,7 +37,8 @@
   background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1510972527921-ce03766a1cf1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80≈);
   background-size: cover;
   background-position: center;
-  height: 550px ;
+  height: 35vh;
+  min-height: 285px;
   width: 100%;
 }
 .background-img p{
