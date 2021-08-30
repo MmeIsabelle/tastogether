@@ -16,8 +16,11 @@ class Tasting < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_params,
-                  against: %i[title description location],
-                  associated_against: { host: :username },
+                  against: %i[title location],
+                  associated_against: {
+                    host: :username,
+                    categories: :name
+                  },
                   using: { tsearch: { prefix: true } }
 
   def date
