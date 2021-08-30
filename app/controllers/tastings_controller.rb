@@ -1,11 +1,12 @@
 class TastingsController < ApplicationController
   def index
-    @tastings = policy_scope(Tasting).order(created_at: :desc)
+    @tastings = policy_scope(Tasting).order(start_at: :asc)
     if params[:query].present?
       @tastings = @tastings.search_by_params(params[:query])
     else
-      @tastings.all
+      @tastings = @tastings.all
     end
+    @tastings = @tastings.all.reject { |tasting| tasting.start_at < DateTime.now + 0.5}
   end
 
   def show
