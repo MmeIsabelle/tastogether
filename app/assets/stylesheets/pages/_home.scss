@@ -1,54 +1,17 @@
 // Specific CSS for your home-page
-.head-banner{
-  background-color: #372F2F;
-  color: #EEEBDD;
-  padding: 30px;
-}
-.head-title{
-  display: flex;
-}
-.head-title img{
-  width: 50px;
-  height: 100%;
-}
-h1{
-  font-family: 'Qwigley', cursive;
-}
-.search-form-control {
-  position: relative;
-  .btn {
-    background-color: #810000;
+
+// Hero Section
+.hero-section {
+  img {
+    width: 50px;
+    height: auto;
+  }
+  h1 {
     color:#EEEBDD;
-    position: absolute;
-    top: 8px;
-    bottom: 8px;
-    right: 8px;
-  }
-  .form-control {
-    background-color: #EEEBDD;
-    height: 3.5rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    border: 1px solid #E7E7E7;
-  }
-  .form-control:focus {
-    border: 1px solid #1EDD88;
-    outline: none !important;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   }
 }
-.navbar-nav{
-  flex-direction: row;
-  padding-top: 15px;
-}
-.nav-item{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: center;
-}
-.fas{
-  font-size: 25px;
-}
+
+// Cards
 .category-card{
   height: 100px;
   width: 100px;

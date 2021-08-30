@@ -131,6 +131,14 @@ tastings = {
     start_at: DateTime.new(2021, 9, 11, 20, 0, 0),
     capacity: 10,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
+  ),
+  barbeque: Tasting.create!(
+    title: "Barbeque Bash",
+    description: "We will barbeque up all kinds of meats.",
+    location: "464 Rue McGill, Montreal",
+    start_at: DateTime.new(2021, 8, 29, 20, 0, 0),
+    capacity: 10,
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
   )
 }
 
@@ -185,6 +193,13 @@ Participation.create!(
 
 Participation.create!(
   tasting: tastings[:pizza],
+  user: users[:edgar],
+  host: true,
+  initial_message: Faker::Lorem.sentence,
+  status: "accepted"
+)
+Participation.create!(
+  tasting: tastings[:barbeque],
   user: users[:edgar],
   host: true,
   initial_message: Faker::Lorem.sentence,
@@ -259,6 +274,13 @@ Participation.create!(
 Participation.create!(
   tasting: tastings[:gelato],
   user: users[:wine],
+  host: false,
+  initial_message: Faker::Lorem.sentence,
+  status: "pending"
+)
+Participation.create!(
+  tasting: tastings[:barbeque],
+  user: users[:meg],
   host: false,
   initial_message: Faker::Lorem.sentence,
   status: "pending"
