@@ -1,4 +1,4 @@
-<div class="bg-secondary py-3 d-flex justify-content-around align-items-center">
+<div class="bg-secondary py-3 dashboard-card d-flex justify-content-around align-items-center">
   <h1><%= @dashboard.user.username %></h1>
   <div>
     <% if @dashboard.user.photo.attached? %>
@@ -17,16 +17,16 @@
   <div class="attending-pending my-4">
     <div>
       <h2>Pending tastings</h2>
-      <div class="card ">
+      <div class="dashboard-cards ">
         <% @dashboard.pending_participations.each do |participation| %>
-          <div class="d-flex justify-content-between align-items-center m-4">
+          <div class="dashboard-card">
             <% if participation.tasting.photo.attached? %>
               <%= cl_image_tag participation.tasting.photo.key%>
             <% else %>
-              <%= image_tag participation.tasting.image, width: 100, height: 100 %>
+              <%= image_tag participation.tasting.image%>
             <% end %>
             <h3><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></h3>
-            <%= participation.tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
+            <p><%= participation.tasting.date.to_time.strftime('%B %e at %l:%M %p') %></p>
           </div>
         <% end %>
       <div>
@@ -35,16 +35,16 @@
   <div class="attending-upcoming my-4">
     <div>
       <h2>Upcoming tastings</h2>
-      <div class="card">
+      <div class="dashboard-cards">
         <% @dashboard.upcoming_tastings.each do |participation| %>
-          <div class="d-flex justify-content-between align-items-center m-4">
+          <div class="dashboard-card">
             <% if participation.tasting.photo.attached? %>
               <%= cl_image_tag participation.tasting.photo.key%>
             <% else %>
-              <%= image_tag participation.tasting.image, width: 100, height: 100 %>
+              <%= image_tag participation.tasting.image%>
             <% end %>
             <h3><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></h3>
-            <%= participation.tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
+            <p><%= participation.tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %></p>
           </div>
         <% end %>
       </div>
@@ -52,32 +52,32 @@
   </div>
   <div class="hosting my-4">
     <h2>Hostings</h2>
-    <div class="card">
+    <div class="dashboard-cards">
       <% @dashboard.hostings.each do |tasting| %>
-        <div class="d-flex justify-content-between align-items-center m-4">
+        <div class="dashboard-card">
           <% if tasting.photo.attached? %>
-            <%= cl_image_tag tasting.photo.key, width: 100, height: 100 %>
+            <%= cl_image_tag tasting.photo.key%>
           <% else %>
-            <%= image_tag tasting.image, width: 100, height: 100 %>
+            <%= image_tag tasting.image%>
           <% end %>
           <h3><%= link_to tasting.title, tasting_path(tasting) %></h3>
-          <%= tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
+          <p><%= tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %></p>
         </div>
       <% end %>
     </div>
   </div>
   <div class="past my-4">
     <h2>Past tastings</h2>
-    <div class="card">
+    <div class="dashboard-cards">
       <% @dashboard.finished_tastings.each do |participation| %>
-        <div class="d-flex justify-content-between align-items-center m-4">
+        <div class="dashboard-card">
           <% if participation.tasting.photo.attached? %>
             <%= cl_image_tag participation.tasting.photo.key%>
           <% else %>
-            <%= image_tag participation.tasting.image, width: 100, height: 100 %>
+            <%= image_tag participation.tasting.image%>
           <% end %>
           <h3><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></h3>
-          <%= participation.tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
+          <p><%= participation.tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %></p>
         </div>
       <% end %>
     </div>

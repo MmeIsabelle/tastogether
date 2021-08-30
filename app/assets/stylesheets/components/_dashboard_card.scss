@@ -1,0 +1,28 @@
+.dashboard-card{
+  height: 80px;
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  align-content: center;
+  margin: 10px auto;
+  img{
+    margin:0 10px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+  }
+  h3{
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  p{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 10px;
+  }
+}
