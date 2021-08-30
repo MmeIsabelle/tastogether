@@ -1,4 +1,4 @@
-<div class="bg-secondary py-3 card d-flex justify-content-around align-items-center">
+<div class="bg-secondary py-3 dashboard-card d-flex justify-content-around align-items-center">
   <h1><%= @dashboard.user.username %></h1>
   <div>
     <% if @dashboard.user.photo.attached? %>
@@ -17,9 +17,9 @@
   <div class="attending-pending my-4">
     <div>
       <h2>Pending tastings</h2>
-      <div class="cards ">
+      <div class="dashboard-cards ">
         <% @dashboard.pending_participations.each do |participation| %>
-          <div class="card">
+          <div class="dashboard-card">
             <% if participation.tasting.photo.attached? %>
               <%= cl_image_tag participation.tasting.photo.key%>
             <% else %>
@@ -35,9 +35,9 @@
   <div class="attending-upcoming my-4">
     <div>
       <h2>Upcoming tastings</h2>
-      <div class="cards">
+      <div class="dashboard-cards">
         <% @dashboard.upcoming_tastings.each do |participation| %>
-          <div class="card">
+          <div class="dashboard-card">
             <% if participation.tasting.photo.attached? %>
               <%= cl_image_tag participation.tasting.photo.key%>
             <% else %>
@@ -52,9 +52,9 @@
   </div>
   <div class="hosting my-4">
     <h2>Hostings</h2>
-    <div class="cards">
+    <div class="dashboard-cards">
       <% @dashboard.hostings.each do |tasting| %>
-        <div class="card">
+        <div class="dashboard-card">
           <% if tasting.photo.attached? %>
             <%= cl_image_tag tasting.photo.key%>
           <% else %>
@@ -68,9 +68,9 @@
   </div>
   <div class="past my-4">
     <h2>Past tastings</h2>
-    <div class="cards">
+    <div class="dashboard-cards">
       <% @dashboard.finished_tastings.each do |participation| %>
-        <div class="card">
+        <div class="dashboard-card">
           <% if participation.tasting.photo.attached? %>
             <%= cl_image_tag participation.tasting.photo.key%>
           <% else %>
