@@ -43,14 +43,26 @@
     </div>
 
     <div class="my-2">
-      <p class="mb-0"><strong> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </strong></p>
-      <ul class="list-inline">
-        <% @tasting.participations.accepted.each do |participant| %>
-          <% unless participant.host %>
-            <li class="list-inline-item"> <%= participant.user.username %> </li>
+      <% if @tasting.host_participation.status == "finished" %>
+      <p>Tasting expired</p>
+      <p class="mb-0"><strong> Guests: <%= @tasting.participations.finished.count-1%>/<%= @tasting.capacity%> </strong></p>
+        <ul class="list-inline">
+          <% @tasting.participations.finished.each do |participant| %>
+            <% unless participant.host %>
+              <li class="list-inline-item"> <%= participant.user.username %> </li>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
+        </ul>
+      <% else %>
+        <p class="mb-0"><strong> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </strong></p>
+        <ul class="list-inline">
+          <% @tasting.participations.accepted.each do |participant| %>
+            <% unless participant.host %>
+              <li class="list-inline-item"> <%= participant.user.username %> </li>
+            <% end %>
+          <% end %>
+        </ul>
+      <% end %>
     </div>
     <hr>
     <div>
