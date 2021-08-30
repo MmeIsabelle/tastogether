@@ -8,6 +8,8 @@
 
 # Destroy all
 puts "Emptying database"
+Categorization.destroy_all
+Category.destroy_all
 Participation.destroy_all
 Tasting.destroy_all
 User.destroy_all
