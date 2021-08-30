@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :participations, only: :update
   resources :hosts, only: :show
   resource :dashboard, only: :show
+  resources :conversations, only: :index
 end
