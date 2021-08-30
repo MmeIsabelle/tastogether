@@ -1,10 +1,10 @@
-<div class="bg-secondary mb-4 py-3 d-flex justify-content-around align-items-center">
-  <div>
+<div class="head-banner">
+  <div class="head-title">
     <h4 class="mb-0"><%= params[:query].nil? ? "" : params[:query].downcase%>
-    <h1>Tastings</h1>
-  </div>
-  <div>
-    <img src="https://via.placeholder.com/100x100?text=Logo" alt="Tastogether logo">
+    <div class="d-flex justify-content-between">
+      <h1>Tastings</h1>
+      <%= image_tag "Tastogether_Thicker.png" , class:"align-self-center"%>
+    </div>
   </div>
 </div>
 

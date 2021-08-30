@@ -2,14 +2,18 @@
   background-color: #372F2F;
   color: #EEEBDD;
   padding: 30px;
-}
-.head-title-home{
-  display: flex;
   img{
   width: 50px;
   height: 100%;
+  }
+  h1{
+    font-family: $headers-font;
+  }
 }
-}
-h1{
+
+.head-title-home{
+  display: flex;
+  h1{
   font-family: 'Qwigley', cursive;
+  }
 }
