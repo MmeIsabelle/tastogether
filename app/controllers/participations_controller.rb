@@ -12,9 +12,11 @@ class ParticipationsController < ApplicationController
     @participation.status = "pending"
     if @participation.save
       Message.create(content: @participation.initial_message, sender: current_user, recipient: @tasting.host)
+      Notification.create(user: @tasting.host, text:"#{current_user.username} requested to participate in #{@tasting.title}")
       redirect_to dashboard_path
     else
-      render "/tastings/:tasting_id"
+      @host = @tasting.host
+      render "/tastings/show"
     end
   end
 

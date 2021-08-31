@@ -6,7 +6,7 @@ class Participation < ApplicationRecord
   scope :finished, -> { where(status: "finished") }
 
   validates :status, inclusion: { in: %w[pending accepted declined finished] }
-  validates :initial_message, length: { maximum: 250 }
+  validates :initial_message, presence: true, length: { maximum: 250 }
   include ActiveModel::Validations
   include ActiveModel::Validations::Callbacks
   after_validation :check_status

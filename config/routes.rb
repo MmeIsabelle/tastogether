@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :tastings, only: [:index, :show, :new, :create]
-  resources :participations, only: :create
-
+  resources :tastings, only: [:index, :show, :new, :create] do
+    resources :participations, only: :create
+  end
+  
   resources :conversations, only: :index, param: :other_user_id do 
     resources :messages, only: :create
   end
