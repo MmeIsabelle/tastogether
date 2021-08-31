@@ -14,6 +14,7 @@
       <%= f.input :start_at, as: :datetime, html5: true, label: "Starts at" %>
       <%= f.input :capacity, placeholder: "Number of Participants" %>
       <%= f.input :photo, as: :file %>
+      <%= f.input :categorizations, collection: ["Pizza", "Chocolate", "Beer", "Wine", "Italian", "Spanish", "Middle-Eastern", "Burger", "Fried Food", "Sweet", "Gelato", "Ice Cream", "Desert", "Barbeque", "Pasta", "Portugese", "Japanese", "Chinese", "Dumplings", "Mexican", "Spicy", "Sour"].sort%>
       <%= f.button :submit, class: "btn-primary mb-3" %>
     <% end %>
   </div>

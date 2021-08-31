@@ -23,6 +23,7 @@ class TastingsController < ApplicationController
 
   def create
     @tasting = Tasting.new(tasting_params)
+    assign_categorization(@tasting)
     @tasting.host = current_user
     authorize @tasting
     if @tasting.save!
@@ -43,5 +44,15 @@ class TastingsController < ApplicationController
 
   def tasting_params
     params.require(:tasting).permit(:title, :description, :location, :start_at, :capacity, :photo)
+  end
+
+  def assign_categorization(tasting)
+    if params[:tasting][:categorizations].class == Array
+      params[:tasting][:categorizations].each do |category|
+        Categorization.create!(tasting: tasting, category: Category.find_by(name: category)) if category != nil && category != ""
+      end
+    elsif params[:tasting][:categorizations] != nil && params[:tasting][:categorizations] != ""
+      Categorization.create!(tasting: tasting, category: Category.find_by(name: params[:tasting][:categorizations]))
+    end
   end
 end
