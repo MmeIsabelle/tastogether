@@ -40,17 +40,17 @@
       <div class="dashboard-cards ">
         <% @dashboard.pending_participations.each do |participation| %>
           <div class="dashboard-card">
-                  <% if participation.tasting.photo.attached? %>
-                    <%= cl_image_tag participation.tasting.photo.key%>
-                  <% else %>
-                    <%= image_tag participation.tasting.image%>
-                  <% end %>
-                <h3>
-                <%= link_to participation.tasting.title, tasting_path(participation.tasting) %>
-                </h3>
-                <p>
-                <%= participation.tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
-                </p>
+            <% if participation.tasting.photo.attached? %>
+              <%= cl_image_tag participation.tasting.photo.key%>
+            <% else %>
+              <%= image_tag participation.tasting.image%>
+            <% end %>
+            <h3>
+            <%= link_to participation.tasting.title, tasting_path(participation.tasting) %>
+            </h3>
+            <p>
+            <%= participation.tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
+            </p>
           </div>
         <% end %>
       </div>
@@ -58,21 +58,21 @@
     <div class="attending-upcoming">
       <h3>My Upcoming Tastings</h3>
       <div class="dashboard-cards">
-            <% @dashboard.upcoming_tastings.each do |participation| %>
-              <div class="dashboard-card">
-                <% if participation.tasting.photo.attached? %>
-                  <%= cl_image_tag participation.tasting.photo.key%>
-                <% else %>
-                  <%= image_tag participation.tasting.image%>
-                <% end %>
-                <h3>
-                <%= link_to participation.tasting.title, tasting_path(participation.tasting) %>
-                </h3>
-                <p>
-                <%= participation.tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
-                </p>
-              </div>
+        <% @dashboard.upcoming_tastings.each do |participation| %>
+          <div class="dashboard-card">
+            <% if participation.tasting.photo.attached? %>
+              <%= cl_image_tag participation.tasting.photo.key%>
+            <% else %>
+              <%= image_tag participation.tasting.image%>
             <% end %>
+            <h3>
+            <%= link_to participation.tasting.title, tasting_path(participation.tasting) %>
+            </h3>
+            <p>
+            <%= participation.tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
+            </p>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -81,20 +81,20 @@
     <div class="hosting">
       <div class="dashboard-cards">
         <% @dashboard.hostings.each do |tasting| %>
-          <div class="dashboard-card">
-            <% if tasting.photo.attached? %>
-              <%= cl_image_tag tasting.photo.key%>
-                <% else %>
-                  <%= image_tag tasting.image%>
-                    <% end %>
-                      <h3>
-                        <%= link_to tasting.title, tasting_path(tasting) %>
-                      </h3>
-                      <p>
-                        <%= tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
-                      </p>
-          </div>
+        <div class="dashboard-card">
+          <% if tasting.photo.attached? %>
+            <%= cl_image_tag tasting.photo.key%>
+          <% else %>
+            <%= image_tag tasting.image%>
           <% end %>
+          <h3>
+          <%= link_to tasting.title, tasting_path(tasting) %>
+          </h3>
+          <p>
+          <%= tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
+          </p>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
