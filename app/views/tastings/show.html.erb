@@ -38,7 +38,14 @@
                 <u><%=@host.username%></u>
               </a>
           </div>
-          <p>-Calendar Here-</p>
+          <div>
+            <div>
+              <p><%= @tasting.start_at.strftime('%b').upcase %></p>
+            </div>
+            <div>
+              <p><%= @tasting.start_at.strftime('%-d') %></p>
+            </div>
+          </div>
       </div>
       <div class="d-flex justify-content-center pt-3">
         <h2 class="tasting-show-title"><%= @tasting.title.capitalize %></h2>
