@@ -8,13 +8,15 @@ class ParticipationsController < ApplicationController
     # set the host attribute to false if the user is not already a participant
     @participation.host = false if @participation.tasting.host_participation
 
-    authorize(@participation)
     @participation.status = "pending"
+    authorize @participation 
     if @participation.save
       Message.create(content: @participation.initial_message, sender: current_user, recipient: @tasting.host)
+      create_notification
       redirect_to dashboard_path
     else
-      render "/tastings/:tasting_id"
+      @host = @tasting.host
+      render "/tastings/show"
     end
   end
 
@@ -30,7 +32,16 @@ class ParticipationsController < ApplicationController
     end
   end
 
+  private
+
   def participation_params
     params.require(:participation).permit(:initial_message, :status)
+  end
+
+  def create_notification
+    Notification.create(
+      user: @participation.tasting.host, 
+      text: render_to_string(partial: 'notifications/participations/request', locals: {participation: @participation})
+    )
   end
 end
