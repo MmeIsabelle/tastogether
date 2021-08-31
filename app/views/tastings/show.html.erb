@@ -33,9 +33,9 @@
                 </div>
               </div>
             </div>
-            <%= image_tag @host.avatar, class: "avatar" %>
+            <%= image_tag @host.avatar, class: "avatar mr-1" %>
               <a href="#" data-toggle="modal" data-target="#myModal">
-                <%=@host.username%>
+                <u><%=@host.username%></u>
               </a>
           </div>
           <p>-Calendar Here-</p>
@@ -86,7 +86,7 @@
         <% unless current_user.tastings.include?(@tasting) %>
           <%# <h3 class="text-center">Want to join?</h3> %>
           <%= simple_form_for [ @tasting, @participation ] do |f| %>
-          <div class="d-flex justify-content-center px-3">
+          <div class="d-flex justify-content-center px-3 tasting-show-msg">
             <%= f.input :initial_message, label: 'Write a message to the host to introduce yourself' %>
           </div>
             <div class="d-flex justify-content-center">
