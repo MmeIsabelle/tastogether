@@ -1,5 +1,6 @@
 class ConversationsController < ApplicationController
   def index
+    current_user.notifications.pending.update(viewed: true)
     @conversations = policy_scope(Conversation)
     @current_conversation = current_conversation
     @message = Message.new
@@ -15,6 +16,6 @@ class ConversationsController < ApplicationController
   end
   
   def current_correspondent
-    User.find_by_id(params[:user_id]) || current_user.messages.last.recipient if current_user.messages.last.present? || nil
+    User.find_by_id(params[:user_id]) || current_user.last_correspondent if current_user.messages
   end
 end

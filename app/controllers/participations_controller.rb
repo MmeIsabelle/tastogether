@@ -11,8 +11,9 @@ class ParticipationsController < ApplicationController
     @participation.status = "pending"
     authorize @participation 
     if @participation.save
-      Message.create(content: @participation.initial_message, sender: current_user, recipient: @tasting.host)
+      @message = Message.create(content: @participation.initial_message, sender: current_user, recipient: @tasting.host)
       create_notification
+      broadcast_notification
       redirect_to dashboard_path
     else
       @host = @tasting.host
@@ -38,10 +39,22 @@ class ParticipationsController < ApplicationController
     params.require(:participation).permit(:initial_message, :status)
   end
 
+  def broadcast_notification
+    NotificationChannel.broadcast_to(
+      @message.recipient,
+      template: render_notification,
+      notification_count: @message.recipient.pending_actions_count
+    )
+  end
+
+  def render_notification
+    render_to_string(partial: 'notifications/participations/request', locals: {participation: @participation})
+  end
+
   def create_notification
     Notification.create(
       user: @participation.tasting.host, 
-      text: render_to_string(partial: 'notifications/participations/request', locals: {participation: @participation})
+      text: render_notification
     )
   end
 end

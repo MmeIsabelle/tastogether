@@ -14,6 +14,7 @@ class User < ApplicationRecord
 
   has_many :hosting_participations, -> { where(host: true, status: "accepted") }, class_name: "Participation"
   has_many :hosted_tastings, through: :hosting_participations, source: :tasting
+  has_many :managed_participations, through: :hosted_tastings, source: :participations
 
   has_many :notifications
 
@@ -33,5 +34,22 @@ class User < ApplicationRecord
 
   def correspondents
     User.correspondents_for(self)
+  end
+
+  def last_correspondent
+    last_message = messages.last
+    if last_message.sender == self
+      last_message.recipient
+    else
+      last_message.sender
+    end
+  end
+
+  def pending_messages_count
+    notifications.pending.size
+  end
+
+  def pending_requests_count
+    managed_participations.pending.size
   end
 end
