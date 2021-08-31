@@ -15,6 +15,6 @@ class ConversationsController < ApplicationController
   end
   
   def current_correspondent
-    User.find_by_id(params[:user_id]) || current_user.messages.last.recipient
+    User.find_by_id(params[:user_id]) || current_user.messages.last.recipient if current_user.messages.last.present? || nil
   end
 end
