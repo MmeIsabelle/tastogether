@@ -2,7 +2,7 @@
   <div class="head-banner">
   </div>
   <%# Container div%>
-<div class="container">
+<div class="container tasting-show-container">
   <%# Card container %>
   <div class="tasting-card">
     <%# Div for tasting card image %>
@@ -90,7 +90,7 @@
           <%= simple_form_for [ @tasting, @participation ] do |f| %>
             <%= f.input :initial_message, label: 'Write a message to the host to introduce yourself' %>
             <div class="d-flex justify-content-center">
-            <%= f.submit "Send my request", class: "btn btn-primary rounded-pill" %>
+            <%= f.submit "Send my request", class: "btn btn-primary rounded-pill mb-3" %>
             </div>
           <% end %>
         <% end %>
