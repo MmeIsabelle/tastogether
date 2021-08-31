@@ -1,0 +1,10 @@
+<% if current_user.present? %>
+  <% unless current_user.pending_messages_count.zero? %>
+    <div class="notification-badge" id="notification" data-user-id="<%= current_user.id %>">
+      <%= current_user.pending_messages_count %>
+    </div>
+  <% else %>
+    <div class="d-none notification-badge" id="notification" data-user-id="<%= current_user.id %>">
+    </div>
+  <% end %>
+<% end %>

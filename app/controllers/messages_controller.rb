@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
     @message.recipient = recipient
     if @message.save
       create_notification
+      broadcast_notification
       redirect_to conversations_path(anchor: "message-#{@message.id}")
     else
       render 'conversations/index'
@@ -30,10 +31,22 @@ class MessagesController < ApplicationController
     )
   end
 
+  def broadcast_notification
+    NotificationChannel.broadcast_to(
+      @message.recipient,
+      template: render_notification,
+      notification_count: @message.recipient.pending_messages_count
+    )
+  end
+  
+  def render_notification
+    render_to_string(partial: 'notifications/messages/received', locals: {message: @message})
+  end
+
   def create_notification
     Notification.create(
       user: @message.recipient, 
-      text: render_to_string(partial: 'notifications/messages/received', locals: {message: @message})
+      text: render_notification
     )
   end
 end

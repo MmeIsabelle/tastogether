@@ -87,12 +87,9 @@
           <% else %>
             <%= image_tag tasting.image%>
           <% end %>
-          <h3>
-            <%= link_to tasting.title, tasting_path(tasting) %>
-          </h3>
-          <p>
-            <%= tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
-          </p>
+          <h3><%= link_to tasting.title, tasting_path(tasting) %></h3>
+          <p><%= tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %></p>
+          <div><%= tasting.participations.pending.size %></div>
         </div>
         <% end %>
       </div>
