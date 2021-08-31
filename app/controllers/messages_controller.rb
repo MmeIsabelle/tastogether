@@ -35,7 +35,7 @@ class MessagesController < ApplicationController
     NotificationChannel.broadcast_to(
       @message.recipient,
       template: render_notification,
-      notification_count: @message.recipient.pending_actions_count
+      notification_count: @message.recipient.pending_messages_count
     )
   end
   
