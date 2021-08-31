@@ -67,8 +67,8 @@
               <% end %>
             </ul>
           <% else %>
-            <p class="mb-0"><strong> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </strong></p>
-            <ul class="list-inline">
+            <p class="mb-0 text-dark"><strong> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </strong></p>
+            <ul class="list-inline text-dark">
               <% @tasting.participations.accepted.each do |participant| %>
                 <% unless participant.host %>
                   <li class="list-inline-item"> <%= participant.user.username %> </li>
@@ -86,7 +86,7 @@
         <% unless current_user.tastings.include?(@tasting) %>
           <%# <h3 class="text-center">Want to join?</h3> %>
           <%= simple_form_for [ @tasting, @participation ] do |f| %>
-          <div class="d-flex justify-content-center px-3 tasting-show-msg">
+          <div class="d-flex text-align-center px-3 tasting-show-msg">
             <%= f.input :initial_message, label: 'Write a message to the host to introduce yourself' %>
           </div>
             <div class="d-flex justify-content-center">
