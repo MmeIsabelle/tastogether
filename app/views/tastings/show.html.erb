@@ -1,4 +1,3 @@
-
   <%# Container div%>
 <div class="container tasting-show-container">
   <div class="tasting-card-background">
@@ -74,35 +73,6 @@
                 <% unless participant.host %>
                   <li class="list-inline-item"> <%= participant.user.username %> </li>
                 <% end %>
-      <% end %>
-    </div>
-    <hr>
-    <div>
-      <% unless current_user.tastings.include?(@tasting) %>
-        <h3 class="text-center">Want to join?</h3>
-        <%= simple_form_for [ @tasting, @participation ] do |f| %>
-          <%= f.input :initial_message, label: 'Write a message to the host to introduce yourself' %>
-          <%= f.submit "Send my request", class: "btn btn-primary rounded my-3" %>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="my-3">
-      <% if current_user.hosted_tastings.include?(@tasting)%>
-        <% @tasting.participations.pending.each do |participation| %>
-        <div>
-          <p><%= participation.user.username %> requested to attend this tasting</p>
-          <p><%= participation.initial_message %></p>
-          <div class="d-flex justify-content-around">
-            <div>
-              <%= simple_form_for participation do |f| %>
-                <%= f.hidden_field :status, value: "accepted" %>
-                <%= f.button :submit, "Accept", class: "btn btn-primary rounded" %>
-              <% end %>
-            </div>
-            <div>
-              <%= simple_form_for participation do |f| %>
-                <%= f.hidden_field :status, value: "declined" %>
-                <%= f.button :submit, "Decline", class: "btn btn-secondary rounded" %>
               <% end %>
             </ul>
           <% end %>
