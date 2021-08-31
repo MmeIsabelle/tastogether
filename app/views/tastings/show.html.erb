@@ -1,10 +1,9 @@
-  <%# Dark brown div on top of page: %>
-  <div class="head-banner">
-  </div>
   <%# Container div%>
 <div class="container tasting-show-container">
+  <div class="tasting-card-background">
+  </div>
   <%# Card container %>
-  <div class="tasting-card">
+    <div class="tasting-card">
     <%# Div for tasting card image %>
     <div>
       <% if @tasting.photo.attached? %>
@@ -82,7 +81,6 @@
       <div>
         <p><%= @tasting.description %></p>
       </div>
-
       <hr>
       <div>
         <% unless current_user.tastings.include?(@tasting) %>
@@ -121,5 +119,6 @@
         <% end %>
       </div>
     </div>
-  </div>
+    </div>
+
 </div>
