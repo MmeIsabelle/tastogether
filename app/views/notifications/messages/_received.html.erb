@@ -1,0 +1,6 @@
+<p>
+  <%= link_to conversation_path do %>
+    <p><%= message.sender.username %> sent you a new message.
+    Included message: <%= message.content %></p>
+  <% end %>
+</p>

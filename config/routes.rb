@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   resources :tastings, only: [:index, :show, :new, :create] do
     resources :participations, only: :create
   end
+  
+  resources :conversations, only: :index, param: :other_user_id do 
+    resources :messages, only: :create
+  end
+
   resources :participations, only: :update
   resources :hosts, only: :show
   resource :dashboard, only: :show

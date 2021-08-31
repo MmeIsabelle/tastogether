@@ -14,6 +14,8 @@ class Tasting < ApplicationRecord
   validates :description, length: { maximum: 500 }
   validates :capacity, numericality: { only_integer: true }
 
+
+
   include PgSearch::Model
   pg_search_scope :search_by_params,
                   against: %i[title location],

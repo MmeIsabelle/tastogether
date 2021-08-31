@@ -11,6 +11,7 @@
 <div class="container">
   <%= render 'shared/search_form' %>
   <div>
+      <p><%= @tastings.count %> <%= @tastings.count != 1 ? "results" : "result" %> found</p>
       <div class="row justify-content-center">
         <% @tastings.each do |tasting| %>
           <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
@@ -26,9 +27,9 @@
                 <div class="card-body">
                   <div class="d-flex">
                     <% if tasting.host.photo.attached? %>
-                      <%= cl_image_tag tasting.host.photo.key, class: "card-product-user rounded-circle border", width: 50, height: 50%>
+                      <%= cl_image_tag tasting.host.photo.key, class: "card-product-user rounded-circle", width: 50, height: 50%>
                     <% elsif tasting.host.avatar? %>
-                      <%= image_tag tasting.host.avatar, class: "card-product-user rounded-circle border", width: 50, height: 50 %>
+                      <%= image_tag tasting.host.avatar, class: "card-product-user rounded-circle", width: 50, height: 50 %>
                     <% else %>
                       <%= image_tag 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630205006/silhouette_od01kv.jpg', class: "card-product-user rounded-circle border", width: 50, height: 50 %>
                     <% end %>
