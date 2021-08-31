@@ -12,7 +12,7 @@ class ParticipationsController < ApplicationController
     @participation.status = "pending"
     if @participation.save
       Message.create(content: @participation.initial_message, sender: current_user, recipient: @tasting.host)
-      Notification.create(user: @tasting.host, text:"#{current_user.username} requested to participate in #{@tasting.title}")
+      create_notification
       redirect_to dashboard_path
     else
       @host = @tasting.host
@@ -32,7 +32,16 @@ class ParticipationsController < ApplicationController
     end
   end
 
+  private
+
   def participation_params
     params.require(:participation).permit(:initial_message, :status)
+  end
+
+  def create_notification
+    Notification.create(
+      user: @tasting.host, 
+      text: "#{current_user.username} requested to participate in #{@tasting.title}.<br>
+            Included message: #{@participation.initial_message}")
   end
 end
