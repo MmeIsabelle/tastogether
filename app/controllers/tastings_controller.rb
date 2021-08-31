@@ -7,6 +7,7 @@ class TastingsController < ApplicationController
       @tastings = @tastings.all
     end
     @tastings = @tastings.all.reject { |tasting| tasting.start_at < DateTime.now + 0.5 }
+    @tastings = @tastings.sort_by { |tasting| current_user.distance_to([tasting.latitude, tasting.longitude])}
   end
 
   def show

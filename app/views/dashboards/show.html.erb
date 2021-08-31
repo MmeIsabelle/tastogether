@@ -13,14 +13,30 @@
       <%= image_tag 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630205006/silhouette_od01kv.jpg', class: "avatar dropdown-toggle" , id: "navbarDropdown" , data: { toggle: 'dropdown' }%>
     <% end %>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-    <%= link_to "Logout" , destroy_user_session_path , method: :delete, class: "dropdown-item" %>
+      <%= link_to "Logout" , destroy_user_session_path , method: :delete, class: "dropdown-item" %>
     </div>
   </div>
 </div>
 <div class="container">
-  <div class="attending-pending my-4">
-    <div>
-      <h2>Pending tastings</h2>
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+        aria-controls="pills-home" aria-selected="true">Attending</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-hostings" role="tab"
+        aria-controls="pills-hostings">Hosting</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-past" role="tab"
+        aria-controls="pills-past">Past</a>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="attending-pending">
+      <h3>Pending Tastings</h3>
       <div class="dashboard-cards ">
         <% @dashboard.pending_participations.each do |participation| %>
           <div class="dashboard-card">
@@ -29,16 +45,18 @@
             <% else %>
               <%= image_tag participation.tasting.image%>
             <% end %>
-            <h3><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></h3>
-            <p><%= participation.tasting.date.to_time.strftime('%B %e at %l:%M %p') %></p>
+            <h3>
+              <%= link_to participation.tasting.title, tasting_path(participation.tasting) %>
+            </h3>
+            <p>
+              <%= participation.tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
+            </p>
           </div>
         <% end %>
-      <div>
+      </div>
     </div>
-  </div>
-  <div class="attending-upcoming my-4">
-    <div>
-      <h2>Upcoming tastings</h2>
+    <div class="attending-upcoming">
+      <h3>My Upcoming Tastings</h3>
       <div class="dashboard-cards">
         <% @dashboard.upcoming_tastings.each do |participation| %>
           <div class="dashboard-card">
@@ -47,17 +65,22 @@
             <% else %>
               <%= image_tag participation.tasting.image%>
             <% end %>
-            <h3><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></h3>
-            <p><%= participation.tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %></p>
+            <h3>
+              <%= link_to participation.tasting.title, tasting_path(participation.tasting) %>
+            </h3>
+            <p>
+              <%= participation.tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
+            </p>
           </div>
         <% end %>
       </div>
     </div>
   </div>
-  <div class="hosting my-4">
-    <h2>Hostings</h2>
-    <div class="dashboard-cards">
-      <% @dashboard.hostings.each do |tasting| %>
+
+  <div class="tab-pane fade" id="pills-hostings" role="tabpanel" aria-labelledby="pills-hostings-tab">
+    <div class="hosting">
+      <div class="dashboard-cards">
+        <% @dashboard.hostings.each do |tasting| %>
         <div class="dashboard-card">
           <% if tasting.photo.attached? %>
             <%= cl_image_tag tasting.photo.key%>
@@ -68,23 +91,31 @@
           <p><%= tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %></p>
           <div><%= tasting.participations.pending.size %></div>
         </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div class="past my-4">
-    <h2>Past tastings</h2>
-    <div class="dashboard-cards">
-      <% @dashboard.finished_tastings.each do |participation| %>
+  <div class="tab-pane fade" id="pills-past" role="tabpanel" aria-labelledby="pills-past-tab">
+    <div class="past">
+      <h3>My Past Tastings</h3>
+      <div class="dashboard-cards">
+        <% @dashboard.finished_tastings.each do |participation| %>
         <div class="dashboard-card">
-          <% if participation.tasting.photo.attached? %>
-            <%= cl_image_tag participation.tasting.photo.key%>
-          <% else %>
-            <%= image_tag participation.tasting.image%>
-          <% end %>
-          <h3><%= link_to participation.tasting.title, tasting_path(participation.tasting) %></h3>
-          <p><%= participation.tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %></p>
+        <% if participation.tasting.photo.attached? %>
+          <%= cl_image_tag participation.tasting.photo.key%>
+        <% else %>
+          <%= image_tag participation.tasting.image%>
+        <% end %>
+        <h3>
+          <%= link_to participation.tasting.title, tasting_path(participation.tasting) %>
+        </h3>
+        <p>
+          <%= participation.tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
+        </p>
         </div>
-      <% end %>
+        <% end %>
+      </div>
+    </div>
     </div>
   </div>
 </div>
