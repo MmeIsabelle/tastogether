@@ -3,7 +3,9 @@
   </div>
   <%# Container div%>
 <div class="container">
-  <%# Div for everything else (excluding navbar on the bottom) %>
+  <%# Card container %>
+  <div class="tasting-card">
+    <%# Div for tasting card image %>
     <div class="d-flex justify-content-center">
       <% if @tasting.photo.attached? %>
         <%= cl_image_tag @tasting.photo.key, height:400 %>
@@ -11,113 +13,115 @@
         <%= image_tag @tasting.image, height:400 %>
       <% end %>
     </div>
-  <div>
-    <div class="d-flex justify-content-between">
-        <div>
-          <div class="modal fade" id="myModal">
-            <div class="modal-dialog modal-sm">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h3>
-                    <%=@host.username%>'s bio:
-                  </h3>
-                </div>
-                <div class="modal-body">
-                  <%=@host.bio%>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <%# <input class="btn btn-default" data-dismiss="modal" value="Close"> %>
+    <%# Div for tasting card info %>
+    <div>
+      <div class="d-flex justify-content-between">
+          <div>
+            <div class="modal fade" id="myModal">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3>
+                      <%=@host.username%>'s bio:
+                    </h3>
+                  </div>
+                  <div class="modal-body">
+                    <%=@host.bio%>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <%# <input class="btn btn-default" data-dismiss="modal" value="Close"> %>
+                  </div>
                 </div>
               </div>
             </div>
+            <%= image_tag @host.avatar, class: "avatar" %>
+              <a href="#" data-toggle="modal" data-target="#myModal">
+                <%=@host.username%>
+              </a>
           </div>
-          <%= image_tag @host.avatar, class: "avatar" %>
-            <a href="#" data-toggle="modal" data-target="#myModal">
-              <%=@host.username%>
-            </a>
+          <p>-Calendar Here-</p>
+      </div>
+      <div class="head-title">
+        <h2><%= @tasting.title.capitalize %></h2>
+      </div>
+      <div>
+        <ul class="list-inline">
+          <% @tasting.categories.each do |category| %>
+            <%= link_to "/tastings?query=#{category.name.downcase}&commit=Discover", query: category.name.downcase do %>
+              <li class="list-inline-item card-text"><i class="fas fa-tag" style="font-size: 1rem; color: black;"><%= category.name.downcase %></i><li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+      <div class="d-flex justify-content-between">
+        <p><%= @tasting.start_at.strftime('%B %e at %l:%M %p')%></p>
+        <%# Guests if statement: %>
+        <div>
+          <% if @tasting.host_participation.status == "finished" %>
+          <p>Tasting expired</p>
+          <p class="mb-0"><strong> Guests: <%= @tasting.participations.finished.count-1%>/<%= @tasting.capacity%> </strong></p>
+            <ul class="list-inline">
+              <% @tasting.participations.finished.each do |participant| %>
+                <% unless participant.host %>
+                  <li class="list-inline-item"> <%= participant.user.username %> </li>
+                <% end %>
+              <% end %>
+            </ul>
+          <% else %>
+            <p class="mb-0"><strong> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </strong></p>
+            <ul class="list-inline">
+              <% @tasting.participations.accepted.each do |participant| %>
+                <% unless participant.host %>
+                  <li class="list-inline-item"> <%= participant.user.username %> </li>
+                <% end %>
+              <% end %>
+            </ul>
+          <% end %>
         </div>
-        <p>-Calendar Here-</p>
-    </div>
-    <div class="head-title">
-      <h2><%= @tasting.title.capitalize %></h2>
-    </div>
-    <div>
-      <ul class="list-inline">
-        <% @tasting.categories.each do |category| %>
-          <%= link_to "/tastings?query=#{category.name.downcase}&commit=Discover", query: category.name.downcase do %>
-            <li class="list-inline-item card-text"><i class="fas fa-tag" style="font-size: 1rem; color: black;"><%= category.name.downcase %></i><li>
+      </div>
+      <div>
+        <p><%= @tasting.description %></p>
+      </div>
+
+      <hr>
+      <div>
+        <% unless current_user.tastings.include?(@tasting) %>
+          <%# <h3 class="text-center">Want to join?</h3> %>
+          <%= simple_form_for [ @tasting, @participation ] do |f| %>
+            <%= f.input :initial_message, label: 'Write a message to the host to introduce yourself' %>
+            <div class="d-flex justify-content-center">
+            <%= f.submit "Send my request", class: "btn btn-primary rounded-pill my-3" %>
+            </div>
           <% end %>
         <% end %>
-      </ul>
-    </div>
-    <div class="d-flex justify-content-between">
-      <p><%= @tasting.start_at.strftime('%B %e at %l:%M %p')%></p>
-      <%# Guests if statement: %>
-      <div>
-        <% if @tasting.host_participation.status == "finished" %>
-        <p>Tasting expired</p>
-        <p class="mb-0"><strong> Guests: <%= @tasting.participations.finished.count-1%>/<%= @tasting.capacity%> </strong></p>
-          <ul class="list-inline">
-            <% @tasting.participations.finished.each do |participant| %>
-              <% unless participant.host %>
-                <li class="list-inline-item"> <%= participant.user.username %> </li>
-              <% end %>
-            <% end %>
-          </ul>
-        <% else %>
-          <p class="mb-0"><strong> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </strong></p>
-          <ul class="list-inline">
-            <% @tasting.participations.accepted.each do |participant| %>
-              <% unless participant.host %>
-                <li class="list-inline-item"> <%= participant.user.username %> </li>
-              <% end %>
-            <% end %>
-          </ul>
+      </div>
+      <div class="my-3">
+        <% if current_user.hosted_tastings.include?(@tasting)%>
+          <% @tasting.participations.pending.each do |participation| %>
+          <div>
+            <p><%= participation.user.username %> requested to attend this tasting</p>
+            <p><%= participation.initial_message %></p>
+            <div class="d-flex justify-content-around">
+              <div>
+                <%= simple_form_for participation do |f| %>
+                  <%= f.hidden_field :status, value: "accepted" %>
+                  <%= f.button :submit, "Accept", class: "btn btn-dark rounded" %>
+                <% end %>
+              </div>
+              <div>
+                <%= simple_form_for participation do |f| %>
+                  <%= f.hidden_field :status, value: "declined" %>
+                  <%= f.button :submit, "Decline", class: "btn btn-white btn-outline-secondary" %>
+                <% end %>
+              </div>
+            </div>
+            <hr>
+          </div>
+          <% end %>
         <% end %>
       </div>
+      <%= link_to "Other Tastings", tastings_path %>
     </div>
-    <div>
-      <p><%= @tasting.description %></p>
-    </div>
-
-    <hr>
-    <div>
-      <% unless current_user.tastings.include?(@tasting) %>
-        <%# <h3 class="text-center">Want to join?</h3> %>
-        <%= simple_form_for [ @tasting, @participation ] do |f| %>
-          <%= f.input :initial_message, label: 'Write a message to the host to introduce yourself' %>
-          <div class="d-flex justify-content-center">
-          <%= f.submit "Send my request", class: "btn btn-primary rounded-pill my-3" %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="my-3">
-      <% if current_user.hosted_tastings.include?(@tasting)%>
-        <% @tasting.participations.pending.each do |participation| %>
-        <div>
-          <p><%= participation.user.username %> requested to attend this tasting</p>
-          <p><%= participation.initial_message %></p>
-          <div class="d-flex justify-content-around">
-            <div>
-              <%= simple_form_for participation do |f| %>
-                <%= f.hidden_field :status, value: "accepted" %>
-                <%= f.button :submit, "Accept", class: "btn btn-dark rounded" %>
-              <% end %>
-            </div>
-            <div>
-              <%= simple_form_for participation do |f| %>
-                <%= f.hidden_field :status, value: "declined" %>
-                <%= f.button :submit, "Decline", class: "btn btn-white btn-outline-secondary" %>
-              <% end %>
-            </div>
-          </div>
-          <hr>
-        </div>
-        <% end %>
-      <% end %>
-    </div>
-    <%= link_to "Other Tastings", tastings_path %>
   </div>
 </div>
