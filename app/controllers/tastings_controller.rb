@@ -47,7 +47,7 @@ class TastingsController < ApplicationController
   end
 
   def assign_categorization(tasting)
-    category_ids = params[:tasting][:categories]
+    category_ids = params[:tasting][:category_ids]
     if category_ids.instance_of?(Array)
       category_ids.each do |category|
         Categorization.create!(tasting: tasting, category: Category.find(category)) if !category.nil? && category != ""
