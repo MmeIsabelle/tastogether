@@ -11,6 +11,7 @@
 <div class="container">
   <%= render 'shared/search_form' %>
   <div>
+      <p><%= @tastings.count %> <%= @tastings.count != 1 ? "results" : "result" %> found</p>
       <div class="row justify-content-center">
         <% @tastings.each do |tasting| %>
           <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
