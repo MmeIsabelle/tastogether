@@ -1,0 +1,37 @@
+.tasting-card {
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 16px;
+}
+
+.tasting-show-date {
+  color: #810000;
+}
+.tasting-show-btn {
+  background-color: #810000;
+  color: #f0f0f0;
+}
+
+.tasting-show-title {
+  font-weight: bolder;
+  color: #333333;
+  font-size: 24px;
+}
+
+.tasting-show-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.tasting-show-container {
+  background-color: #f0f0f0;
+}
+
+.tasting-card-background {
+  height: 118px;
+  background: #372F2F;
+  margin: 0px -1rem -4rem;
+}
