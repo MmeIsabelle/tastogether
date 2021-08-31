@@ -1,0 +1,33 @@
+<div class="head-banner">
+  <div class="head-title">
+    <h1>Conversations</h1>
+  </div>
+  </div>
+<div class="container">
+  <div class="my-3 sticky-top bg-white">
+    <p class="small">Conversations with</p>
+    <% @conversations.each do |conversation| %>
+      <% if conversation.other_user == @current_conversation.other_user %>
+        <%= link_to conversation.other_user.username, conversations_path(user_id: conversation.other_user.id), class: "btn btn-dark rounded" %>
+      <% else %>
+        <%= link_to conversation.other_user.username, conversations_path(user_id: conversation.other_user.id), class: "btn btn-white btn-outline-secondary" %>
+      <% end %>
+      
+    <% end %>
+  </div>
+  <div>  
+    <% @current_conversation.messages.each do |message|  %>
+    <div>
+      <p class="small">Sent by <strong><%= message.sender.username %></strong> <%= time_ago_in_words(message.created_at) %> ago</p>
+      <p id="message-<%= message.id %>"><i class="fas fa-envelope"></i> <%= message.content %></p>
+      <hr>
+    <% end %>
+    </div>
+  </div>
+  <div id="new">
+    <%= simple_form_for @message, url:conversation_messages_path(@current_conversation.other_user) do |f|%>
+      <%= f.input :content, label: false,placeholder: "Type your message"%>
+      <%= f.button :submit, "Send message", class: 'btn btn-primary rounded-pill my-3' %>
+    <% end %>
+  </div>
+</div>

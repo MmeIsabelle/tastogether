@@ -10,7 +10,8 @@ class ParticipationsController < ApplicationController
 
     authorize(@participation)
     @participation.status = "pending"
-    if @participation.save!
+    if @participation.save
+      Message.create(content: @participation.initial_message, sender: current_user, recipient: @tasting.host)
       redirect_to dashboard_path
     else
       render "/tastings/:tasting_id"
