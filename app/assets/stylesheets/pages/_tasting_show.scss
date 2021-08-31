@@ -35,3 +35,21 @@
   background: #372F2F;
   margin: 0px -1rem -4rem;
 }
+
+.tasting-show-calendar-top {
+  padding: 8px 16px;
+  background-color: #810000;
+  color: white;
+  border: 2px solid black;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.tasting-show-calendar-bottom {
+  padding: 8px 16px;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
