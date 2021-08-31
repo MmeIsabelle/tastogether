@@ -25,9 +25,9 @@ class TastingsController < ApplicationController
     @tasting = Tasting.new(tasting_params)
     @tasting.host = current_user
     authorize @tasting
-    if @tasting.save!
+    if @tasting.save
       assign_categorization(@tasting)
-      Participation.create!(
+      Participation.create(
         status: "accepted",
         host: true,
         user: @tasting.host,
@@ -50,10 +50,10 @@ class TastingsController < ApplicationController
     category_ids = params[:tasting][:category_ids]
     if category_ids.instance_of?(Array)
       category_ids.each do |category|
-        Categorization.create!(tasting: tasting, category: Category.find(category)) if !category.nil? && category != ""
+        Categorization.create(tasting: tasting, category: Category.find(category)) if !category.nil? && category != ""
       end
     elsif !category_ids.nil? && category_ids != ""
-      Categorization.create!(tasting: tasting, category: Category.find(category_ids))
+      Categorization.create(tasting: tasting, category: Category.find(category_ids))
     end
   end
 end
