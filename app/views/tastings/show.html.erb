@@ -14,7 +14,7 @@
     </div>
     <%# Div for tasting card info %>
     <div>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between px-3 mt-3">
           <div>
             <div class="modal fade" id="myModal">
               <div class="modal-dialog modal-sm">
@@ -43,7 +43,7 @@
       <div class="d-flex justify-content-center pt-3">
         <h2 class="tasting-show-title"><%= @tasting.title.capitalize %></h2>
       </div>
-      <div>
+      <div class="px-3">
         <ul class="list-inline">
           <% @tasting.categories.each do |category| %>
             <%= link_to "/tastings?query=#{category.name.downcase}&commit=Discover", query: category.name.downcase do %>
@@ -52,7 +52,7 @@
           <% end %>
         </ul>
       </div>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between px-3">
         <p class="tasting-show-date"><%= @tasting.start_at.strftime('%B %e at %l:%M %p')%></p>
         <%# Guests if statement: %>
         <div>
@@ -78,7 +78,7 @@
           <% end %>
         </div>
       </div>
-      <div>
+      <div class="d-flex justify-content-center px-3">
         <p><%= @tasting.description %></p>
       </div>
       <hr>
@@ -86,7 +86,9 @@
         <% unless current_user.tastings.include?(@tasting) %>
           <%# <h3 class="text-center">Want to join?</h3> %>
           <%= simple_form_for [ @tasting, @participation ] do |f| %>
+          <div class="d-flex justify-content-center px-3">
             <%= f.input :initial_message, label: 'Write a message to the host to introduce yourself' %>
+          </div>
             <div class="d-flex justify-content-center">
             <%= f.submit "Send my request", class: "btn btn-primary rounded-pill mb-3" %>
             </div>
