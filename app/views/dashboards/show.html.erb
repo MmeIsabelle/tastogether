@@ -13,7 +13,7 @@
       <%= image_tag 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630205006/silhouette_od01kv.jpg', class: "avatar dropdown-toggle" , id: "navbarDropdown" , data: { toggle: 'dropdown' }%>
     <% end %>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-    <%= link_to "Logout" , destroy_user_session_path , method: :delete, class: "dropdown-item" %>
+      <%= link_to "Logout" , destroy_user_session_path , method: :delete, class: "dropdown-item" %>
     </div>
   </div>
 </div>
@@ -46,10 +46,10 @@
               <%= image_tag participation.tasting.image%>
             <% end %>
             <h3>
-            <%= link_to participation.tasting.title, tasting_path(participation.tasting) %>
+              <%= link_to participation.tasting.title, tasting_path(participation.tasting) %>
             </h3>
             <p>
-            <%= participation.tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
+              <%= participation.tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
             </p>
           </div>
         <% end %>
@@ -66,10 +66,10 @@
               <%= image_tag participation.tasting.image%>
             <% end %>
             <h3>
-            <%= link_to participation.tasting.title, tasting_path(participation.tasting) %>
+              <%= link_to participation.tasting.title, tasting_path(participation.tasting) %>
             </h3>
             <p>
-            <%= participation.tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
+              <%= participation.tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
             </p>
           </div>
         <% end %>
@@ -88,10 +88,10 @@
             <%= image_tag tasting.image%>
           <% end %>
           <h3>
-          <%= link_to tasting.title, tasting_path(tasting) %>
+            <%= link_to tasting.title, tasting_path(tasting) %>
           </h3>
           <p>
-          <%= tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
+            <%= tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
           </p>
         </div>
         <% end %>
@@ -110,10 +110,10 @@
           <%= image_tag participation.tasting.image%>
         <% end %>
         <h3>
-        <%= link_to participation.tasting.title, tasting_path(participation.tasting) %>
+          <%= link_to participation.tasting.title, tasting_path(participation.tasting) %>
         </h3>
         <p>
-        <%= participation.tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
+          <%= participation.tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
         </p>
         </div>
         <% end %>
