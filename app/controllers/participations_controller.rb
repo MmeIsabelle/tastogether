@@ -8,8 +8,8 @@ class ParticipationsController < ApplicationController
     # set the host attribute to false if the user is not already a participant
     @participation.host = false if @participation.tasting.host_participation
 
-    authorize(@participation)
     @participation.status = "pending"
+    authorize @participation 
     if @participation.save
       Message.create(content: @participation.initial_message, sender: current_user, recipient: @tasting.host)
       create_notification
@@ -40,8 +40,8 @@ class ParticipationsController < ApplicationController
 
   def create_notification
     Notification.create(
-      user: @tasting.host, 
-      text: "#{current_user.username} requested to participate in #{@tasting.title}.<br>
-            Included message: #{@participation.initial_message}")
+      user: @participation.tasting.host, 
+      text: render_to_string(partial: 'notifications/participations/request', locals: {participation: @participation})
+    )
   end
 end
