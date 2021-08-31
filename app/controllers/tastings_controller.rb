@@ -26,6 +26,13 @@ class TastingsController < ApplicationController
     @tasting.host = current_user
     authorize @tasting
     if @tasting.save!
+      Participation.create!(
+        status: "accepted",
+        host: true,
+        user: @tasting.host,
+        initial_message: nil,
+        tasting: @tasting,
+        )
       redirect_to dashboard_path
     else
       render :new
