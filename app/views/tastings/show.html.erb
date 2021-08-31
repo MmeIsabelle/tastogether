@@ -86,7 +86,9 @@
         <% unless current_user.tastings.include?(@tasting) %>
           <%# <h3 class="text-center">Want to join?</h3> %>
           <%= simple_form_for [ @tasting, @participation ] do |f| %>
+          <div class="d-flex justify-content-center">
             <%= f.input :initial_message, label: 'Write a message to the host to introduce yourself' %>
+          </div>
             <div class="d-flex justify-content-center">
             <%= f.submit "Send my request", class: "btn btn-primary rounded-pill mb-3" %>
             </div>
