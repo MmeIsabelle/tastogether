@@ -37,19 +37,30 @@
 }
 
 .tasting-show-calendar-top {
-  padding: 8px 16px;
-  background-color: #810000;
-  color: white;
-  border: 2px solid black;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+    padding: 2px 20px;
+    background: linear-gradient(to bottom, #810000 0%, #A10027 100%);
+    background-blend-mode: multiply,multiply;
+    color: white;
+    border: 1px solid #454545;
+    border-top-left-radius: 16px;
+    border-bottom: 0.5px solid #454545;
+    border-top-right-radius: 16px;
 }
 
 .tasting-show-calendar-bottom {
-  padding: 8px 16px;
-  color: black;
-  background-color: white;
-  border: 2px solid black;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+    padding: 4px 16px;
+    color: black;
+    background-color: white;
+    border: 1px solid #454545;
+    border-top: 0.5px solid #454545;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.tasting-show-calendar {
+  position: relative;
+  top: -60px;
 }
