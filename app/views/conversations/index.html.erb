@@ -7,7 +7,6 @@
   <div class="my-3 sticky-top bg-white">
     <p class="small">Conversations with</p>
     <% @conversations.each do |conversation| %>
-      
       <% if conversation.other_user == @current_conversation.other_user %>
         <%= link_to conversation.other_user.username, conversations_path(user_id: conversation.other_user.id), class: "btn btn-dark rounded" %>
       <% else %>
@@ -26,7 +25,7 @@
     </div>
   </div>
   <div id="new">
-    <%= simple_form_for @message, url:conversation_messages_path(@current_conversation.other_user), remote: true do |f|%>
+    <%= simple_form_for @message, url:conversation_messages_path(@current_conversation.other_user) do |f|%>
       <%= f.input :content, label: false,placeholder: "Type your message"%>
       <%= f.button :submit, "Send message", class: 'btn btn-primary rounded-pill my-3' %>
     <% end %>
