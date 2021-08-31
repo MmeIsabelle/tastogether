@@ -6,7 +6,7 @@ class TastingsController < ApplicationController
     else
       @tastings = @tastings.all
     end
-    @tastings = @tastings.all.reject { |tasting| tasting.start_at < DateTime.now + 0.5}
+    @tastings = @tastings.all.reject { |tasting| tasting.start_at < DateTime.now + 0.5 }
   end
 
   def show
@@ -23,17 +23,17 @@ class TastingsController < ApplicationController
 
   def create
     @tasting = Tasting.new(tasting_params)
-    assign_categorization(@tasting)
     @tasting.host = current_user
     authorize @tasting
     if @tasting.save!
+      assign_categorization(@tasting)
       Participation.create!(
         status: "accepted",
         host: true,
         user: @tasting.host,
         initial_message: nil,
-        tasting: @tasting,
-        )
+        tasting: @tasting
+      )
       redirect_to dashboard_path
     else
       render :new
@@ -47,12 +47,13 @@ class TastingsController < ApplicationController
   end
 
   def assign_categorization(tasting)
-    if params[:tasting][:categorizations].class == Array
-      params[:tasting][:categorizations].each do |category|
-        Categorization.create!(tasting: tasting, category: Category.find_by(name: category)) if category != nil && category != ""
+    category_ids = params[:tasting][:categories]
+    if category_ids.instance_of?(Array)
+      category_ids.each do |category|
+        Categorization.create!(tasting: tasting, category: Category.find(category)) if !category.nil? && category != ""
       end
-    elsif params[:tasting][:categorizations] != nil && params[:tasting][:categorizations] != ""
-      Categorization.create!(tasting: tasting, category: Category.find_by(name: params[:tasting][:categorizations]))
+    elsif !category_ids.nil? && category_ids != ""
+      Categorization.create!(tasting: tasting, category: Category.find(category_ids))
     end
   end
 end
