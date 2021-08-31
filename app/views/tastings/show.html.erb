@@ -30,7 +30,6 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <%# <input class="btn btn-default" data-dismiss="modal" value="Close"> %>
                   </div>
                 </div>
               </div>
@@ -91,7 +90,7 @@
           <%= simple_form_for [ @tasting, @participation ] do |f| %>
             <%= f.input :initial_message, label: 'Write a message to the host to introduce yourself' %>
             <div class="d-flex justify-content-center">
-            <%= f.submit "Send my request", class: "btn btn-primary rounded-pill my-3" %>
+            <%= f.submit "Send my request", class: "btn btn-primary rounded-pill" %>
             </div>
           <% end %>
         <% end %>
@@ -121,7 +120,6 @@
           <% end %>
         <% end %>
       </div>
-      <%= link_to "Other Tastings", tastings_path %>
     </div>
   </div>
 </div>
