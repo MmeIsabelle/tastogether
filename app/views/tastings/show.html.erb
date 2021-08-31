@@ -1,15 +1,18 @@
   <%# Dark brown div on top of page: %>
   <div class="head-banner">
-    <div class="head-title">
-      <h1><%= @tasting.title.capitalize %></h1>
-    </div>
   </div>
   <%# Container div%>
 <div class="container">
   <%# Div for everything else (excluding navbar on the bottom) %>
+    <div class="d-flex justify-content-center">
+      <% if @tasting.photo.attached? %>
+        <%= cl_image_tag @tasting.photo.key, height:400 %>
+      <% else %>
+        <%= image_tag @tasting.image, height:400 %>
+      <% end %>
+    </div>
   <div>
     <div class="d-flex justify-content-between">
-      <div class="host-card">
         <div>
           <div class="modal fade" id="myModal">
             <div class="modal-dialog modal-sm">
@@ -34,15 +37,10 @@
               <%=@host.username%>
             </a>
         </div>
-        <p>Rating: ☆☆☆☆☆</p>
-      </div>
+        <p>-Calendar Here-</p>
     </div>
-    <div class="d-flex justify-content-center">
-      <% if @tasting.photo.attached? %>
-        <%= cl_image_tag @tasting.photo.key, height:400 %>
-      <% else %>
-        <%= image_tag @tasting.image, height:400 %>
-      <% end %>
+    <div class="head-title">
+      <h2><%= @tasting.title.capitalize %></h2>
     </div>
     <div>
       <ul class="list-inline">
@@ -53,41 +51,45 @@
         <% end %>
       </ul>
     </div>
-    <div>
-      <h3>Description</h3>
-      <p><%= @tasting.description %></p>
+    <div class="d-flex justify-content-between">
       <p><%= @tasting.start_at.strftime('%B %e at %l:%M %p')%></p>
+      <%# Guests if statement: %>
+      <div>
+        <% if @tasting.host_participation.status == "finished" %>
+        <p>Tasting expired</p>
+        <p class="mb-0"><strong> Guests: <%= @tasting.participations.finished.count-1%>/<%= @tasting.capacity%> </strong></p>
+          <ul class="list-inline">
+            <% @tasting.participations.finished.each do |participant| %>
+              <% unless participant.host %>
+                <li class="list-inline-item"> <%= participant.user.username %> </li>
+              <% end %>
+            <% end %>
+          </ul>
+        <% else %>
+          <p class="mb-0"><strong> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </strong></p>
+          <ul class="list-inline">
+            <% @tasting.participations.accepted.each do |participant| %>
+              <% unless participant.host %>
+                <li class="list-inline-item"> <%= participant.user.username %> </li>
+              <% end %>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+    <div>
+      <p><%= @tasting.description %></p>
     </div>
 
-    <div class="my-2">
-      <% if @tasting.host_participation.status == "finished" %>
-      <p>Tasting expired</p>
-      <p class="mb-0"><strong> Guests: <%= @tasting.participations.finished.count-1%>/<%= @tasting.capacity%> </strong></p>
-        <ul class="list-inline">
-          <% @tasting.participations.finished.each do |participant| %>
-            <% unless participant.host %>
-              <li class="list-inline-item"> <%= participant.user.username %> </li>
-            <% end %>
-          <% end %>
-        </ul>
-      <% else %>
-        <p class="mb-0"><strong> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </strong></p>
-        <ul class="list-inline">
-          <% @tasting.participations.accepted.each do |participant| %>
-            <% unless participant.host %>
-              <li class="list-inline-item"> <%= participant.user.username %> </li>
-            <% end %>
-          <% end %>
-        </ul>
-      <% end %>
-    </div>
     <hr>
     <div>
       <% unless current_user.tastings.include?(@tasting) %>
-        <h3 class="text-center">Want to join?</h3>
+        <%# <h3 class="text-center">Want to join?</h3> %>
         <%= simple_form_for [ @tasting, @participation ] do |f| %>
           <%= f.input :initial_message, label: 'Write a message to the host to introduce yourself' %>
+          <div class="d-flex justify-content-center">
           <%= f.submit "Send my request", class: "btn btn-primary rounded-pill my-3" %>
+          </div>
         <% end %>
       <% end %>
     </div>
