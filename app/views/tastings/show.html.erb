@@ -75,7 +75,7 @@
           <% else %>
             <div>
               <p class="mb-0 text-dark"><strong> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </strong></p>
-              <ul class="list-inline text-dark">
+              <ul class="list-inline text-dark mt-2">
                 <% @tasting.participations.accepted.each do |participant| %>
                   <% unless participant.host %>
                     <li class="list-inline-item"> <%= cl_image_tag participant.user.avatar, class: "avatar mr-1" %> </li>
