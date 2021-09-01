@@ -38,7 +38,7 @@
                     <ul class="list-inline">
                       <% tasting.categories.each do |category| %>
                         <%= link_to "/tastings?query=#{category.name.downcase}&commit=Discover", query: category.name.downcase do %>
-                          <li class="list-inline-item card-text"><i class="fas fa-tag" style="font-size: 1rem; color: black;"><%= category.name.downcase %></i><li>
+                          <li class="list-inline-item card-text">#<%= category.name.downcase %><li>
                         <% end %>
                       <% end %>
                     </ul>
