@@ -9,7 +9,6 @@ const initNotificationCable = () => {
       received(data) {
         console.log(data); // called when data is broadcast in the cable
         document.body.insertAdjacentHTML("beforeend", data.template)
-        notificationBadge.innerText = data.notification_count
         notificationBadge.classList.remove('d-none')
       },
       connected(data) {
