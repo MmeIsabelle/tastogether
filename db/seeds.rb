@@ -21,7 +21,7 @@ users = {
     password: "123456",
     address: "632 Rue Cathcart, Montreal",
     username: "Marc",
-    bio: "Extreme chocolate lover. Lifelong music expert. Incurable gamer. Social media nerd. Food fan. Explorer.",
+    bio: "Extreme chocolate lover. Lifelong music expert. Food fan. Explorer.",
     avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190849/marc.jpg'
   ),
   sweet: User.create!(
@@ -29,7 +29,7 @@ users = {
     password: "123456",
     address: "8910 Rue Lajeunesse, Montreal",
     username: "Nick",
-    bio: "Student. Sweets nerd. Icecream-a-holic. Introvert. Evil music aficionado. Freelance pop culture advocate. Coffee trailblazer.",
+    bio: "I have a huge sweet tooth. Nothing better than a good barbeque with some friends.",
     avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190866/nick.jpg'
   ),
   wine: User.create!(
@@ -37,7 +37,7 @@ users = {
     password: "123456",
     address: "1255 Square Phillips, Montreal",
     username: "Arlette",
-    bio: "Wine specialist. Social media fan. Evil web geek. Introvert. Problem solver. Entrepreneur.",
+    bio: "Entrepreneur. A bottle of wine is the best way to unwind after a long day. Tea > Coffee",
     avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190836/arlette.jpg'
   ),
   coffee: User.create!(
@@ -45,7 +45,7 @@ users = {
     password: "123456",
     address: "620 Saint-Catherine, Montreal",
     username: "Corrine",
-    bio: "Coffee evangelist. Wannabe travel trailblazer. Twitter nerd. Alcohol advocate. Social media aficionado. Pop culture ninja.",
+    bio: "Coffee evangelist and chocolate fanatic. Architect by trade.",
     avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190856/corrine.jpg'
   ),
   bobby: User.create!(
@@ -53,15 +53,15 @@ users = {
     password: "123456",
     address: "192 Rue Saint-Zotique, Montreal",
     username: "Bobby",
-    bio: "Food expert. Travel geek. Pop culture scholar. Troublemaker. Gamer. Coffee guru. Internet evangelist. Writer. Beer buff.",
+    bio: "Finance professional that loves to travel and experience new food",
     avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190853/bobby.jpg'
   ),
-  edgar: User.create!(
+  fabiola: User.create!(
     email: "user5@user.com",
     password: "123456",
     address: "4534 Cartier, Montreal",
     username: "Fabiola",
-    bio: "Beer trailblazer. Italy lover. Twitter buff. Travel specialist.",
+    bio: "Beer trailblazer and Italy lover. Willing to spice it up when it comes to my food",
     avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190839/Fabiola.jpg'
   ),
   meg: User.create!(
@@ -70,6 +70,27 @@ users = {
     address: "888 Wellington, Montreal",
     username: "Meg",
     bio: "Food explorer. Web lover. Wine collector. Coffee enthusiast. Chocolate amateur.",
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190929/meg-957fj3o9.jpg'
+  ),
+  # Need new avatars for the below users
+
+  # Needs to be an avatar of a man
+  lorenzo: User.create!(
+    email: "user6@user.com",
+    password: "123456",
+    address: "1201 Avenue Van Horne, Montréal",
+    username: "Lorenzo22",
+    bio: "Italian born foodie living in Montreal. I love pasta, gelato and coffee.",
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190929/meg-957fj3o9.jpg'
+  ),
+
+  # Needs to be an avatar of a woman
+  rachel: User.create!(
+    email: "user7@user.com",
+    password: "123456",
+    address: "1446 Rue Crescent, Montréal",
+    username: "RachelG",
+    bio: "Elementary school teacher by day and foodie by night.",
     avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190929/meg-957fj3o9.jpg'
   )
 }
@@ -137,7 +158,7 @@ tastings = {
 
   barbeque: Tasting.create!(
     title: "Barbeque Bash",
-    description: "We will barbeque up all kinds of meats.",
+    description: "We will barbeque up all kinds of meats. Steaks, hot dogs, hamburgers, you name it. Afterwords we will hang out with a few beers in my backyard. Hoping to see you there!",
     location: "464 Rue McGill, Montreal",
     start_at: DateTime.new(2021, 8, 29, 20, 0, 0),
     capacity: 10,
@@ -164,7 +185,7 @@ tastings = {
     description: "I am a huge fan of IPA's and recently I have found that there are so many more under the radar brands. Whether you are a fan of bitter or sweet IPA's, bring your favourite IPA and we will do a sampling of all the IPA's that everyone brings and debate which is the best! Please register quickly as I expect the available spots to be taken quickly. Food will be provided. ",
     location: "80 Sherbrooke Street West",
     start_at: DateTime.new(2021, 10, 3, 4, 30, 0),
-    capacity: 25,
+    capacity: 6,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
   ),
   spice: Tasting.create!(
@@ -172,7 +193,7 @@ tastings = {
     description: "Are you a fan of the show Hot Ones? I am hosting a hot sauce challenge where each of us will eat 10 hot sauces on chicken wings barbequed by me. Each round the hot sauce will hit harder and harder and any who are left standing will be crowned champions and will most likely burn all their taste buds. I am hoping for a huge turnout, so if you like spicey food and pushing yourself to the limit, then be there.",
     location: "5 Samson Blvd, Laval",
     start_at: DateTime.new(2021, 9, 27, 6, 20, 0),
-    capacity: 50,
+    capacity: 10,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
   ),
   italian: Tasting.create!(
@@ -188,7 +209,7 @@ tastings = {
     description: "Hey everyone! Who doesn't love fried food? Whether it's for a meal like fried chicken and curly fries or for desert like fried ice cream , fried food is just awesome. I welcome all fried food lovers to come and enjoy the all the fried food they can ever eat. No need to bring anything. Everything will be provided. See you there.",
     location: "421 Rue St. Vincent, Montréal",
     start_at: DateTime.new(2021, 9, 22, 7, 0, 0),
-    capacity: 25,
+    capacity: 5,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
   ),
   taco: Tasting.create!(
@@ -196,7 +217,7 @@ tastings = {
     description: "For all you taco people out there, this event is for you. Me and my wife love making all different kinds of authentic tacos and sharing them with others. So, bring a bottle of wine and let's meet up over some Tacos in my backyard. As of now we have 8 spots available. Note that me and my wife are in our late thirties, so we would prefer if attendees are around that age.",
     location: "360 rue St-Antoine Ouest, Montréal",
     start_at: DateTime.new(2021, 9, 18, 7, 30, 0),
-    capacity: 8,
+    capacity: 4,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
   )
 }
@@ -220,14 +241,14 @@ participations = {
     ),
     host_beans: Participation.create!(
       tasting: tastings[:beans],
-      user: users[:choco],
+      user: users[:coffee],
       host: true,
       initial_message: Faker::Lorem.sentence,
       status: "accepted"
     ),
     host_gelato: Participation.create!(
       tasting: tastings[:gelato],
-      user: users[:sweet],
+      user: users[:lorenzo],
       host: true,
       initial_message: Faker::Lorem.sentence,
       status: "accepted"
@@ -248,21 +269,21 @@ participations = {
     ),
     host_pizza: Participation.create!(
       tasting: tastings[:pizza],
-      user: users[:edgar],
+      user: users[:fabiola],
       host: true,
       initial_message: Faker::Lorem.sentence,
       status: "accepted"
     ),
     host_barbeque: Participation.create!(
       tasting: tastings[:barbeque],
-      user: users[:edgar],
+      user: users[:bobby],
       host: true,
       initial_message: Faker::Lorem.sentence,
       status: "accepted"
     ),
     host_banh: Participation.create!(
       tasting: tastings[:banh_mi],
-      user: users[:bobby],
+      user: users[:rachel],
       host: true,
       initial_message: Faker::Lorem.sentence,
       status: "accepted"
@@ -276,35 +297,35 @@ participations = {
     ),
     host_beer: Participation.create!(
       tasting: tastings[:beer],
-      user: users[:edgar],
+      user: users[:fabiola],
       host: true,
       initial_message: Faker::Lorem.sentence,
       status: "accepted"
     ),
     host_spice: Participation.create!(
       tasting: tastings[:spice],
-      user: users[:edgar],
+      user: users[:bobby],
       host: true,
       initial_message: Faker::Lorem.sentence,
       status: "accepted"
     ),
     host_italian: Participation.create!(
       tasting: tastings[:italian],
-      user: users[:edgar],
+      user: users[:lorenzo],
       host: true,
       initial_message: Faker::Lorem.sentence,
       status: "accepted"
     ),
     host_fried: Participation.create!(
       tasting: tastings[:fried],
-      user: users[:edgar],
+      user: users[:sweet],
       host: true,
       initial_message: Faker::Lorem.sentence,
       status: "accepted"
     ),
     host_taco: Participation.create!(
       tasting: tastings[:taco],
-      user: users[:edgar],
+      user: users[:bobby],
       host: true,
       initial_message: Faker::Lorem.sentence,
       status: "accepted"
@@ -315,14 +336,14 @@ participations = {
     beans: [
       Participation.create!(
         tasting: tastings[:beans],
-        user: users[:bobby],
+        user: users[:choco],
         host: false,
         initial_message: Faker::Lorem.sentence,
         status: "accepted"
       ),
       Participation.create!(
         tasting: tastings[:beans],
-        user: users[:edgar],
+        user: users[:fabiola],
         host: false,
         initial_message: Faker::Lorem.sentence,
         status: "pending"
@@ -523,10 +544,6 @@ categorizations_for_tastings = {
     )
   ],
   spice: [
-    Categorization.create!(
-      category: categories[:spice],
-      tasting: tastings[:spice]
-    ),
     Categorization.create!(
       category: categories[:spice],
       tasting: tastings[:spice]
