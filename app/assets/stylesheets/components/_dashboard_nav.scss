@@ -1,11 +1,13 @@
-.dashboard-tabs{
+.dashboard-tabs {
   width: 100%;
   justify-content: space-evenly;
 }
-.tab-nav-item{
-  width: 33%;
+
+.tab-nav-item {
+  width: 33.333333333333333333%;
   text-align: center;
 }
+
 #dashboard-badge{
   position: relative;
   top: -43px;
@@ -14,4 +16,7 @@
   background: #810000;
   color: white;
   font-weight: normal;
+
+.my-nav-pills {
+  border-radius: 0 !important;
 }
