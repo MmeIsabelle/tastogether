@@ -59,10 +59,9 @@
           <% end %>
         </ul>
       </div>
-      <div class="d-flex justify-content-between px-3">
         <p class="tasting-show-date"><%= @tasting.start_at.strftime('%B %e at %l:%M %p')%></p>
         <%# Guests if statement: %>
-        <div>
+        <div class="d-flex text-align-center justify-content-center py-3">
           <% if @tasting.host_participation.status == "finished" %>
           <p>Tasting expired</p>
           <p class="mb-0"><strong> Guests: <%= @tasting.participations.finished.count-1%>/<%= @tasting.capacity%> </strong></p>
@@ -84,7 +83,6 @@
             </ul>
           <% end %>
         </div>
-      </div>
       <div class="d-flex justify-content-center px-3">
         <p><%= @tasting.description %></p>
       </div>
