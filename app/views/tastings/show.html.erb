@@ -63,8 +63,8 @@
         <%# Guests if statement: %>
         <div class="d-flex text-align-center justify-content-center py-3">
           <% if @tasting.host_participation.status == "finished" %>
-              <p><strong>Tasting expired.<strong></p>
             <div>
+              <p class ="py-2"><strong>Tasting expired.<strong></p>
               <p class="mb-0 text-dark"><strong> Guests: <%= @tasting.participations.finished.count-1%>/<%= @tasting.capacity%> </strong></p>
               <ul class="list-inline text-dark mt-2">
                 <% @tasting.participations.accepted.each do |participant| %>
