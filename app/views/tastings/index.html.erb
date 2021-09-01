@@ -19,7 +19,7 @@
               <div class="card my-3" style="width: 300px;">
                 <div>
                   <% if tasting.photo.attached? %>
-                    <%= cl_image_tag tasting.photo.key, transformation: { crop:"fill", height:200, width:300} %>
+                    <%= cl_image_tag tasting.photo.key, class: "card-photo", transformation: { crop:"fill", height:200, width:300} %>
                   <% else %>
                     <%= image_tag tasting.image, class: "card-photo"%>
                   <% end %>
