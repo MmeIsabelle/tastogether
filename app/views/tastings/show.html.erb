@@ -33,7 +33,7 @@
                 </div>
               </div>
             </div>
-            <%= image_tag @host.avatar, class: "avatar mr-1" %>
+            <%= image_tag @host.avatar, class: "avatar" %>
               <a href="#" data-toggle="modal" data-target="#myModal">
                 <u><%=@host.username%></u>
               </a>
@@ -59,17 +59,17 @@
           <% end %>
         </ul>
       </div>
-        <p class="tasting-show-date"><%= @tasting.start_at.strftime('%B %e at %l:%M %p')%></p>
+        <p class="tasting-show-date px-3"><%= @tasting.start_at.strftime('%B %e at %l:%M %p')%></p>
         <%# Guests if statement: %>
-        <div class="d-flex text-align-center justify-content-center py-3">
+        <div class="d-flex text-align-left justify-content-left p-3">
           <% if @tasting.host_participation.status == "finished" %>
             <div>
               <p class ="py-2">Tasting expired.</p>
-              <p class="mb-0 text-dark" style="text-align: center;">Guests: <%= @tasting.participations.finished.count-1%>/<%= @tasting.capacity%></p>
-              <ul class="d-flex list-inline mt-2 justify-content-center">
+              <p class="mb-0 text-dark">Guests: <%= @tasting.participations.finished.count-1%>/<%= @tasting.capacity%></p>
+              <ul class="d-flex list-inline mt-2 justify-content-left guest-list">
                 <% @tasting.participations.finished.each do |participant| %>
                   <% unless participant.host %>
-                    <li class="list-inline-item"> <%= cl_image_tag participant.user.avatar, class: "avatar mr-1" %> </li>
+                    <li class="list-inline-item avatar-guest"> <%= cl_image_tag participant.user.avatar%> </li>
                   <% end %>
                 <% end %>
               </ul>
@@ -78,11 +78,11 @@
           <% else %>
 
             <div>
-              <p class="mb-0 text-dark" style="text-align: center;"> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </p>
-              <ul class="d-flex list-inline mt-2 justify-content-center">
+              <p class="mb-0 text-dark"> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </p>
+              <ul class="d-flex list-inline mt-2 justify-content-left guest-list">
                 <% @tasting.participations.accepted.each do |participant| %>
                   <% unless participant.host %>
-                    <li class="list-inline-item"> <%= cl_image_tag participant.user.avatar, class: "avatar mr-1" %> </li>
+                    <li class="list-inline-item avatar-guest"> <%= cl_image_tag participant.user.avatar%> </li>
                   <% end %>
                 <% end %>
               </ul>
