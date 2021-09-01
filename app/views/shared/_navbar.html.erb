@@ -25,7 +25,13 @@
       <li class="nav-item my-nav-item mx-3">
         <i class="fas fa-inbox mx-auto text-body"></i>
         <p class="mt-2">Inbox</p>
-        <%= render 'shared/message_badge' %>
+        <% if current_user.present? %>
+          <%unless current_user.pending_messages_count.zero?%>
+          <span class="badge my-badge badge-light">
+            <%= render 'shared/message_badge' %>
+          </span>
+          <%end%>
+        <%end%>
       </li>
     <% end %>
 
@@ -33,7 +39,13 @@
       <li class="nav-item my-nav-item mx-3">
         <i class="fas fa-user-circle mx-auto text-body"></i>
         <p class="mt-2">Profile</p>
-        <%= render 'shared/request_badge' %>
+        <% if current_user.present? %>
+          <% unless current_user.pending_requests_count.zero? %>
+            <span class="badge my-badge badge-light">
+              <%= render 'shared/request_badge' %>
+            </span>
+          <%end%>
+        <%end%>
       </li>
     <% end %>
 
