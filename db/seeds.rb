@@ -83,14 +83,38 @@ users = {
     bio: "Italian born foodie living in Montreal. I love pasta, gelato and coffee.",
     avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190929/meg-957fj3o9.jpg'
   ),
+  max: User.create!(
+    email: "user7@user.com",
+    password: "123456",
+    address: "1208 Crescent Street, Montréal",
+    username: "MaxLo",
+    bio: "Montreal born. Food is my passion. Sour and salty is the perfect combination.",
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190929/meg-957fj3o9.jpg'
+  ),
+  charlie: User.create!(
+    email: "user8@user.com",
+    password: "123456",
+    address: "1196 rue Peel, Montréal",
+    username: "CJ85",
+    bio: "Professional Violinist and Amateur Foodie.",
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190929/meg-957fj3o9.jpg'
+  ),
 
   # Needs to be an avatar of a woman
   rachel: User.create!(
-    email: "user7@user.com",
+    email: "user9@user.com",
     password: "123456",
     address: "1446 Rue Crescent, Montréal",
     username: "RachelG",
     bio: "Elementary school teacher by day and foodie by night.",
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190929/meg-957fj3o9.jpg'
+  ),
+  jules: User.create!(
+    email: "user10@user.com",
+    password: "123456",
+    address: "1446 Rue Crescent, Montréal",
+    username: "JulesT",
+    bio: "I love to travel because I love to discover foreign food. Looking to meetup with people who share similar preferences as me when it comes to food.",
     avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190929/meg-957fj3o9.jpg'
   )
 }
@@ -126,7 +150,7 @@ tastings = {
     description: "There is nothing better than a good gelato. For those that have tried it to those who have not, this event is one you don't want to miss. Gelato is just an amazing world to discover... Let's do it together! I will be buying many types of gelato fo us to savour.",
     location: "8910 Rue Lajeunesse, Montreal",
     start_at: DateTime.new(2021, 9, 4, 15, 0, 0),
-    capacity: 4,
+    capacity: 8,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630000742/Tastogether/gelato_ela3ku.jpg'
   ),
   milk: Tasting.create!(
@@ -398,8 +422,44 @@ participations = {
         user: users[:wine],
         host: false,
         initial_message: Faker::Lorem.sentence,
-        status: "pending"
-      )],
+        status: "accepted"
+      ),
+      Participation.create!(
+        tasting: tastings[:gelato],
+        user: users[:coffee],
+        host: false,
+        initial_message: Faker::Lorem.sentence,
+        status: "accepted"
+      ),
+      Participation.create!(
+        tasting: tastings[:gelato],
+        user: users[:sweet],
+        host: false,
+        initial_message: Faker::Lorem.sentence,
+        status: "accepted"
+      ),
+      Participation.create!(
+        tasting: tastings[:gelato],
+        user: users[:bobby],
+        host: false,
+        initial_message: Faker::Lorem.sentence,
+        status: "accepted"
+      ),
+      Participation.create!(
+        tasting: tastings[:gelato],
+        user: users[:jules],
+        host: false,
+        initial_message: Faker::Lorem.sentence,
+        status: "accepted"
+      ),
+      Participation.create!(
+        tasting: tastings[:gelato],
+        user: users[:max],
+        host: false,
+        initial_message: Faker::Lorem.sentence,
+        status: "accepted"
+      )
+    ],
     bbq: [
       Participation.create!(
         tasting: tastings[:barbeque],
