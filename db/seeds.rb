@@ -107,7 +107,7 @@ tastings = {
   ),
   coffee_tasting: Tasting.create!(
     title: "Exotic coffee tasting",
-    description: "Bring your coffee of choice. Coffee connaisseurs only.",
+    description: "Bring your coffee of choice. We will talk about our favourites. 4 spots available. Coffee connaisseurs only. Must be older than 25.",
     location: "620 Saint-Catherine, Montreal",
     start_at: DateTime.new(2021, 9, 6, 19, 0, 0),
     capacity: 4,
@@ -123,7 +123,7 @@ tastings = {
   ),
   gelato: Tasting.create!(
     title: "Gelato, just because...",
-    description: "Gelato is just an amazing world to discover... Join in!",
+    description: "There is nothing better than a good gelato. For those that have tried it to those who have not, this event is one you don't want to miss. Gelato is just an amazing world to discover... Let's do it together! I will be buying many types of gelato fo us to savour.",
     location: "8910 Rue Lajeunesse, Montreal",
     start_at: DateTime.new(2021, 9, 4, 15, 0, 0),
     capacity: 4,
@@ -139,7 +139,7 @@ tastings = {
   ),
   vintage: Tasting.create!(
     title: "From old to new",
-    description: "Let's taste the same wine from different vintages to compare and discuss the effect of aging on the flavours.",
+    description: "Let's taste the same wine from different vintages to compare and discuss the effect of aging on the flavours. 6 spots available. Wine experts and amateurs allowed. ",
     location: "1255 Square Phillips, Montreal",
     start_at: DateTime.new(2021, 9, 16, 19, 30, 0),
     capacity: 6,
@@ -147,7 +147,7 @@ tastings = {
   ),
   pizza: Tasting.create!(
     title: "Pizza party",
-    description: "We will all order pizza from our favorite pizza restaurants to compare their take on the margarita pizza.",
+    description: "We will all order pizza from our favorite pizza restaurants to compare their take on the margarita pizza. 10 spots available. Looking forward to it!",
     location: "4534 Cartier, Montreal",
     start_at: DateTime.new(2021, 9, 11, 20, 0, 0),
     capacity: 10,
@@ -160,7 +160,7 @@ tastings = {
     title: "Barbeque Bash",
     description: "We will barbeque up all kinds of meats. Steaks, hot dogs, hamburgers, you name it. Afterwords we will hang out with a few beers in my backyard. Hoping to see you there!",
     location: "464 Rue McGill, Montreal",
-    start_at: DateTime.new(2021, 8, 29, 20, 0, 0),
+    start_at: DateTime.new(2021, 9, 29, 20, 0, 0),
     capacity: 10,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
   ),
@@ -181,7 +181,7 @@ tastings = {
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
   ),
   beer: Tasting.create!(
-    title: "BYOB IPA Style",
+    title: "Indian Pale Ale Meetup",
     description: "I am a huge fan of IPA's and recently I have found that there are so many more under the radar brands. Whether you are a fan of bitter or sweet IPA's, bring your favourite IPA and we will do a sampling of all the IPA's that everyone brings and debate which is the best! Please register quickly as I expect the available spots to be taken quickly. Food will be provided. ",
     location: "80 Sherbrooke Street West",
     start_at: DateTime.new(2021, 10, 3, 4, 30, 0),
@@ -190,7 +190,7 @@ tastings = {
   ),
   spice: Tasting.create!(
     title: "Spice is Life",
-    description: "Are you a fan of the show Hot Ones? I am hosting a hot sauce challenge where each of us will eat 10 hot sauces on chicken wings barbequed by me. Each round the hot sauce will hit harder and harder and any who are left standing will be crowned champions and will most likely burn all their taste buds. I am hoping for a huge turnout, so if you like spicey food and pushing yourself to the limit, then be there.",
+    description: "Are you a fan of the show Hot Ones? I am hosting a hot sauce challenge where each of us will eat 10 hot sauces on chicken wings that I will barbeque. Each round the hot sauce will hit harder and harder and any who are left standing will be crowned champions and will most likely burn all their taste buds. I am hoping for a huge turnout, so if you like spicey food and pushing yourself to the limit, then be there.",
     location: "5 Samson Blvd, Laval",
     start_at: DateTime.new(2021, 9, 27, 6, 20, 0),
     capacity: 10,
@@ -206,7 +206,7 @@ tastings = {
   ),
   fried: Tasting.create!(
     title: "Fried Food Fest",
-    description: "Hey everyone! Who doesn't love fried food? Whether it's for a meal like fried chicken and curly fries or for desert like fried ice cream , fried food is just awesome. I welcome all fried food lovers to come and enjoy the all the fried food they can ever eat. No need to bring anything. Everything will be provided. See you there.",
+    description: "Hey everyone! Who doesn't love fried food? Whether it's for a meal like fried chicken or for desert like fried ice cream, fried food is just awesome. I welcome all fried food lovers to come and enjoy all the fried food they can ever eat. No need to bring anything. Everything will be provided. See you there.",
     location: "421 Rue St. Vincent, Montréal",
     start_at: DateTime.new(2021, 9, 22, 7, 0, 0),
     capacity: 5,
@@ -214,7 +214,7 @@ tastings = {
   ),
   taco: Tasting.create!(
     title: "Taco Takeover",
-    description: "For all you taco people out there, this event is for you. Me and my wife love making all different kinds of authentic tacos and sharing them with others. So, bring a bottle of wine and let's meet up over some Tacos in my backyard. As of now we have 8 spots available. Note that me and my wife are in our late thirties, so we would prefer if attendees are around that age.",
+    description: "For all you taco people out there, this event is for you. Me and my wife love making all different kinds of authentic tacos and sharing them with others. So, bring a bottle of wine and let's meet up over some Tacos in my backyard. As of now we have 4 spots available. Note that me and my wife are in our late thirties, so we would prefer if attendees are around that age.",
     location: "360 rue St-Antoine Ouest, Montréal",
     start_at: DateTime.new(2021, 9, 18, 7, 30, 0),
     capacity: 4,
@@ -345,21 +345,21 @@ participations = {
         tasting: tastings[:beans],
         user: users[:fabiola],
         host: false,
-        initial_message: Faker::Lorem.sentence,
+        initial_message: "Hey! I have recently really gotten into eating different kinds of chocolate and your event sounds super interesting. Do you have room for one more?",
         status: "pending"
       ),
         Participation.create!(
           tasting: tastings[:beans],
           user: users[:wine],
           host: false,
-          initial_message: Faker::Lorem.sentence,
+          initial_message: "Hi. I found your event and I am really excited about the prospect of experiencing chocolate in this way. I would love to attend.",
           status: "pending"
       ),
         Participation.create!(
           tasting: tastings[:beans],
           user: users[:meg],
           host: false,
-          initial_message: Faker::Lorem.sentence,
+          initial_message: "Hey! Your event sounds amazing. As a fellow chocolate lover, going to this event would make my day",
           status: "accepted"
       )],
     vintage: [
@@ -389,7 +389,7 @@ participations = {
         tasting: tastings[:milk],
         user: users[:sweet],
         host: false,
-        initial_message: Faker::Lorem.sentence,
+        initial_message: "Hey! Your event sounds amazing. As a fellow chocolate lover, going to this event would make my day",
         status: "pending"
       )],
     gelato: [
