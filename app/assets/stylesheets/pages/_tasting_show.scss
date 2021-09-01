@@ -67,12 +67,11 @@
 
 .avatar-guest {
   margin-left: -24px;
-}
-
-.avatar-guest img {
+  img {
   width: 40px;
   border-radius: 50%;
   border: 2px solid white;
+  }
 }
 
 .guest-list li:nth-of-type(1) {
