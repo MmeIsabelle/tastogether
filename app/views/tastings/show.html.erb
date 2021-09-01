@@ -67,7 +67,7 @@
               <p class ="py-2"><strong>Tasting expired.<strong></p>
               <p class="mb-0 text-dark"><strong> Guests: <%= @tasting.participations.finished.count-1%>/<%= @tasting.capacity%> </strong></p>
               <ul class="list-inline text-dark mt-2">
-                <% @tasting.participations.accepted.each do |participant| %>
+                <% @tasting.participations.finished.each do |participant| %>
                   <% unless participant.host %>
                     <li class="list-inline-item"> <%= cl_image_tag participant.user.avatar, class: "avatar mr-1" %> </li>
                   <% end %>
