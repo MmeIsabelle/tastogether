@@ -18,6 +18,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  max-height: 50px;
 }
 .my-nav-link{
   width: 20%;
@@ -27,4 +28,13 @@
 }
 .fas{
   font-size: 25px;
+}
+.my-badge{
+  position: relative;
+  top: -68px;
+  right: -12px;
+  border-radius: 50%;
+  background: #810000;
+  color: white;
+  font-weight: normal;
 }

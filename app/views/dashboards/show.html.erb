@@ -26,6 +26,13 @@
     <li class="nav-item tab-nav-item" role="presentation">
       <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-hostings" role="tab"
         aria-controls="pills-hostings">Hosting</a>
+      <% if current_user.present? %>
+        <% unless current_user.pending_requests_count.zero? %>
+          <span class="badge my-badge badge-light" id="dashboard-badge">
+            <%= render 'shared/request_badge' %>
+          </span>
+        <%end%>
+      <%end%>
     </li>
     <li class="nav-item tab-nav-item" role="presentation">
       <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-past" role="tab"
