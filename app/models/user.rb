@@ -37,11 +37,13 @@ class User < ApplicationRecord
   end
 
   def last_correspondent
-    last_message = messages.last
-    if last_message.sender == self
-      last_message.recipient
-    else
-      last_message.sender
+    if messages.exists?
+      last_message = messages.last
+      if last_message.sender == self
+        last_message.recipient
+      else
+        last_message.sender
+      end
     end
   end
 

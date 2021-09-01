@@ -24,8 +24,8 @@
     <% end %>
     </div>
   </div>
-  <div id="new">
-    <% if @current_conversation %>
+  <div class="container" id="new">
+    <% if @current_conversation.other_user %>
       <%= simple_form_for @message, url:conversation_messages_path(@current_conversation.other_user) do |f|%>
         <%= f.input :content, label: false,placeholder: "Type your message"%>
         <%= f.button :submit, "Send message", class: 'btn btn-primary rounded-pill my-3' %>
