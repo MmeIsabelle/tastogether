@@ -10,12 +10,12 @@
       <% if conversation.other_user == @current_conversation.other_user %>
         <%= link_to conversation.other_user.username, conversations_path(user_id: conversation.other_user.id), class: "btn btn-dark rounded" %>
       <% else %>
-        <%= link_to conversation.other_user.username, conversations_path(user_id: conversation.other_user.id), class: "btn btn-white btn-outline-secondary" %>
+        <%= link_to conversation.other_user.username, conversations_path(user_id: conversation.other_user.id), class: "btn btn-secondary" %>
       <% end %>
-      
+
     <% end %>
   </div>
-  <div>  
+  <div>
     <% @current_conversation.messages.each do |message|  %>
     <div>
       <p class="small">Sent by <strong><%= message.sender.username %></strong> <%= time_ago_in_words(message.created_at) %> ago</p>
