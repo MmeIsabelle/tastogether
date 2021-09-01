@@ -95,8 +95,21 @@
             <%= image_tag tasting.image%>
           <% end %>
           <h3><%= link_to tasting.title, tasting_path(tasting) %></h3>
-          <p><%= tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %></p>
-          <div><%= tasting.participations.pending.size %></div>
+          <p>
+            <%= tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
+          </p>
+          <% if current_user.present? %>
+            <% unless current_user.pending_requests_count.zero? %>
+              <span class="badge hosting-notification-badge">
+
+                <%if tasting.participations.pending.size > 1%>
+                  <p><%= tasting.participations.pending.size %> notifications pending</p>
+                <%else%>
+                  <p><%= tasting.participations.pending.size %> notification pending</p>
+                <%end%>
+              </span>
+            <%end%>
+          <%end%>
         </div>
         <% end %>
       </div>
