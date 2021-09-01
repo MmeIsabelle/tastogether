@@ -13,7 +13,7 @@
       <%= f.input :location, placeholder: "Street Name" %>
       <%= f.input :start_at, as: :datetime, html5: true, label: "Starts at" %>
       <%= f.input :capacity, placeholder: "Number of Participants", collection: 2..100, min: 2 %>
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photo, as: :file, required: true%>
       <%= f.association :categories, collection: Category.all.order(name: :asc), as: :check_boxes, multiple: :true, label: "Categories (Pick no more than 3)"%>
       <%= f.button :submit, class: "btn-primary mb-3" %>
     <% end %>
