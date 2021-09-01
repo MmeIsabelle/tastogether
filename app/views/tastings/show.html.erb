@@ -64,9 +64,9 @@
         <div class="d-flex text-align-center justify-content-center py-3">
           <% if @tasting.host_participation.status == "finished" %>
             <div>
-              <p class ="py-2"><strong>Tasting expired.<strong></p>
-              <p class="mb-0 text-dark"><strong> Guests: <%= @tasting.participations.finished.count-1%>/<%= @tasting.capacity%> </strong></p>
-              <ul class="list-inline mt-2">
+              <p class ="py-2">Tasting expired.</p>
+              <p class="mb-0 text-dark" style="text-align: center;">Guests: <%= @tasting.participations.finished.count-1%>/<%= @tasting.capacity%></p>
+              <ul class="d-flex list-inline mt-2 justify-content-center">
                 <% @tasting.participations.finished.each do |participant| %>
                   <% unless participant.host %>
                     <li class="list-inline-item"> <%= cl_image_tag participant.user.avatar, class: "avatar mr-1" %> </li>
@@ -78,8 +78,8 @@
           <% else %>
 
             <div>
-              <p class="mb-0 text-dark"><strong> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </strong></p>
-              <ul class="list-inline mt-2">
+              <p class="mb-0 text-dark" style="text-align: center;"> Guests: <%= @tasting.participations.accepted.count-1%>/<%= @tasting.capacity%> </p>
+              <ul class="d-flex list-inline mt-2 justify-content-center">
                 <% @tasting.participations.accepted.each do |participant| %>
                   <% unless participant.host %>
                     <li class="list-inline-item"> <%= cl_image_tag participant.user.avatar, class: "avatar mr-1" %> </li>
