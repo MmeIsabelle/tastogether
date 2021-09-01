@@ -6,7 +6,6 @@
 
 .tasting-show-date {
   color: #810000;
-  padding-left: 12px;
 }
 
 .tasting-show-msg {
@@ -64,4 +63,18 @@
 .tasting-show-calendar {
   position: relative;
   top: -60px;
+}
+
+.avatar-guest {
+  margin-left: -24px;
+}
+
+.avatar-guest img {
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.guest-list li:nth-of-type(1) {
+  margin-left: 0;
 }
