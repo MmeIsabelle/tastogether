@@ -68,7 +68,7 @@
             <ul class="list-inline">
               <% @tasting.participations.finished.each do |participant| %>
                 <% unless participant.host %>
-                  <li class="list-inline-item"> <%= participant.user.username %> </li>
+                  <li class="list-inline-item"> <%= cl_image_tag participant.user.avatar, class: "avatar mr-1" %> </li>
                 <% end %>
               <% end %>
             </ul>
@@ -77,7 +77,7 @@
             <ul class="list-inline text-dark">
               <% @tasting.participations.accepted.each do |participant| %>
                 <% unless participant.host %>
-                  <li class="list-inline-item"> <%= participant.user.username %> </li>
+                  <li class="list-inline-item"> <%= cl_image_tag participant.user.avatar, class: "avatar mr-1" %> </li>
                 <% end %>
               <% end %>
             </ul>
