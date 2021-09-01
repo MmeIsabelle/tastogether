@@ -108,13 +108,13 @@
           <% end %>
         <% end %>
       </div>
-      <div class="my-3">
+      <div class="d-flex px-3 justify-content-center align-text-center">
         <% if current_user.hosted_tastings.include?(@tasting)%>
           <% @tasting.participations.pending.each do |participation| %>
           <div>
             <p><%= participation.user.username %> requested to attend this tasting</p>
             <p><%= participation.initial_message %></p>
-            <div class="d-flex justify-content-around">
+            <div class="d-flex justify-content-between pt-2">
               <div>
                 <%= simple_form_for participation do |f| %>
                   <%= f.hidden_field :status, value: "accepted" %>
@@ -124,7 +124,7 @@
               <div>
                 <%= simple_form_for participation do |f| %>
                   <%= f.hidden_field :status, value: "declined" %>
-                  <%= f.button :submit, "Decline", class: "btn btn-white btn-outline-secondary" %>
+                  <%= f.button :submit, "Decline", class: "btn btn-danger" %>
                 <% end %>
               </div>
             </div>
