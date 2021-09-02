@@ -42,7 +42,7 @@
       <h3>Pending Tastings</h3>
       <div class="dashboard-cards ">
         <% if @dashboard.pending_participations.empty? %>
-          <p>You have no pending request at the moment</p>
+          <p>You have no pending request at this moment.</p>
         <% end %>
         <% @dashboard.pending_participations.each do |participation| %>
           <%= render "participations/card", participation: participation %>
@@ -53,7 +53,7 @@
       <h3>My Upcoming Tastings</h3>
       <div class="dashboard-cards">
         <% if @dashboard.pending_participations.empty? %>
-          <p>You have no pending request at the moment</p>
+          <p>You have no pending request at this moment.</p>
         <% end %>
         <% @dashboard.upcoming_tastings.each do |participation| %>
           <%= render "participations/card", participation: participation %>
