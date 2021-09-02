@@ -1,4 +1,5 @@
-<div class="received-popup">
+<div class="received-popup d-flex align-items-center">
+  <%= cl_image_tag message.sender.avatar, class: "avatar mr-2" %>
   <%= link_to conversations_path(user_id: message.recipient_id) do %>
     <p><%= message.sender.username %> sent you a new message.
     Included message: <%= message.content %></p>
