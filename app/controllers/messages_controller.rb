@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
     sender = current_user
     recipient = User.find(params[:conversation_other_user_id])
     @current_conversation = current_conversation
-  
+
     @message = Message.new(message_params)
     @message.sender = sender
     @message.recipient = recipient
@@ -35,17 +35,20 @@ class MessagesController < ApplicationController
     NotificationChannel.broadcast_to(
       @message.recipient,
       template: render_notification,
-      notification_count: @message.recipient.pending_messages_count
+      notification_counters: {
+        messages_count: @message.recipient.pending_messages_count,
+        requests_count: @message.recipient.pending_requests_count
+      }
     )
   end
-  
+
   def render_notification
     render_to_string(partial: 'notifications/messages/received', locals: {message: @message})
   end
 
   def create_notification
     Notification.create(
-      user: @message.recipient, 
+      user: @message.recipient,
       text: render_notification
     )
   end

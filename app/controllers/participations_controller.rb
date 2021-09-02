@@ -9,7 +9,7 @@ class ParticipationsController < ApplicationController
     @participation.host = false if @participation.tasting.host_participation
 
     @participation.status = "pending"
-    authorize @participation 
+    authorize @participation
     if @participation.save
       @message = Message.create(content: @participation.initial_message, sender: current_user, recipient: @tasting.host)
       create_notification
@@ -43,7 +43,10 @@ class ParticipationsController < ApplicationController
     NotificationChannel.broadcast_to(
       @message.recipient,
       template: render_notification,
-      notification_count: @message.recipient.pending_requests_count
+      notification_counters: {
+        messages_count: @message.recipient.pending_messages_count,
+        requests_count: @message.recipient.pending_requests_count
+      }
     )
   end
 
@@ -53,7 +56,7 @@ class ParticipationsController < ApplicationController
 
   def create_notification
     Notification.create(
-      user: @participation.tasting.host, 
+      user: @participation.tasting.host,
       text: render_notification
     )
   end
