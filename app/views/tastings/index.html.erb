@@ -38,7 +38,7 @@
                   <div class="d-flex">
                       <% tasting.categories.each do |category| %>
                         <%= link_to "/tastings?query=#{category.name.downcase}&commit=Discover", query: category.name.downcase do %>
-                          <p class="card-text">#<%= category.name.downcase %></p>
+                          <p class="card-text">#<%= category.name.downcase %> &emsp;</p>
                         <% end %>
                       <% end %>
                   </div>
