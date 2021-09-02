@@ -1,11 +1,11 @@
 <% unless current_user.pending_messages_count.zero? %>
   <span class="badge my-badge badge-light">
-    <div class="message-notification-badge" id="notification" data-user-id="<%= current_user.id %>">
+    <div class="message-notification-badge">
       <%= current_user.pending_messages_count %>
     </div>
   </span>
 <% else %>
   <span class="badge my-badge badge-light d-none">
-    <div class="message-notification-badge" id="notification" data-user-id="<%= current_user.id %>"></div>
+    <div class="message-notification-badge"></div>
   </span>
 <% end %>
