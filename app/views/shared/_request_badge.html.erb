@@ -1,10 +1,11 @@
-<% if current_user.present? %>
-  <% unless current_user.pending_requests_count.zero? %>
-    <div class="notification-badge" id="notification" data-user-id="<%= current_user.id %>">
+<% unless current_user.pending_requests_count.zero? %>
+  <span class="badge my-badge" id="notification">
+    <div data-user-id="<%= current_user.id %>">
       <%= current_user.pending_requests_count %>
     </div>
-  <% else %>
-    <div class="d-none notification-badge" id="notification" data-user-id="<%= current_user.id %>">
-    </div>
-  <% end %>
+  </span>
+<% else %>
+  <span class="d-none badge my-badge badge-light" id="notification">
+    <div data-user-id="<%= current_user.id %>"></div>
+  </span>
 <% end %>

@@ -26,13 +26,9 @@
     <li class="nav-item tab-nav-item" role="presentation">
       <a class="nav-link my-nav-pills" id="pills-contact-tab" data-toggle="pill" href="#pills-hostings" role="tab"
         aria-controls="pills-hostings">Hosting</a>
-      <% if current_user.present? %>
-        <% unless current_user.pending_requests_count.zero? %>
-          <span class="badge my-badge badge-light" id="dashboard-badge">
-            <%= render 'shared/request_badge' %>
-          </span>
-        <%end%>
-      <%end%>
+      <span id="dashboard-badge">
+        <%= render 'shared/request_badge' if current_user.present? %>
+      </span>
     </li>
     <li class="nav-item tab-nav-item" role="presentation">
       <a class="nav-link my-nav-pills" id="pills-contact-tab" data-toggle="pill" href="#pills-past" role="tab"
@@ -45,6 +41,9 @@
     <div class="attending-pending">
       <h3>Pending Tastings</h3>
       <div class="dashboard-cards ">
+        <% if @dashboard.pending_participations.empty? %>
+          <p>You have no pending request at the moment</p>
+        <% end %>
         <% @dashboard.pending_participations.each do |participation| %>
           <div class="dashboard-card">
             <% if participation.tasting.photo.attached? %>
