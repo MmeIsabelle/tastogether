@@ -75,7 +75,7 @@ users = {
   lorenzo: User.create!(
     email: "user6@user.com",
     password: "123456",
-    address: "1201 Avenue Van Horne, Montréal",
+    address: "731 William Street, Montréal",
     username: "Lorenzo22",
     bio: "Italian born foodie living in Montreal. I love pasta, gelato and coffee.",
     avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,c_thumb,g_face,z_0.8,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190845/lorenzo22.jpg'
@@ -143,7 +143,7 @@ tastings = {
   gelato: Tasting.create!(
     title: "Gelato, just because...",
     description: "There is nothing better than a good gelato. For those that have tried it to those who have not, this event is one you don't want to miss. Gelato is just an amazing world to discover... Let's do it together! I will be buying many types of gelato fo us to savour.",
-    location: "1201 Avenue Van Horne, Montréal",
+    location: "731 William Street, Montréal",
     start_at: DateTime.new(2021, 9, 4, 15, 0, 0),
     capacity: 8,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630000742/Tastogether/gelato_ela3ku.jpg'
@@ -215,7 +215,7 @@ tastings = {
   italian: Tasting.create!(
     title: "Italian Food Lovers",
     description: "Calling all Italian food lovers. Me and my friends cannot get enough of Italian food and are looking to try out and experiment with new recipes. We are hosting an event where attendees can bring their favourite Italian recipes and we can all sample them and get each other's recipes! There will be 8 spots available. I will provide white wine for all of us as well.",
-    location: "1201 Avenue Van Horne, Montréal",
+    location: "731 William Street, Montréal",
     start_at: DateTime.new(2021, 9, 16, 6, 0, 0),
     capacity: 8,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630543301/italian.jpg'
@@ -370,13 +370,6 @@ participations = {
           host: false,
           initial_message: "Hi. I found your event and I am really excited about the prospect of experiencing chocolate in this way. I would love to attend.",
           status: "pending"
-      ),
-        Participation.create!(
-          tasting: tastings[:beans],
-          user: users[:meg],
-          host: false,
-          initial_message: "Hey! Your event sounds amazing. As a fellow chocolate lover, going to this event would make my day",
-          status: "accepted"
       )],
     vintage: [
       Participation.create!(
@@ -452,14 +445,6 @@ participations = {
         status: "accepted"
       )
     ],
-    bbq: [
-      Participation.create!(
-        tasting: tastings[:barbeque],
-        user: users[:meg],
-        host: false,
-        initial_message: Faker::Lorem.sentence,
-        status: "pending"
-      )]
     }
 }
 
