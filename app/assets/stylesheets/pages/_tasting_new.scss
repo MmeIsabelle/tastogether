@@ -1,0 +1,19 @@
+.categories{
+  display: flex;
+}
+.buttons{
+  display: flex;
+  justify-content: space-around;
+}
+.btn-back{
+  width: 128px;
+}
+.tasting_categories{
+  display: grid;
+  margin-bottom: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  legend{
+  grid-column: span 3;
+  padding: 0;
+  }
+}
