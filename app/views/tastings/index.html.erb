@@ -1,6 +1,6 @@
 <div class="head-banner">
   <div class="head-title">
-    <h4 class="mb-0"><%= params[:query].nil? ? "" : params[:query].downcase%>
+    <h4 class="mb-0"><%= params[:query].nil? || params[:query] == "" ? "" :  "#" + params[:query].downcase %></h4>
     <div class="d-flex justify-content-between">
       <h1>Tastings</h1>
       <%= image_tag "Tastogether_Thicker.png" , class:"align-self-center"%>
