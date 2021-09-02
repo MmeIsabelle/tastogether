@@ -7,12 +7,12 @@ const initNotificationCable = () => {
 
     consumer.subscriptions.create({ channel: "NotificationChannel", id: id }, {
       received(data) {
-        console.log(data); // called when data is broadcast in the cable
-        document.body.insertAdjacentHTML("beforeend", data.template)
+        console.log(data.template); // called when data is broadcast in the cable
+        document.body.insertHTML("beforeend", data.template)
         notificationBadge.classList.remove('d-none')
       },
       connected(data) {
-        console.log('connected', id);
+        // console.log('connected', id);
       }
     });
   }
