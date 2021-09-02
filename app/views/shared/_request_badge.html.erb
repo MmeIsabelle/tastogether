@@ -1,11 +1,11 @@
 <% unless current_user.pending_requests_count.zero? %>
   <span class="badge my-badge">
-    <div id="request-notification-badge">
+    <div class="request-notification-badge">
       <%= current_user.pending_requests_count %>
     </div>
   </span>
 <% else %>
   <span class="d-none badge my-badge badge-light">
-    <div id="request-notification-badge"></div>
+    <div class="request-notification-badge"></div>
   </span>
 <% end %>

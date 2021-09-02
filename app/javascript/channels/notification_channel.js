@@ -4,8 +4,8 @@ const initNotificationCable = () => {
   const navbarElement = document.getElementById('navbar');
   const userId = navbarElement.dataset.userId;
   if (userId && !window.notificationBadgeConnection) {
-    const messageBadge = document.getElementById('message-notification-badge');
-    const requestBadge = document.getElementById('request-notification-badge');
+    const messageBadges = document.querySelectorAll('.message-notification-badge');
+    const requestBadges = document.querySelectorAll('.request-notification-badge');
 
     consumer.subscriptions.create({ channel: "NotificationChannel", id: userId }, {
       received(data) {
@@ -14,10 +14,10 @@ const initNotificationCable = () => {
 
         const requestsCount = data.notification_counters.requests_count
         const messagesCount = data.notification_counters.messages_count
-        requestBadge.innerText = requestsCount
-        messageBadge.innerText = messagesCount
-        requestBadge.parentElement.classList.remove('d-none')
-        messageBadge.parentElement.classList.remove('d-none')
+        requestBadges.forEach((badge) => { badge.innerText = requestsCount })
+        messageBadges.forEach((badge) => { badge.innerText = messagesCount })
+        requestBadges.forEach((badge) => { badge.parentElement.classList.remove('d-none') })
+        messageBadges.forEach((badge) => { badge.parentElement.classList.remove('d-none') })
       },
       connected(data) {
         console.log('connected', userId);
