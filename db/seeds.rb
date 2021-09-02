@@ -22,7 +22,7 @@ users = {
     address: "632 Rue Cathcart, Montreal",
     username: "Marc",
     bio: "Extreme chocolate lover. Lifelong music expert. Food fan. Explorer.",
-    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190849/marc.jpg'
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,c_thumb,g_face,z_0.9,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190849/marc.jpg'
   ),
   sweet: User.create!(
     email: "user1@user.com",
@@ -30,7 +30,7 @@ users = {
     address: "8910 Rue Lajeunesse, Montreal",
     username: "Nick",
     bio: "I have a huge sweet tooth. Nothing better than a good barbeque with some friends.",
-    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190866/nick.jpg'
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,c_thumb,g_face,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190866/nick.jpg'
   ),
   wine: User.create!(
     email: "user2@user.com",
@@ -38,7 +38,7 @@ users = {
     address: "1255 Square Phillips, Montreal",
     username: "Arlette",
     bio: "Entrepreneur. A bottle of wine is the best way to unwind after a long day. Tea > Coffee",
-    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190836/arlette.jpg'
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,c_thumb,g_face,z_1.1,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190836/arlette.jpg'
   ),
   coffee: User.create!(
     email: "user3@user.com",
@@ -46,7 +46,7 @@ users = {
     address: "620 Saint-Catherine, Montreal",
     username: "Corrine",
     bio: "Coffee evangelist and chocolate fanatic. Architect by trade.",
-    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190856/corrine.jpg'
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,c_thumb,g_face,z_0.9,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190856/corrine.jpg'
   ),
   bobby: User.create!(
     email: "user4@user.com",
@@ -54,7 +54,7 @@ users = {
     address: "192 Rue Saint-Zotique, Montreal",
     username: "Bobby",
     bio: "Finance professional that loves to travel and experience new food",
-    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190853/bobby.jpg'
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,c_thumb,g_face,z_0.9,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190853/bobby.jpg'
   ),
   fabiola: User.create!(
     email: "user5@user.com",
@@ -62,7 +62,7 @@ users = {
     address: "4534 Cartier, Montreal",
     username: "Fabiola",
     bio: "Beer trailblazer and Italy lover. Willing to spice it up when it comes to my food",
-    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190839/Fabiola.jpg'
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,c_thumb,g_face,z_1.1,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190839/Fabiola.jpg'
   ),
   meg: User.create!(
     email: "meg@user.com",
@@ -70,18 +70,15 @@ users = {
     address: "888 Wellington, Montreal",
     username: "Meg",
     bio: "Food explorer. Web lover. Wine collector. Coffee enthusiast. Chocolate amateur.",
-    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190929/meg-957fj3o9.jpg'
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,c_fill,g_face,z_1.2,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190929/meg-957fj3o9.jpg'
   ),
-  # Need new avatars for the below users
-
-  # Needs to be an avatar of a man
   lorenzo: User.create!(
     email: "user6@user.com",
     password: "123456",
     address: "1201 Avenue Van Horne, Montréal",
     username: "Lorenzo22",
     bio: "Italian born foodie living in Montreal. I love pasta, gelato and coffee.",
-    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190929/meg-957fj3o9.jpg'
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,c_thumb,g_face,z_0.8,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190845/lorenzo22.jpg'
   ),
   max: User.create!(
     email: "user7@user.com",
@@ -89,7 +86,7 @@ users = {
     address: "1208 Crescent Street, Montréal",
     username: "MaxLo",
     bio: "Montreal born. Food is my passion. Sour and salty is the perfect combination.",
-    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190929/meg-957fj3o9.jpg'
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,c_thumb,g_face,z_0.9,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630541486/max.jpg'
   ),
   charlie: User.create!(
     email: "user8@user.com",
@@ -97,17 +94,15 @@ users = {
     address: "1196 rue Peel, Montréal",
     username: "CJ85",
     bio: "Professional Violinist and Amateur Foodie.",
-    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190929/meg-957fj3o9.jpg'
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,c_thumb,g_face,z_0.9,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630541484/charlie.jpg'
   ),
-
-  # Needs to be an avatar of a woman
   rachel: User.create!(
     email: "user9@user.com",
     password: "123456",
     address: "1446 Rue Crescent, Montréal",
     username: "RachelG",
     bio: "Elementary school teacher by day and foodie by night.",
-    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190929/meg-957fj3o9.jpg'
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,c_thumb,g_face,z_0.9,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190870/rachel.jpg'
   ),
   jules: User.create!(
     email: "user10@user.com",
@@ -115,7 +110,7 @@ users = {
     address: "1446 Rue Crescent, Montréal",
     username: "JulesT",
     bio: "I love to travel because I love to discover foreign food. Looking to meetup with people who share similar preferences as me when it comes to food.",
-    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630190929/meg-957fj3o9.jpg'
+    avatar: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,c_thumb,g_face,z_1.1,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630542108/jules.jpg'
   )
 }
 
@@ -177,16 +172,13 @@ tastings = {
     capacity: 10,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
   ),
-
-  # All below tastings need new cloudinary images. Will now just be reusing the cloudinary pizza image for the pizza party tasting
-
   barbeque: Tasting.create!(
     title: "Barbeque Bash",
     description: "We will barbeque up all kinds of meats. Steaks, hot dogs, hamburgers, you name it. Afterwords we will hang out with a few beers in my backyard. Hoping to see you there!",
     location: "464 Rue McGill, Montreal",
     start_at: DateTime.new(2021, 9, 29, 20, 0, 0),
     capacity: 10,
-    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630543291/bbq.jpg'
   ),
   banh_mi: Tasting.create!(
     title: "Banh Mi: Best Sandwich",
@@ -194,7 +186,7 @@ tastings = {
     location: "1255 rue Jeanne-Mance",
     start_at: DateTime.new(2021, 9, 9, 12, 30, 0),
     capacity: 7,
-    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630543287/banhmi.jpg'
   ),
   tea: Tasting.create!(
     title: "Tea and Biscuits Time",
@@ -202,7 +194,7 @@ tastings = {
     location: "900 Blvd. Rene Levesque West, Montréal",
     start_at: DateTime.new(2021, 9, 8, 2, 30, 0),
     capacity: 4,
-    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630543295/tea.jpg'
   ),
   beer: Tasting.create!(
     title: "Indian Pale Ale Meetup",
@@ -210,7 +202,7 @@ tastings = {
     location: "80 Sherbrooke Street West",
     start_at: DateTime.new(2021, 10, 3, 4, 30, 0),
     capacity: 6,
-    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630543687/beers.jpg'
   ),
   spice: Tasting.create!(
     title: "Spice is Life",
@@ -218,7 +210,7 @@ tastings = {
     location: "5 Samson Blvd, Laval",
     start_at: DateTime.new(2021, 9, 27, 6, 20, 0),
     capacity: 10,
-    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630543299/hotsauce.jpg'
   ),
   italian: Tasting.create!(
     title: "Italian Food Lovers",
@@ -226,7 +218,7 @@ tastings = {
     location: "10 Sherbrooke Ouest, Montréal",
     start_at: DateTime.new(2021, 9, 16, 6, 0, 0),
     capacity: 8,
-    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630543301/italian.jpg'
   ),
   fried: Tasting.create!(
     title: "Fried Food Fest",
@@ -234,7 +226,7 @@ tastings = {
     location: "421 Rue St. Vincent, Montréal",
     start_at: DateTime.new(2021, 9, 22, 7, 0, 0),
     capacity: 5,
-    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630543304/fried.jpg'
   ),
   taco: Tasting.create!(
     title: "Taco Takeover",
@@ -242,7 +234,7 @@ tastings = {
     location: "360 rue St-Antoine Ouest, Montréal",
     start_at: DateTime.new(2021, 9, 18, 7, 30, 0),
     capacity: 4,
-    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
+    image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/v1630543280/tacos.jpg'
   )
 }
 
