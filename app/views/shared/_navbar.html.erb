@@ -1,4 +1,8 @@
-<div class="navbar my-navbar navbar-light">
+<div
+  class="navbar my-navbar navbar-light"
+  id="navbar"
+  <%= current_user.present? ? "data-user-id=#{current_user.id}" : "" %>
+>
   <ul class="navbar-nav my-navbar-nav m-auto">
     <%= link_to root_path, class: "nav-link my-nav-link" do %>
       <li class="nav-item my-nav-item mx-3">
