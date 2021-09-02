@@ -7,7 +7,7 @@
   <div class="sticky-top conversation-head-banner">
     <% @conversations.each do |conversation| %>
       <% if conversation.other_user == @current_conversation.other_user %>
-        <%= link_to conversation.other_user.username, conversations_path(user_id: conversation.other_user.id), class: "head-banner-item border-bottom" %>
+        <%= link_to conversation.other_user.username, conversations_path(user_id: conversation.other_user.id), class: "head-banner-item my-border-bottom" %>
       <% else %>
         <%= link_to conversation.other_user.username, conversations_path(user_id: conversation.other_user.id), class: "head-banner-item" %>
       <% end %>
