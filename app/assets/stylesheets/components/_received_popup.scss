@@ -1,13 +1,13 @@
 @keyframes popup {
   0% {bottom: -99px;}
-  25% {bottom: 99px;}
-  50% {opacity: 1; bottom: 99px;}
+  15% {bottom: 99px;}
+  85% {opacity: 1; bottom: 99px;}
   100% {opacity: 0; display: none; bottom: 0;}
 }
 
 .received-popup{
   background-color: #FFC65A;
-  position: sticky;
+  position: fixed;
   bottom: 99px;
   margin: 15px;
   padding: 10px;
@@ -16,5 +16,5 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   animation-name: popup;
   animation-fill-mode: forwards;
-  animation-duration: 4s;
+  animation-duration: 8s;
 }
