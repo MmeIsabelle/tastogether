@@ -19,7 +19,7 @@
               <div class="card my-3" style="width: 300px;">
                 <div>
                   <% if tasting.photo.attached? %>
-                    <%= cl_image_tag tasting.photo.key, transformation: { crop:"fill", height:200, width:300} %>
+                    <%= cl_image_tag tasting.photo.key, class: "card-photo", transformation: { crop:"fill", height:200, width:300} %>
                   <% else %>
                     <%= image_tag tasting.image, class: "card-photo"%>
                   <% end %>
@@ -34,14 +34,14 @@
                       <%= image_tag 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1630205006/silhouette_od01kv.jpg', class: "card-product-user rounded-circle border", width: 50, height: 50 %>
                     <% end %>
                   </div>
-                    <h3 class="card-title"><%= tasting.title %></h3>
-                    <ul class="list-inline">
+                  <h3 class="card-title"><%= tasting.title %></h3>
+                  <div class="d-flex">
                       <% tasting.categories.each do |category| %>
                         <%= link_to "/tastings?query=#{category.name.downcase}&commit=Discover", query: category.name.downcase do %>
-                          <li class="list-inline-item card-text">#<%= category.name.downcase %><li>
+                          <p class="card-text">#<%= category.name.downcase %></p>
                         <% end %>
                       <% end %>
-                    </ul>
+                  </div>
                 </div>
                 <ul>
                   <li class="text-right">
