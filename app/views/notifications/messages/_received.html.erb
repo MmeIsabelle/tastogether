@@ -1,6 +1,5 @@
 <div class="received-popup">
   <%= link_to conversations_path(user_id: message.recipient_id) do %>
-    <p><%= message.sender.username %> sent you a new message.
-    Included message: <%= message.content %></p>
+    <p><%= message.sender.username %> sent you a new message: <%= message.content %></p>
   <% end %>
 </div>
