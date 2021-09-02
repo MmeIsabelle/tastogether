@@ -51,6 +51,9 @@
     <div class="attending-upcoming">
       <h3>My Upcoming Tastings</h3>
       <div class="dashboard-cards">
+        <% if @dashboard.pending_participations.empty? %>
+          <p>You have no pending request at the moment</p>
+        <% end %>
         <% @dashboard.upcoming_tastings.each do |participation| %>
           <%= render "participations/card", participation: participation %>
         <% end %>
@@ -62,29 +65,28 @@
     <div class="hosting">
       <div class="dashboard-cards">
         <% @dashboard.hostings.each do |tasting| %>
-        <div class="dashboard-card">
-          <% if tasting.photo.attached? %>
-            <%= cl_image_tag tasting.photo.key%>
-          <% else %>
-            <%= image_tag tasting.image%>
-          <% end %>
-          <h3><%= link_to tasting.title, tasting_path(tasting) %></h3>
-          <p>
-            <%= tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
-          </p>
-          <% if current_user.present? %>
-            <% unless current_user.pending_requests_count.zero? %>
-              <span class="badge hosting-notification-badge">
-
-                <%if tasting.participations.pending.size > 1%>
-                  <p><%= tasting.participations.pending.size %> notifications pending</p>
-                <%else%>
-                  <p><%= tasting.participations.pending.size %> notification pending</p>
-                <%end%>
-              </span>
+          <div class="dashboard-card">
+            <% if tasting.photo.attached? %>
+              <%= cl_image_tag tasting.photo.key%>
+            <% else %>
+              <%= image_tag tasting.image%>
+            <% end %>
+            <h3><%= link_to tasting.title, tasting_path(tasting) %></h3>
+            <p>
+              <%= tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
+            </p>
+            <% if current_user.present? %>
+              <% unless current_user.pending_requests_count.zero? %>
+                <span class="badge hosting-notification-badge">
+                  <%if tasting.participations.pending.size > 1%>
+                    <p><%= tasting.participations.pending.size %> notifications pending</p>
+                  <%else%>
+                    <p><%= tasting.participations.pending.size %> notification pending</p>
+                  <%end%>
+                </span>
+              <%end%>
             <%end%>
-          <%end%>
-        </div>
+          </div>
         <% end %>
       </div>
     </div>
