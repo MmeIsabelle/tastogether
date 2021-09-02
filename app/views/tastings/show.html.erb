@@ -110,7 +110,7 @@
         <% if current_user.hosted_tastings.include?(@tasting)%>
           <% @tasting.participations.pending.each do |participation| %>
           <div>
-            <p class="message-request-header"><%= participation.user.username %> requested to attend this tasting</p>
+            <p class="message-request-header"><%= participation.user.username %> requested to attend this tasting.</p>
             <p><%= participation.initial_message %></p>
             <div class="d-flex justify-content-between pt-2">
               <div>
