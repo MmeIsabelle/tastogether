@@ -76,7 +76,7 @@
             <% end %>
             <h3><%= link_to tasting.title, tasting_path(tasting) %></h3>
             <p>
-              <%= tasting.start_at.to_time.strftime('%B %e at %l:%M %p') %>
+              <%= tasting.start_at.to_time.strftime('%B %e <br> %l:%M %p').html_safe %>
             </p>
             <% if current_user.present? %>
               <% unless current_user.pending_requests_count.zero? %>
