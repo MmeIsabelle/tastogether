@@ -48,7 +48,7 @@
                     <p><%= tasting.start_at.strftime('%B %e at %l:%M %p') %></p>
                     <p><%= "Montreal" %></p>
                     <% if  current_user.latitude.present?%>
-                      <p><%= current_user.distance_to([tasting.latitude, tasting.longitude]).round(2) %>km</p>
+                      <p class="mb-2"><%= current_user.distance_to([tasting.latitude, tasting.longitude]).round(2) %>km</p>
                     <% end %>
                   </li>
                 </ul>
