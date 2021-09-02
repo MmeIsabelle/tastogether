@@ -41,16 +41,24 @@
     <div class="attending-pending mb-3">
       <h3>Pending Tastings</h3>
       <div class="dashboard-cards ">
-        <% @dashboard.pending_participations.each do |participation| %>
-          <%= render "participations/card", participation: participation %>
+        <% if @dashboard.pending_participations.any? %>
+          <% @dashboard.pending_participations.each do |participation| %>
+            <%= render "participations/card", participation: participation %>
+          <% end %>
+        <% else %>
+          <p> You have no pending requests at this moment. </p>
         <% end %>
       </div>
     </div>
     <div class="attending-upcoming">
       <h3>My Upcoming Tastings</h3>
       <div class="dashboard-cards">
-        <% @dashboard.upcoming_tastings.each do |participation| %>
-          <%= render "participations/card", participation: participation %>
+        <% if @dashboard.upcoming_tastings.any? %>
+          <% @dashboard.upcoming_tastings.each do |participation| %>
+            <%= render "participations/card", participation: participation %>
+          <% end %>
+        <% else %>
+          <p> You have no upcoming tastings at this moment. </p>
         <% end %>
       </div>
     </div>
