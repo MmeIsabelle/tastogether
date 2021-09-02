@@ -33,14 +33,18 @@ p {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    p {
-      text-shadow: 2px 2px 2px rgba(255,255,255,0.2);
-    }
+  p {
+    text-shadow: 2px 2px 2px rgba(255,255,255,0.2);
+  }
+
 }
 .category-cards{
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
+  a{
+    text-decoration: none;
+  }
 }
 
 .background-img{
