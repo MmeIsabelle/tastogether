@@ -45,7 +45,8 @@
                 </div>
                 <ul>
                   <li class="text-right">
-                    <p><%= tasting.start_at.strftime('%B %e at %l:%M %p') %> - Montreal</p>
+                    <p><%= tasting.start_at.strftime('%B %e at %l:%M %p') %></p>
+                    <p><%= "Montreal" %></p>
                     <% if  current_user.latitude.present?%>
                       <p><%= current_user.distance_to([tasting.latitude, tasting.longitude]).round(2) %>km</p>
                     <% end %>
