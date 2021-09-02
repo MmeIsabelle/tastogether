@@ -1,17 +1,15 @@
-<div class="dashboard-cards ">
-  <%= link_to tasting_path(participation.tasting) do %>
-    <div class="dashboard-card">
-      <% if participation.tasting.photo.attached? %>
-        <%= cl_image_tag participation.tasting.photo.key%>
-      <% else %>
-        <%= image_tag participation.tasting.image%>
-      <% end %>
-      <h3>
-        <%= participation.tasting.title %>
-      </h3>
-      <p>
-        <%= participation.tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
-      </p>
-    </div>
-  <% end %>
-</div>
+<%= link_to tasting_path(participation.tasting) do %>
+  <div class="dashboard-card">
+    <% if participation.tasting.photo.attached? %>
+      <%= cl_image_tag participation.tasting.photo.key%>
+    <% else %>
+      <%= image_tag participation.tasting.image%>
+    <% end %>
+    <h3>
+      <%= participation.tasting.title %>
+    </h3>
+    <p>
+      <%= participation.tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
+    </p>
+  </div>
+<% end %>

@@ -1,6 +1,6 @@
 <div class="head-banner">
   <div class="head-title">
-    <h4 class="mb-0"><%= params[:query].nil? ? "" : params[:query].downcase%>
+    <h4 class="mb-0"><%= params[:query].nil? || params[:query] == "" ? "" :  "#" + params[:query].downcase %></h4>
     <div class="d-flex justify-content-between">
       <h1>Tastings</h1>
       <%= image_tag "Tastogether_Thicker.png" , class:"align-self-center"%>
@@ -38,14 +38,15 @@
                   <div class="d-flex">
                       <% tasting.categories.each do |category| %>
                         <%= link_to "/tastings?query=#{category.name.downcase}&commit=Discover", query: category.name.downcase do %>
-                          <p class="card-text">#<%= category.name.downcase %></p>
+                          <p class="card-text">#<%= category.name.downcase %> &emsp;</p>
                         <% end %>
                       <% end %>
                   </div>
                 </div>
                 <ul>
-                  <li class="text-right">
-                    <p><%= tasting.start_at.strftime('%B %e at %l:%M %p') %> - Montreal</p>
+                  <li class="text-right mb-2">
+                    <p><%= tasting.start_at.strftime('%B %e at %l:%M %p') %></p>
+                    <p><%= "Montreal" %></p>
                     <% if  current_user.latitude.present?%>
                       <p><%= current_user.distance_to([tasting.latitude, tasting.longitude]).round(2) %>km</p>
                     <% end %>
