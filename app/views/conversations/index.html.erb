@@ -17,9 +17,14 @@
   <div>
     <% @current_conversation.messages.each do |message|  %>
     <div>
-      <%= image_tag message.sender.avatar, class: "avatar" %>
+      <% if message.sender.photo.attached? %>
+        <%= cl_image_tag message.sender.photo.key, class: "avatar", :transformation=>[ {:width=>150, :height=>150, :gravity=>"face",
+        :crop=>"thumb"}] %>
+      <% else message.sender.avatar?%>
+        <%= image_tag message.sender.avatar, class: "avatar"%>
+      <% end %>
       <strong class="message-name text-dark px-2"><%= message.sender.username %></strong>
-      <small><%= time_ago_in_words(message.created_at) %>ago</small>
+      <small><%= time_ago_in_words(message.created_at) %> ago</small>
       <p class="message-content" id="message-<%= message.id %>"> <%= message.content %></p>
       <hr>
     <% end %>
