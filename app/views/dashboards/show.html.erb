@@ -44,21 +44,23 @@
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     <div class="attending-pending">
       <h3>Pending Tastings</h3>
-      <div class="dashboard-cards ">
         <% @dashboard.pending_participations.each do |participation| %>
-          <div class="dashboard-card">
-            <% if participation.tasting.photo.attached? %>
-              <%= cl_image_tag participation.tasting.photo.key%>
-            <% else %>
-              <%= image_tag participation.tasting.image%>
-            <% end %>
-            <h3>
-              <%= link_to participation.tasting.title, tasting_path(participation.tasting) %>
-            </h3>
-            <p>
-              <%= participation.tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
-            </p>
-          </div>
+          <div class="dashboard-cards ">
+            <%= link_to tasting_path(participation.tasting) do %>
+            <div class="dashboard-card">
+              <% if participation.tasting.photo.attached? %>
+                <%= cl_image_tag participation.tasting.photo.key%>
+              <% else %>
+                <%= image_tag participation.tasting.image%>
+              <% end %>
+              <h3>
+                <%= participation.tasting.title %>
+              </h3>
+              <p>
+                <%= participation.tasting.date.to_time.strftime('%B %e at %l:%M %p') %>
+              </p>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
