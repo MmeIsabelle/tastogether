@@ -4,13 +4,12 @@
   </div>
 </div>
 <div class="container">
-  <div class="my-3 sticky-top bg-white">
-    <p class="small">Conversations with</p>
+  <div class="sticky-top conversation-head-banner">
     <% @conversations.each do |conversation| %>
       <% if conversation.other_user == @current_conversation.other_user %>
-        <%= link_to conversation.other_user.username, conversations_path(user_id: conversation.other_user.id), class: "btn btn-dark rounded" %>
+        <%= link_to conversation.other_user.username, conversations_path(user_id: conversation.other_user.id), class: "head-banner-item" %>
       <% else %>
-        <%= link_to conversation.other_user.username, conversations_path(user_id: conversation.other_user.id), class: "btn btn-secondary" %>
+        <%= link_to conversation.other_user.username, conversations_path(user_id: conversation.other_user.id), class: "head-banner-item" %>
       <% end %>
 
     <% end %>
@@ -18,18 +17,22 @@
   <div>
     <% @current_conversation.messages.each do |message|  %>
     <div>
-      <p class="small">Sent by <strong><%= message.sender.username %></strong> <%= time_ago_in_words(message.created_at) %> ago</p>
-      <p id="message-<%= message.id %>"><i class="fas fa-envelope"></i> <%= message.content %></p>
+      <%= image_tag message.sender.avatar, class: "avatar" %>
+      <strong class="message-name text-dark px-2"><%= message.sender.username %></strong>
+      <small><%= time_ago_in_words(message.created_at) %>ago</small>
+      <p class="message-content" id="message-<%= message.id %>"> <%= message.content %></p>
       <hr>
     <% end %>
     </div>
   </div>
-  <div class="container" id="new">
+  <div id="new">
     <% if @current_conversation.other_user %>
-      <%= simple_form_for @message, url:conversation_messages_path(@current_conversation.other_user) do |f|%>
-        <%= f.input :content, label: false,placeholder: "Type your message"%>
-        <%= f.button :submit, "Send message", class: 'btn btn-primary rounded-pill my-3' %>
-      <% end %>
+      <div class="message-form form-group">
+        <%= simple_form_for @message, url:conversation_messages_path(@current_conversation.other_user) do |f|%>
+          <%= f.input :content, label: false, class: "form-control ", placeholder: "Type your message" %>
+          <%= f.button :submit, "Send" , class: 'btn btn-primary rounded-pill' %>
+        <% end %>
+      </div>
     <% else %>
     <p class="ml-5">You have no conversations for the moment</p>
     <% end %>

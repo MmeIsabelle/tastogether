@@ -1,0 +1,29 @@
+.conversation-head-banner{
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid darkgray;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #F0F0F0;
+}
+.head-banner-item{
+  border-right: 0.5px solid darkgray;
+  padding: 0 30px;
+  text-align: center;
+}
+.head-banner-item:last-child{
+    border: none;
+}
+
+.message-content{
+  padding-left: 53px ;
+}
+.message-form{
+  .form-control {
+    height: 2.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    border: 1px solid #E7E7E7;
+    border-radius: 8px;
+  }
+
+}
