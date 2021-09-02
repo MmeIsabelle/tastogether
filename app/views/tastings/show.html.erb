@@ -50,14 +50,12 @@
       <div class="d-flex justify-content-center">
         <h2 class="tasting-show-title"><%= @tasting.title.capitalize %></h2>
       </div>
-      <div class="px-3">
-        <ul class="list-inline">
-          <% @tasting.categories.each do |category| %>
-            <%= link_to "/tastings?query=#{category.name.downcase}&commit=Discover", query: category.name.downcase do %>
-              <li class="list-inline-item card-text">#<%= category.name.downcase %><li>
-            <% end %>
+      <div class="px-3 d-flex">
+        <% @tasting.categories.each do |category| %>
+          <%= link_to "/tastings?query=#{category.name.downcase}&commit=Discover", query: category.name.downcase do %>
+            <p class="card-text">#<%= category.name.downcase %> &ensp; </p>
           <% end %>
-        </ul>
+        <% end %>
       </div>
         <p class="tasting-show-date px-3"><%= @tasting.start_at.strftime('%B %e at %l:%M %p')%></p>
         <%# Guests if statement: %>
