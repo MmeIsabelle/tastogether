@@ -1,13 +1,14 @@
 .head-banner{
   background-color: #372F2F;
   color: #EEEBDD;
-  padding: 30px;
+  padding: 30px 0;
   img{
   width: 50px;
   height: 100%;
   }
   h1{
     font-family: $headers-font;
+    margin: 0;
   }
 }
 
