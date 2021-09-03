@@ -120,7 +120,7 @@ tastings = {
     title: "Dark chocolate party",
     description: "A variety of dark chocolate from different origins will be shared to explore the nuances and the different notes. Bring your favorite! The rarer the better.",
     location: "632 Rue Cathcart, Montreal",
-    date: DateTime.new(2021, 9, 3, 20, 0, 0),
+    date: DateTime.new(2021, 9, 20, 20, 0, 0),
     capacity: 5,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_600/v1629996108/Tastogether/dark_chocolate_k402i4.jpg'
   ),
