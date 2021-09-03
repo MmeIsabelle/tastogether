@@ -75,7 +75,7 @@
               <%= image_tag tasting.image%>
             <% end %>
             <h3><%= link_to tasting.title, tasting_path(tasting) %></h3>
-            <p>
+            <p class="text-right mr-3 text-muted">
               <%= tasting.start_at.to_time.strftime('%B %e <br> %l:%M %p').html_safe %>
             </p>
             <% if current_user.present? %>
