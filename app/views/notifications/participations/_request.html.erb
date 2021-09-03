@@ -1,4 +1,5 @@
-<div class="received-popup">
+<div class="received-popup d-flex align-items-center">
+  <%= cl_image_tag participation.user.avatar, class: "avatar mr-2" %>
   <%= link_to tasting_path(participation.tasting) do %>
     <p><%= participation.user.username %> requested to participate in <%= participation.tasting.title %>.
     Included message: <%= participation.initial_message %></p>
