@@ -477,7 +477,6 @@ categories = {
   sour: Category.create!(name: "Sour"),
   spice: Category.create!(name: "Spicy"),
   salty: Category.create!(name: "Salty"),
-  fish: Category.create!(name: "Fish"),
   taco: Category.create!(name: "Taco"),
   fried: Category.create!(name: "Fried"),
   chicken: Category.create!(name: "Chicken"),
@@ -485,7 +484,8 @@ categories = {
   vegan: Category.create!(name: "Vegan"),
   tea: Category.create!(name: "Tea"),
   barbeque: Category.create!(name: "Barbeque"),
-  ipa: Category.create!(name: "IPA")
+  ipa: Category.create!(name: "IPA"),
+  local_product: Category.create!(name: "Local")
 }
 
 # Creating Categorizations
