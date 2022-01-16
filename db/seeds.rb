@@ -120,7 +120,7 @@ tastings = {
     title: "Dark chocolate party",
     description: "A variety of dark chocolate from different origins will be shared to explore the nuances and the different notes. Bring your favorite! The rarer the better.",
     location: "632 Rue Cathcart, Montreal",
-    date: DateTime.new(2021, 9, 20, 20, 0, 0),
+    date: DateTime.new(2022, 3, 20, 20, 0, 0),
     capacity: 5,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_600/v1629996108/Tastogether/dark_chocolate_k402i4.jpg'
   ),
@@ -128,7 +128,7 @@ tastings = {
     title: "Exotic coffee tasting",
     description: "Bring your coffee of choice. We will talk about our favourites. 4 spots available. Coffee connaisseurs only. Must be older than 25.",
     location: "620 Saint-Catherine, Montreal",
-    start_at: DateTime.new(2021, 9, 6, 19, 0, 0),
+    start_at: DateTime.new(2022, 3, 6, 19, 0, 0),
     capacity: 4,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_600,a_90/v1629996106/Tastogether/coffee_lesk06.jpg'
   ),
@@ -136,7 +136,7 @@ tastings = {
     title: "From the beans to the bar",
     description: "Chocolate made from scratch... Really! Let's taste chocolates made from beans from different countries. I will show you how I make it possible and we can discuss the subtle and not so subtle diffenrences in flavours.",
     location: "620 Saint-Catherine, Montreal",
-    start_at: DateTime.new(2021, 9, 9, 19, 0, 0),
+    start_at: DateTime.new(2022, 3, 9, 19, 0, 0),
     capacity: 4,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_600/v1630000746/Tastogether/bean_to_bar_mzj7m2.jpg'
   ),
@@ -144,7 +144,7 @@ tastings = {
     title: "Gelato, just because...",
     description: "There is nothing better than a good gelato. For those that have tried it to those who have not, this event is one you don't want to miss. Gelato is just an amazing world to discover... Let's do it together! I will be buying many types of gelato fo us to savour.",
     location: "731 William Street, Montréal",
-    start_at: DateTime.new(2021, 9, 4, 15, 0, 0),
+    start_at: DateTime.new(2022, 3, 4, 15, 0, 0),
     capacity: 8,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_600/v1630000742/Tastogether/gelato_ela3ku.jpg'
   ),
@@ -152,7 +152,7 @@ tastings = {
     title: "The milky way",
     description: "Because milk chocolates don't all taste the same! We will revisit some well know bars and compare them with some local chocolaters ",
     location: "632 Rue Cathcart, Montreal",
-    start_at: DateTime.new(2021, 9, 7, 20, 0, 0),
+    start_at: DateTime.new(2022, 3, 7, 20, 0, 0),
     capacity: 4,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_600/v1630000740/Tastogether/chocolate_bar_em9caz.jpg'
   ),
@@ -160,7 +160,7 @@ tastings = {
     title: "From old to new",
     description: "Let's taste the same wine from different vintages to compare and discuss the effect of aging on the flavours. 6 spots available. Wine experts and amateurs allowed. ",
     location: "1255 Square Phillips, Montreal",
-    start_at: DateTime.new(2021, 9, 16, 19, 30, 0),
+    start_at: DateTime.new(2022, 3, 16, 19, 30, 0),
     capacity: 6,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_600/v1629996979/Tastogether/wine_bgbbom.jpg'
   ),
@@ -168,7 +168,7 @@ tastings = {
     title: "Margarita Pizza Contest",
     description: "We will all order pizza from our favorite pizza restaurants to compare their take on the margarita pizza. 10 spots available. Looking forward to it!",
     location: "4534 Cartier, Montreal",
-    start_at: DateTime.new(2021, 9, 11, 20, 0, 0),
+    start_at: DateTime.new(2022, 3, 11, 20, 0, 0),
     capacity: 10,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_500,ar_16:9,c_fill,g_auto,e_sharpen/v1629996975/Tastogether/pizza_ixu3hd.jpg'
   ),
@@ -176,7 +176,7 @@ tastings = {
     title: "Barbeque Bash",
     description: "We will barbeque up all kinds of meats. Steaks, hot dogs, hamburgers, you name it. Afterwords we will hang out with a few beers in my backyard. Hoping to see you there!",
     location: "192 Rue Saint-Zotique, Montreal",
-    start_at: DateTime.new(2021, 9, 29, 20, 0, 0),
+    start_at: DateTime.new(2022, 3, 29, 20, 0, 0),
     capacity: 10,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_600/v1630543291/bbq.jpg'
   ),
@@ -184,7 +184,7 @@ tastings = {
     title: "Banh Mi: Best Sandwich",
     description: "In my opinion a banh mi is the best kind of sandwich in the world. Duh. All who share my opinon are welcome to come over and bring their own banh mi sandwich favorites for others to delight in. I will personally have several different varieties of banh mi sandwiches for us to eat. It's gonna be a great time!",
     location: "1446 Rue Crescent, Montréal",
-    start_at: DateTime.new(2021, 9, 9, 12, 30, 0),
+    start_at: DateTime.new(2022, 3, 9, 12, 30, 0),
     capacity: 7,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_600/v1630543287/banhmi.jpg'
   ),
@@ -192,7 +192,7 @@ tastings = {
     title: "Tea and Biscuits Time",
     description: "Growing up in England I loved chatting and catching up with my friends while drinking tea. It is one of the things I miss the most about the U.K. now that I live in North America. So, I am looking for at most 4 other people to come over and chat over a nice cup of tea. I have a large selection for us to sample.",
     location: "1255 Square Phillips, Montreal",
-    start_at: DateTime.new(2021, 9, 8, 2, 30, 0),
+    start_at: DateTime.new(2022, 3, 8, 2, 30, 0),
     capacity: 4,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_600/v1630543295/tea.jpg'
   ),
@@ -200,7 +200,7 @@ tastings = {
     title: "Indian Pale Ale Meetup",
     description: "I am a huge fan of IPA's and recently I have found that there are so many more under the radar brands. Whether you are a fan of bitter or sweet IPA's, bring your favourite IPA and we will do a sampling of all the IPA's that everyone brings and debate which is the best! Please register quickly as I expect the available spots to be taken quickly. Food will be provided. ",
     location: "4534 Cartier, Montreal",
-    start_at: DateTime.new(2021, 10, 3, 4, 30, 0),
+    start_at: DateTime.new(2022, 4, 3, 4, 30, 0),
     capacity: 6,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_600/v1630543687/beers.jpg'
   ),
@@ -208,7 +208,7 @@ tastings = {
     title: "Spice is Life",
     description: "Are you a fan of the show Hot Ones? I am hosting a hot sauce challenge where each of us will eat 10 hot sauces on chicken wings that I will barbeque. Each round the hot sauce will hit harder and harder and any who are left standing will be crowned champions and will most likely burn all their taste buds. I am hoping for a huge turnout, so if you like spicey food and pushing yourself to the limit, then be there.",
     location: "192 Rue Saint-Zotique, Montreal",
-    start_at: DateTime.new(2021, 9, 27, 6, 20, 0),
+    start_at: DateTime.new(2022, 3, 27, 6, 20, 0),
     capacity: 10,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_600/v1630543299/hotsauce.jpg'
   ),
@@ -216,7 +216,7 @@ tastings = {
     title: "Italian Food Lovers",
     description: "Calling all Italian food lovers. Me and my friends cannot get enough of Italian food and are looking to try out and experiment with new recipes. We are hosting an event where attendees can bring their favourite Italian recipes and we can all sample them and get each other's recipes! There will be 8 spots available. I will provide white wine for all of us as well.",
     location: "731 William Street, Montréal",
-    start_at: DateTime.new(2021, 9, 16, 6, 0, 0),
+    start_at: DateTime.new(2022, 3, 16, 6, 0, 0),
     capacity: 8,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_600/v1630543301/italian.jpg'
   ),
@@ -224,7 +224,7 @@ tastings = {
     title: "Fried Food Fest",
     description: "Hey everyone! Who doesn't love fried food? Whether it's for a meal like fried chicken or for desert like fried ice cream, fried food is just awesome. I welcome all fried food lovers to come and enjoy all the fried food they can ever eat. No need to bring anything. Everything will be provided. See you there.",
     location: "8910 Rue Lajeunesse, Montreal",
-    start_at: DateTime.new(2021, 9, 22, 7, 0, 0),
+    start_at: DateTime.new(2022, 3, 22, 7, 0, 0),
     capacity: 5,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_600/v1630543304/fried.jpg'
   ),
@@ -232,7 +232,7 @@ tastings = {
     title: "Taco Takeover",
     description: "For all you taco people out there, this event is for you. Me and my wife love making all different kinds of authentic tacos and sharing them with others. So, bring a bottle of wine and let's meet up over some Tacos in my backyard. As of now we have 4 spots available. Note that me and my wife are in our late thirties, so we would prefer if attendees are around that age.",
     location: "192 Rue Saint-Zotique, Montreal",
-    start_at: DateTime.new(2021, 9, 18, 7, 30, 0),
+    start_at: DateTime.new(2022, 3, 18, 7, 30, 0),
     capacity: 4,
     image: 'https://res.cloudinary.com/dd3n6uf2t/image/upload/w_600/v1630543280/tacos.jpg'
   )
